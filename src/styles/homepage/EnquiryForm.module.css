@@ -1,0 +1,183 @@
+.enquirySection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 8%;
+  flex-wrap: wrap;
+
+  /* fixed spacing between form and text */
+  gap: 278px;
+
+  /* ✅ Smokey background effect */
+  position: relative;
+}
+
+.enquirySection::before {
+  content: "";
+  position: absolute;
+  top: 90%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  width: 140%;
+  height: 120%;
+  background: radial-gradient(circle at right, rgba(105, 58, 183, 0.25) 0%, transparent 70%);
+  filter: blur(120px);
+  z-index: -2; /* stays behind everything */
+}
+
+/* FORM CARD */
+.formCard {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  padding: 30px 25px;
+  text-align: center;
+  border: 1px solid #e4d7f9;
+
+  /* fixed form size */
+  width: 371px;
+  height: 463px;
+
+  flex-shrink: 0; /* don’t let it shrink */
+  position: relative; /* ✅ required for glow effect */
+}
+
+/* ✅ Smokey glow behind form */
+.formCard::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 480px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(103, 58, 183, 0.35) 0%, transparent 70%);
+  z-index: -1;
+  filter: blur(100px);
+}
+
+.formTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: #6a0dad;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 100%;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #6a0dad;
+}
+
+.textarea {
+  resize: none;
+  min-height: 60px;
+}
+
+.terms {
+  font-size: 11px;
+  color: #666;
+  margin: 5px 0 10px;
+}
+
+.terms a {
+  color: #6a0dad;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.submitBtn {
+  background: #6a0dad;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submitBtn:hover {
+  background: #4b0082;
+}
+
+/* TEXT CONTENT */
+.textContent {
+  max-width: 400px;
+  position: relative; /* ✅ required for glow under text */
+}
+
+.smallHeading {
+  font-size: 13px;
+  font-weight: 600;
+  color: #6a0dad;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.mainHeading {
+  font-size: 26px;
+  font-weight: 700;
+  color: #222;
+  line-height: 1.4;
+  position: relative;
+}
+
+/* ✅ Smokey glow under "Register now..." */
+.mainHeading::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(103, 58, 183, 0.35) 0%, transparent 70%);
+  z-index: -1;
+  filter: blur(90px);
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 992px) {
+  .enquirySection {
+    flex-direction: column;
+    gap: 20px; /* smaller gap when stacked */
+    text-align: center;
+  }
+
+  .formCard {
+    width: 100%;
+    max-width: 400px;
+    height: auto; /* auto height on small screens */
+  }
+
+  .textContent {
+    display: none; /* ❌ hide "Register Now" section */
+  }
+
+  /* ✅ Keep "Enquiry" visible on top of form */
+  .formTitle {
+    display: block !important;
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+}
