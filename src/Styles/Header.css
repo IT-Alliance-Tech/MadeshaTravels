@@ -1,0 +1,121 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 80px;  /* smaller padding for correct height */
+  background-color: #fff;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 80px; /* fixed height like Figma */
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 30px; /* match Figma size */
+  width: 100px;
+}
+
+/* NAVIGATION */
+.nav ul {
+  display: flex;
+  gap: 40px; /* adjust spacing like Figma */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  font-size: 15px;
+  color: #222;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+.nav ul li a:hover,
+.nav ul li a:focus,
+.nav ul li a.active {
+  color: #6a0dad; /* purple hover effect */
+  font-weight: 600;
+}
+
+/* CONTACT BUTTON */
+.contact-button {
+  display: flex;
+  align-items: center;
+}
+
+.contact-btn {
+  background: #6a0dad;        /* purple like Figma */
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: #520c9c;       /* darker purple hover */
+}
+
+
+/* ---------------- RESPONSIVE ---------------- */
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .header {
+    padding: 15px 40px;
+  }
+
+  .nav ul {
+    gap: 25px;
+  }
+
+  .logo img {
+    height: 30px; /* scale down */
+  }
+}
+
+/* Mobile (≤768px) */
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 20px;
+    justify-content: space-between;
+  }
+
+  .nav {
+    display: none; /* keep hidden for now */
+  }
+
+  .contact-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 40px;
+  }
+}
+
+/* Small Mobile (≤480px) */
+@media (max-width: 480px) {
+  .header {
+    padding: 10px 15px;
+    height: 70px;
+  }
+
+  .contact-btn {
+    padding: 6px 14px;
+    font-size: 13px;
+    border-radius: 35px;
+  }
+}

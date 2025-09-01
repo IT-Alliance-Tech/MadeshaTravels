@@ -1,0 +1,108 @@
+"use client";
+import React, { useState } from "react";
+import Image from "next/image";  
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import "../../Styles/Footer.css";
+import logo from "../../assets/Images/logo.png";
+
+const socialLinks = [
+  { icon: <FaFacebookF />, href: "#" },
+  { icon: <FaTwitter />, href: "#" },
+  { icon: <FaInstagram />, href: "#" },
+];
+
+const footerLinks = [
+  {
+    title: "Company",
+    links: ["Services", "Discover", "Gallery", "Testimonials"],
+  },
+  {
+    title: "Contact",
+    links: ["Why Travlog?", "Partner with us", "FAQ’s", "Blog"],
+  },
+];
+
+const contactInfo = [
+  "+00 92 1234 56789",
+  "info@travlog.com",
+  "205. R Street, New York",
+  "BD23200",
+];
+
+const Footer = () => {
+  const [openSection, setOpenSection] = useState(null);
+
+  const toggleSection = (name) => {
+    setOpenSection(openSection === name ? null : name);
+  };
+
+  return (
+    <footer className="footer">
+      <div className="footer-container">
+        {/* Left Section */}
+        <div className="footer-left">
+          <div className="logo-area">
+            <Image src={logo} alt="Logo" className="footer-logo" priority />
+          </div>
+          <p className="footer-text">
+            From breathtaking destinations to unforgettable experiences, we’re
+            here to make every journey safe, simple, and truly memorable.
+          </p>
+          <div className="social-icons">
+            {socialLinks.map((item, index) => (
+              <a key={index} href={item.href}>
+                {item.icon}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Company */}
+        <div
+          className={`footer-links ${
+            openSection === "company" ? "active" : ""
+          }`}
+        >
+          <h4 onClick={() => toggleSection("company")}>Company</h4>
+          <ul>
+            {footerLinks[0].links.map((link, i) => (
+              <li key={i}>
+                <a href="#">{link}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Contact */}
+        <div
+          className={`footer-links ${
+            openSection === "contact" ? "active" : ""
+          }`}
+        >
+          <h4 onClick={() => toggleSection("contact")}>Contact</h4>
+          <ul>
+            {footerLinks[1].links.map((link, i) => (
+              <li key={i}>
+                <a href="#">{link}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Meet Us */}
+        <div
+          className={`footer-contact ${
+            openSection === "meet" ? "active" : ""
+          }`}
+        >
+          <h4 onClick={() => toggleSection("meet")}>Meet Us</h4>
+          {contactInfo.map((info, index) => (
+            <p key={index}>{info}</p>
+          ))}
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
