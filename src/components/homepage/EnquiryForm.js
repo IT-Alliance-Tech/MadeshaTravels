@@ -13,7 +13,7 @@ export default function EnquiryForm() {
           <input type="text" placeholder="Phone" className={styles.input} />
           <input type="email" placeholder="Email" className={styles.input} />
           <textarea
-            placeholder="Hello, I am interested in booking a hotel..."
+            placeholder="Hello, I am interested in booking a hotel...."
             className={styles.textarea}
           ></textarea>
           <p className={styles.terms}>
