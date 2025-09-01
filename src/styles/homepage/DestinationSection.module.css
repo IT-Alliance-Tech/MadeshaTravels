@@ -1,0 +1,161 @@
+.destinationSection {
+  padding: 40px 8% 40px 8%; /* reduced top & bottom padding */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.smallHeading {
+  font-size: 14px;
+  font-weight: 700;
+  color: #6a0dad;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.mainHeading {
+  font-size: 32px;
+  font-weight: 700;
+  color: #222;
+}
+
+.arrows {
+  display: flex;
+  gap: 12px;
+}
+
+.arrowBtn,
+.arrowBtnActive {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  background: #f3f3f3;
+  transition: all 0.3s ease;
+}
+
+.arrowBtnActive {
+  background: #6a0dad;
+  color: #fff;
+}
+
+/* ✅ FIXED: Exactly 3 cards in one row */
+.cardsWrapper {
+  display: flex;
+  flex-wrap: nowrap;         /* Keep in single row */
+  gap: 24px;
+  justify-content: center;   /* Center them nicely */
+  overflow: hidden;          /* Prevent scroll */
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  flex: 0 0 30%;             /* Each card takes ~30% */
+  max-width: 373px;
+  height: 480px;
+  overflow: hidden;
+}
+
+.cardImg {
+  width: 100%;               /* Fill card width */
+  height: 350px;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0; /* ✅ Rounded top edges */
+}
+
+.cardContent {
+  padding: 16px;
+}
+
+.cardContent h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #6a0dad;
+}
+
+.location {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.rating {
+  font-size: 14px;
+  font-weight: 600;
+  color: #6a0dad;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+  .mainHeading {
+    font-size: 26px;
+  }
+
+  .cardsWrapper {
+    flex-wrap: wrap;       /* ✅ Allow wrapping on smaller screens */
+    justify-content: center;
+  }
+
+  .card {
+    flex: 0 0 45%;         /* ✅ 2 per row */
+    max-width: 300px;
+    height: 460px;
+  }
+
+  .cardImg {
+    height: 280px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .mainHeading {
+    font-size: 22px;
+  }
+
+  .cardsWrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    flex: 0 0 100%;        /* ✅ 1 per row */
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .cardImg {
+    height: 220px;
+  }
+}
