@@ -5,19 +5,53 @@
   padding: 80px 20px;
   font-family: Arial, sans-serif;
   background-color: #fff;
+   position: relative;
+    overflow: hidden;
+    
+
+    background-image: url("../assets/Images/Layer_1.png"); /* 👈 replace with your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  
+  min-height: 650px;  /* adjust this value as per your design */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.testimonials::before {
+  content: "";
+  position: absolute;
+  width: 2506.2px;
+  height: 958.64px;
+  top: 5738px;
+  left: -757.53px;
+  background-image: url("../assets/Images/Layer_1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  opacity: 0.1;
+  transform: rotate(9.37deg);
+  z-index: 0; /* stay behind content */
 }
 
 .subtitle {
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 872px;
+  height: 28px;
   color: #6c3bce;
   letter-spacing: 2px;
   margin-bottom: 10px;
+  font-size: 23px;
 }
 
 .title {
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 44px;
+  font-weight: 872px;
+  height: 73px;
   margin-bottom: 40px;
   color: #222;
 }
@@ -26,6 +60,14 @@
   position: relative;
   max-width: 1000px;
   margin: 0 auto;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  min-height: 450px;   /* make this tall enough for longest review */
 }
 
 .testimonial-img {
@@ -37,28 +79,39 @@
 }
 
 .name {
-  font-size: 1.2rem;
+  font-size: 28px;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #222;
+  color: #B39DDB;
 }
 
 .role {
   font-weight: normal;
-  color: #666;
+  font-size: 28px;
+  color: #191825BF;
 }
 
 .stars {
+  display: flex;         /* enable flex layout */
+  justify-content: center;
+  align-items: center;
+  gap: 12px;             /* controls spacing between stars */
   margin: 10px 0 20px;
 }
 
 .review {
   font-size: 1.1rem;
-  color: #444;
+  color:#191825BF;
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
+
+  min-height: 120px;   /* 👈 fixes jump (adjust to longest review) */
+  display: flex;
+  align-items: center; /* keeps review vertically centered */
+  text-align: center;
 }
+
 
 /* ✅ Arrows (always at bottom, pushed more down) */
 .arrow {
@@ -71,7 +124,9 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   transition: all 0.3s ease;
-  transform: none;        /* remove vertical centering */
+transform: translateY(0);      /* remove vertical centering */
+bottom: 200px;
+
 }
 
 .arrow:hover {
@@ -80,21 +135,30 @@
 }
 
 .arrow.left {
-  left: -70px;
+  left: -150px;
+   font-size: 1rem;  
 }
 
 .arrow.right {
-  right: -70px;
+  right: -150px;
+   font-size: 1rem;  
 }
+
 
 /* Dots */
 .dots {
-  margin-top: 30px;
+ position: absolute;
+  bottom: 0px;         /* fixed distance from bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .dot {
-  height: 10px;
-  width: 10px;
+  height: 15px;
+  width: 15px;
   margin: 0 6px;
   background-color: #bbb;
   border-radius: 50%;
@@ -134,12 +198,12 @@
 
   .arrow.left {
     left: 40px;
-    bottom: -80px;  /* pushed more down */
+    bottom: -60px;  /* pushed more down */
   }
 
   .arrow.right {
     right: 40px;
-    bottom: -80px;  /* pushed more down */
+    bottom: -60px;  /* pushed more down */
   }
 }
 
@@ -147,8 +211,13 @@
 @media (max-width: 600px) {
   .testimonials {
     padding: 50px 15px;
-    position: relative; /* ensure arrows are positioned relative to this */
+    /* position: relative; ensure arrows are positioned relative to this */
   }
+  .testimonial-content {
+    min-height: 320px;      /* shrink block height */
+    padding-bottom: 50px;   /* leave just enough space for dots */
+  }
+
 
   .testimonial-img {
     width: 90px;
@@ -156,7 +225,12 @@
   }
 
   .name {
-    font-size: 1rem;
+    font-size: 21px;
+    color: #673AB7;
+  }
+  
+  .role {
+    font-size: 21px;   /* bigger role */
   }
 
   .review {
@@ -167,15 +241,16 @@
 
   /* ✅ Arrows adjusted for mobile */
   .arrow {
-    padding: 10px;
-    bottom: -70px;  /* pushed further down for mobile */
+    top: auto;            /* disable vertical centering */
+    bottom: 100px;        /* fixed position above dots */
+    transform: none;
+    padding: 10px;        /* smaller size */
   }
 
   .arrow.left {
-    left: 6%;
+    left: 20px;           /* keep gap from edge */
   }
-
-  .arrow.right {
-    right: 6%;
+ .arrow.right {
+    right: 20px;
   }
 }
