@@ -3,8 +3,8 @@
 import Image from "next/image";
 import busImg from "../../assets/image/bus.png";
 import flightImg from "../../assets/image/flight.png";
-import trainImg from "../../assets/image/train.png";
-import hotelImg from "../../assets/image/hotel.png";
+import trainImg from "../../assets/image/tempo.png";
+
 import styles from "../../styles/homepage/ServicesSection.module.css";
 
 export default function ServicesSection() {
@@ -39,19 +39,14 @@ export default function ServicesSection() {
 
       <div className={styles.card}>
         <Image src={trainImg} alt="Train Services" className={styles.cardImg} />
-        <h3>Train Services</h3>
+        <h3>Tempo Traveller Services</h3>
         <p>
-          Affordable and comfortable travel with India's vast railway network.
+         Comfortable and reliable Tempo Traveller (TT) rentals for group
+            trips, office outings, and family tours.
         </p>
       </div>
 
-      <div className={styles.card}>
-        <Image src={hotelImg} alt="Hotel Services" className={styles.cardImg} />
-        <h3>Hotel Services</h3>
-        <p>
-          Find the best deals on hotels with comfort and convenience guaranteed.
-        </p>
-      </div>
+      
     </section>
   );
 }
