@@ -12,6 +12,11 @@ import Footer from "@/components/homepage/Footer";
 export default function Home() {
   return (
     <main>
+        
+  
+
+
+    
       <Header />
       <HeroSection />
       <EnquiryForm />

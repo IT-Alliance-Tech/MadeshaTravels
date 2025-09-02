@@ -5,9 +5,9 @@ import styles from "../../styles/homepage/HeroSection.module.css";
 import hillImg from "../../assets/image/image3.png";
 import gatewayImg from "../../assets/image/image2.png";
 import tajmahalImg from "../../assets/image/image1.png";
-import worldMap from "../../assets/image/map.jpg"; // replace with purple world map if you have one
+import worldMap from "../../assets/image/map.jpg";
 
-// Icons (using react-icons for demo, you can swap with your own SVGs)
+// Icons
 import { FaPaperPlane, FaUserAlt } from "react-icons/fa";
 import { MdFlight } from "react-icons/md";
 
@@ -17,9 +17,13 @@ export default function HeroSection() {
       {/* Left Side */}
       <div className={styles.left}>
         <button className={styles.exploreBtn}>Explore Ultimate India!</button>
-        <h1>
-          Travel <span className={styles.top}>top</span>{" "}
-          <span className={styles.destination}>destination</span> of India
+        <h1 className={styles.heading}>
+          <span className={styles.travel}>Travel</span>{" "}
+          <span className={styles.top}>
+            top <FaUserAlt className={styles.contactIcon} />
+          </span>{" "}
+          <span className={styles.destination}>destination</span>{" "}
+          <span className={styles.india}>of India</span>
         </h1>
         <p>
           We always make our customer happy by providing as many choices as
@@ -35,12 +39,13 @@ export default function HeroSection() {
       <div className={styles.right}>
         {/* World Map */}
         <div className={styles.mapWrapper}>
-          <Image src={worldMap} alt="World Map" className={styles.worldMap} />
-
-          {/* Flying airplanes */}
-          <MdFlight className={`${styles.flightIcon} ${styles.flight1}`} />
-          <MdFlight className={`${styles.flightIcon} ${styles.flight2}`} />
-          <MdFlight className={`${styles.flightIcon} ${styles.flight3}`} />
+          <Image
+            src={worldMap}
+            alt="World Map"
+            className={styles.worldMap}
+            priority
+          />
+          
         </div>
 
         {/* Image Layout */}
@@ -61,23 +66,23 @@ export default function HeroSection() {
           {/* Right column (Gateway) */}
           <div className={styles.rightCol}>
             <div className={styles.imgCardTall}>
-              <Image src={gatewayImg} alt="Gateway of India" placeholder="blur" />
+              <Image
+                src={gatewayImg}
+                alt="Gateway of India"
+                placeholder="blur"
+              />
               <span className={styles.badge}>Top Places</span>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* User Icon Floating */}
-        <div className={styles.userIcon}>
-          <FaUserAlt />
-        </div>
-
-        {/* Bottom-left triangles */}
-        <div className={styles.triangleGroup}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+      {/* Bottom-left triangles */}
+      <div className={styles.decorArrows}>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </section>
   );

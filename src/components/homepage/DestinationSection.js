@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "../../styles/homepage/DestinationSection.module.css";
 
-// ✅ Import your images
+// ✅ Import images
 import munnarImg from "../../assets/image/munnar.png";
 import kedarnathImg from "../../assets/image/kedarnath.png";
 import keralaImg from "../../assets/image/7 hill.png";
@@ -27,12 +27,12 @@ export default function DestinationSection() {
         <div className={styles.card}>
           <Image src={munnarImg} alt="Munnar" className={styles.cardImg} />
           <div className={styles.cardContent}>
-            <h3>Munnar Trip (3 Days, 2 Nights)</h3>
-            <div className={styles.infoRow}>
-              <p className={styles.price}>₹15,500</p>
-              <p className={styles.rating}>⭐ 4.8</p>
+            <div className={styles.cardHeader}>
+              <h3>Munnar Trip (3 Days, 2 Nights)</h3>
+              <span className={styles.price}>₹15,500</span>
             </div>
             <p className={styles.location}>Cochin (Kochi), ~130 km away</p>
+            <p className={styles.rating}>4.8</p>
           </div>
         </div>
 
@@ -40,12 +40,12 @@ export default function DestinationSection() {
         <div className={styles.card}>
           <Image src={kedarnathImg} alt="Kedarnath" className={styles.cardImg} />
           <div className={styles.cardContent}>
-            <h3>Kedarnath Trip (3–4 Days)</h3>
-            <div className={styles.infoRow}>
-              <p className={styles.price}>₹18,500</p>
-              <p className={styles.rating}>⭐ 4.5</p>
+            <div className={styles.cardHeader}>
+              <h3>Kedarnath Trip (3–4 Days)</h3>
+              <span className={styles.price}>₹18,500</span>
             </div>
             <p className={styles.location}>Garhwal Himalayas (North India)</p>
+            <p className={styles.rating}>4.5</p>
           </div>
         </div>
 
@@ -53,12 +53,12 @@ export default function DestinationSection() {
         <div className={styles.card}>
           <Image src={keralaImg} alt="Kerala" className={styles.cardImg} />
           <div className={styles.cardContent}>
-            <h3>7-Day Kerala Itinerary</h3>
-            <div className={styles.infoRow}>
-              <p className={styles.price}>₹60,000</p>
-              <p className={styles.rating}>⭐ 5.0</p>
+            <div className={styles.cardHeader}>
+              <h3>7-Day Kerala Itinerary</h3>
+              <span className={styles.price}>₹60,000</span>
             </div>
             <p className={styles.location}>Kerala, India</p>
+            <p className={styles.rating}>5.0</p>
           </div>
         </div>
       </div>

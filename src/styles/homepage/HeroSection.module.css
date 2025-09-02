@@ -47,14 +47,17 @@
   margin-bottom: 15px;
 }
 
-/* ✅ Travel of India + Top 10 Destination */
-.travel,
-.top,
-.destination,
-.india {
+.left h1 .travel {
+  color: #000;
+}
+
+.left h1 .top,
+.left h1 .destination {
   color: #4b56d2;
-  font-size: 40px;   /* Desktop */
-  font-weight: 600;
+}
+
+.left h1 .india {
+  color: #000;
 }
 
 .left p {
@@ -130,7 +133,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 650px;
-  opacity: 0.2;
+  opacity: 0.55;   /* ✅ increased opacity */
   z-index: 1;
 }
 
@@ -146,13 +149,14 @@
   flex-direction: column;
   gap: 20px;
   flex: 1;
-  /* position: relative; ✅ required for icon positioning */
 }
 
 .rightCol {
   display: flex;
   flex: 1;
   align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .imgCard,
@@ -160,7 +164,6 @@
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  /* position: relative; */
 }
 
 .imgCard img,
@@ -191,7 +194,7 @@
 /* 📍 Paper plane icon positioned at LEFT corner between 2 stacked images */
 .iconOverlay {
   position: absolute;
-  left: -20px;   /* 👈 for left corner | use right:-20px for right corner */
+  left: -20px;
   top: 43%;
   background: #6a0dad;
   color: #fff;
@@ -221,22 +224,22 @@
   z-index: 3;
 }
 
-/* User Icon bottom-center */
+/* ✅ User Icon centered under tall image */
 .userIcon {
   position: absolute;
-  bottom: -28px;
+  bottom: -55px;   /* ✅ adjusted for correct placement */
   left: 50%;
   transform: translateX(-50%);
-  width: 46px;
-  height: 46px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   background: #fff;
   color: #6a0dad;
   display: grid;
   place-items: center;
-  font-size: 18px;
+  font-size: 20px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-  z-index: 3;
+  z-index: 5;
 }
 
 /* ================== RESPONSIVE ================== */
@@ -250,10 +253,10 @@
     font-size: 42px;
   }
 
-  .travel,
-  .top,
-  .destination,
-  .india {
+  .left h1 .travel,
+  .left h1 .top,
+  .left h1 .destination,
+  .left h1 .india {
     font-size: 32px;
   }
 
@@ -300,10 +303,10 @@
     font-size: 28px;
   }
 
-  .travel,
-  .top,
-  .destination,
-  .india {
+  .left h1 .travel,
+  .left h1 .top,
+  .left h1 .destination,
+  .left h1 .india {
     font-size: 22px;
   }
 
@@ -312,7 +315,6 @@
     margin: 0 auto 15px;
   }
 
-  /* ✅ stack buttons one below the other */
   .buttons {
     flex-direction: column;
     align-items: center;
@@ -325,7 +327,6 @@
     max-width: 260px;
   }
 
-  /* ✅ KEEP SAME DESKTOP LAYOUT but scale smaller */
   .imageLayout {
     flex-direction: row;
     gap: 12px;
@@ -350,10 +351,10 @@
   }
 
   .userIcon {
-    bottom: -20px;
-    width: 38px;
-    height: 38px;
-    font-size: 15px;
+    bottom: -40px;   /* ✅ keep centered under image on mobile */
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
   }
 
   .badge {
