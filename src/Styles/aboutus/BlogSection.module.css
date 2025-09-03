@@ -1,0 +1,155 @@
+.blogSection {
+  padding: 60px 0; /* removed left/right % padding */
+  font-family: "Arial", sans-serif;
+  text-align: left;
+  position: relative;
+  max-width: 1200px;  /* keeps layout centered */
+  margin: 0 auto;     /* centers section */
+}
+
+/* Small heading (BLOGS) */
+.smallHeading {
+  font-size: 14px;
+  font-weight: 700;
+  color: #673AB7;   /* ✅ primary color */
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+  padding-left: 8%;   /* aligns with cards */
+}
+
+/* Main heading */
+.mainHeading {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #000;
+  padding-left: 8%;   /* aligns with cards */
+}
+
+/* Cards wrapper */
+.cardsWrapper {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start; /* ✅ ensures equal alignment */
+  flex-wrap: wrap;
+  padding-left: 8%;   /* same padding as headings */
+  padding-right: 8%;
+}
+
+/* Blog Card */
+.blogCard {
+  flex: 0 0 320px;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0px 4px 14px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.blogCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 6px 18px rgba(0,0,0,0.25);
+}
+
+/* Blog Image */
+.blogImage {
+  width: 100%;
+  height: 260px;   /* ✅ increased image height */
+  object-fit: cover;
+  display: block;
+}
+
+/* Blog Content with subtle smoky effect */
+.blogContent {
+  padding: 18px;
+  flex-grow: 1;
+  background: linear-gradient(
+    to top,
+    rgba(240, 245, 255, 0.5),
+    rgba(255, 255, 255, 1)
+  ); /* ✅ soft white-blue gradient */
+}
+
+.blogTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.knowMore {
+  color: #673AB7;   /* ✅ primary color */
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.knowMore:hover {
+  text-decoration: underline;
+}
+
+/* Navigation buttons */
+.navButtons {
+  position: absolute;
+  top: 30px;
+  right: 8%;
+  display: flex;
+  gap: 12px;
+}
+
+.navBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navBtn.activeBtn {
+  background: #673AB7;  /* ✅ primary color */
+  color: #fff;          /* arrow color */
+}
+
+.navBtn:hover {
+  transform: scale(1.05);
+}
+
+/* ---------------- MOBILE ---------------- */
+@media (max-width: 768px) {
+  .mainHeading {
+    font-size: 22px;
+    padding-left: 6%;
+  }
+
+  .cardsWrapper {
+    gap: 12px;
+    padding-left: 6%;
+    padding-right: 6%;
+    justify-content: center;
+  }
+
+  .blogCard {
+    flex: 0 0 260px;
+  }
+
+  .blogImage {
+    height: 200px;  /* ✅ taller image for mobile too */
+  }
+
+  .navButtons {
+    top: auto;
+    bottom: -20px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}

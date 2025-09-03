@@ -1,0 +1,157 @@
+.faqSection {
+  padding: 60px 8%;
+  font-family: "Arial", sans-serif;
+}
+
+/* Heading is above everything */
+.faqHeader {
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.faqSmallHeading {
+  font-size: 14px;
+  font-weight: 700;
+  color: #6a0dad;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.faqHeading {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.3;
+  color: #1a1a1a;
+}
+
+/* Flex row → image + FAQ list side by side */
+.faqContainer {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start; /* ✅ aligns FAQ with top of image */
+  flex-wrap: wrap;
+}
+
+/* Image */
+.faqImage {
+  flex: 1;
+  min-width: 320px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.imageBox {
+  border-radius: 20px;
+  width: 100%;
+  max-width: 500px;  /* ✅ wider */
+  height: 100%;
+  max-height: 350px; /* ✅ shorter */
+
+}
+
+/* FAQ List */
+.faqList {
+  flex: 1;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faqItem {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+/* FAQ Question with dropdown arrow */
+.faqQuestion {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #222;
+  text-align: left;
+  position: relative;
+}
+
+.faqQuestion::after {
+  content: "▼"; /* dropdown arrow */
+  font-size: 12px;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s;
+}
+
+.active .faqQuestion::after {
+  transform: translateY(-50%) rotate(180deg); /* arrow rotates */
+}
+
+.active {
+  background: #6a0dad;
+  color: #fff;
+  border-color: #6a0dad;
+}
+
+.active .faqQuestion {
+  color: #fff;
+}
+
+.faqAnswer {
+  padding: 15px;
+  font-size: 14px;
+  line-height: 1.5;
+  background: transparent;
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+.active .faqAnswer {
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .faqContainer {
+    flex-direction: column;
+  }
+
+  .faqImage {
+    order: 2;
+    justify-content: center;
+  }
+
+  .faqList {
+    order: 3;
+  }
+
+  .faqHeading {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .faqSection {
+    padding: 40px 5%;
+  }
+
+  .faqHeading {
+    font-size: 20px;
+  }
+
+  .imageBox {
+    max-width: 100%;
+    max-height: 280px;
+    object-fit: contain;
+  }
+}

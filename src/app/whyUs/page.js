@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import styles from "../styles/WhyUs.module.css";
-import hampiImg from "../public/images/hampi.png"; // ✅ import method
+import styles from "../../styles/aboutus/WhyUs.module.css";
+import hampiImg from "../../assets/image/hampi.png"; // ✅ import method
 
 const whyUsPoints = [
   {
@@ -47,7 +47,11 @@ export default function WhyUs() {
       {/* Right Content */}
       <div className={styles.content}>
         <p className={styles.subtitle}>WHY US?</p>
-        <h2 className={styles.heading}>Your Journey, Our Commitment</h2>
+        {/* ✅ Force Commitment to next line */}
+        <h2 className={styles.heading}>
+          Your Journey, our <span className={styles.break}>Commitment</span>
+        </h2>
+
         <ul className={styles.list}>
           {whyUsPoints.map((point) => (
             <li key={point.id} className={styles.listItem}>
