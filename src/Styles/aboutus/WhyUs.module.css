@@ -13,7 +13,7 @@
 
 .image {
   width: 500px;          /* ✅ fixed width */
-  height: 550px;         /* ✅ fixed height */
+  height: 500px;         /* ✅ fixed height */
   border-radius: 45px;
   object-fit: cover;
   margin-top: 64px;      /* keep spacing */
@@ -23,6 +23,7 @@
 
 .content {
   flex: 1;
+  margin-top: 64px;   /* ✅ shifted down to align with image */
 }
 
 .subtitle {
@@ -136,45 +137,58 @@
 
 @media (max-width: 768px) {
   .whyUsSection {
-    flex-direction: column;
+    flex-direction: column; /* ✅ image on top, text below */
     text-align: center;
+    padding: 40px 5%;
   }
 
   .image {
-    margin: 0 auto;
+    margin: 0 auto 25px;  /* ✅ image centered with bottom spacing */
     width: 100%;
-    height: auto; /* ✅ responsive adjustment */
+    height: auto;         /* ✅ responsive adjustment */
+    border-radius: 20px;  /* ✅ softer radius for mobile */
   }
 
   .content {
-    margin-top: 25px;
+    margin-top: 0;        /* ✅ remove extra top margin */
+  }
+
+  .subtitle {
+    margin-bottom: 8px;
+  }
+
+  .heading {
+    font-size: 22px;
+    margin-bottom: 18px;
   }
 
   .listItem {
-    justify-content: center;
+    justify-content: flex-start; /* ✅ align text left */
     text-align: left;
+    font-size: 14px;
   }
 
   .buttons {
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;  /* ✅ stack buttons vertically */
+    gap: 12px;
+    width: 100%;             /* ✅ make buttons take full width */
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    width: 100%;             /* ✅ full width buttons */
+    height: 49px;
+    font-size: 14px;
+    border-radius: 100px;
   }
 }
 
 @media (max-width: 480px) {
   .heading {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .listItem {
-    font-size: 14px;
-  }
-
-  .primaryBtn,
-  .secondaryBtn {
-    width: auto;
-    height: auto;
-    padding: 12px 20px;
-    font-size: 14px;
+    font-size: 13px;
   }
 }

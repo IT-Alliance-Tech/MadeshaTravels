@@ -1,12 +1,13 @@
 "use client";
 import Image from "next/image";
-import styles from "../../styles/aboutus/PartnerSection.module.css"; // ✅ CSS import
+import { Plane } from "lucide-react"; // ✅ airplane icon
+import styles from "../../styles/aboutus/PartnerSection.module.css";
 
 // Import images
 import img1 from "../../assets/image/partner1.png"; 
 import img2 from "../../assets/image/partner3.png";
 import img3 from "../../assets/image/partner2.png";
-import worldmap from "../../assets/image/image4.png"; // ✅ world map import
+import worldmap from "../../assets/images/map2.png"; // ✅ world map import
 
 export default function PartnerSection() {
   const services = [
@@ -56,8 +57,15 @@ export default function PartnerSection() {
 
       {/* Right Images */}
       <div className={styles.imageGrid}>
+        {/* World Map */}
         <Image src={worldmap} alt="World Map" className={styles.worldMap} />
 
+        {/* Airplane Icons */}
+        <Plane className={`${styles.airplane} ${styles.airplane1}`} />
+        <Plane className={`${styles.airplane} ${styles.airplane2}`} />
+        <Plane className={`${styles.airplane} ${styles.airplane3}`} />
+
+        {/* Partner Images */}
         <div className={styles.imageWrapper}>
           <Image src={img1} alt="Partner Image 1" className={styles.partnerImage} />
         </div>
