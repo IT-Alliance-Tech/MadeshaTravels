@@ -74,7 +74,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Bottom-left triangles */}
+      {/* Bottom-left triangles */}{/* Remove this part and add new background image */}
       <div className={styles.decorArrows}>
         <span></span>
         <span></span>
