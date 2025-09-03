@@ -9,7 +9,7 @@ import worldMap from "../../assets/image/map.jpg";
 
 // Icons
 import { FaPaperPlane, FaUserAlt } from "react-icons/fa";
-import { MdFlight } from "react-icons/md";
+import userIcon from "../../assets/icons/add-user 1.png";
 
 export default function HeroSection() {
   return (
@@ -19,9 +19,7 @@ export default function HeroSection() {
         <button className={styles.exploreBtn}>Explore Ultimate India!</button>
         <h1 className={styles.heading}>
           <span className={styles.travel}>Travel</span>{" "}
-          <span className={styles.top}>
-            top <FaUserAlt className={styles.contactIcon} />
-          </span>{" "}
+          <span className={styles.top}>top</span>{" "}
           <span className={styles.destination}>destination</span>{" "}
           <span className={styles.india}>of India</span>
         </h1>
@@ -38,15 +36,6 @@ export default function HeroSection() {
       {/* Right Side */}
       <div className={styles.right}>
         {/* World Map */}
-        <div className={styles.mapWrapper}>
-          <Image
-            src={worldMap}
-            alt="World Map"
-            className={styles.worldMap}
-            priority
-          />
-          
-        </div>
 
         {/* Image Layout */}
         <div className={styles.imageLayout}>
@@ -71,8 +60,16 @@ export default function HeroSection() {
                 alt="Gateway of India"
                 placeholder="blur"
               />
+
               <span className={styles.badge}>Top Places</span>
             </div>
+            <Image
+              height={40}
+              width={40}
+              className={`${styles.userProfileIcon}`}
+              src={userIcon}
+              alt="userIcon"
+            />
           </div>
         </div>
       </div>

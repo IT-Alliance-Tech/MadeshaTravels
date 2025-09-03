@@ -10,7 +10,8 @@
 
 .left {
   flex: 1;
-  min-width: 300px;
+  /* min-width: 300px; */
+  width: 45%;
   z-index: 2;
 }
 
@@ -124,7 +125,8 @@
   display: flex;
   justify-content: center;
   position: relative;
-  min-width: 300px;
+  /* min-width: 300px; */
+  width: 55%;
 }
 
 .worldMap {
@@ -138,22 +140,29 @@
 }
 
 .imageLayout {
+  background-image: url("../../assets/image/heroBGImage.png");
+  background-size: contain;
+  background-repeat: no-repeat;
   display: flex;
-  gap: 20px;
-  position: relative;
+  justify-content: center;
+  /* position: relative; */
   z-index: 2;
+  width: 100%;
+  gap: 40px;
+  padding: 60px;
 }
 
 .leftCol {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  flex: 1;
+  position: relative;
+  /* flex: 1; */
 }
 
 .rightCol {
   display: flex;
-  flex: 1;
+  /* flex: 1; */
   align-items: center;
   justify-content: center;
   position: relative;
@@ -175,18 +184,18 @@
 
 /* ========= Custom Sizes ========= */
 .leftCol .imgCard:nth-of-type(1) {
-  width: 250px;
-  height: 280px;
+  width: 200px;
+  height: 240px;
 }
 
 .leftCol .imgCard:nth-of-type(2) {
-  width: 250px;
-  height: 280px;
+  width: 200px;
+  height: 240px;
 }
 
 .rightCol .imgCardTall {
-  width: 250px;
-  height: 400px;
+  width: 200px;
+  height: 300px;
 }
 
 /* ========= Floating ICONS ========= */
@@ -194,7 +203,7 @@
 /* 📍 Paper plane icon positioned at LEFT corner between 2 stacked images */
 .iconOverlay {
   position: absolute;
-  left: -20px;
+  left: -15px;
   top: 43%;
   background: #6a0dad;
   color: #fff;
@@ -210,8 +219,8 @@
 /* Top Places Badge on Gateway */
 .badge {
   position: absolute;
-  right: -5%;
-  top: 50%;
+  right: -30%;
+  top: 70%;
   transform: translateY(-50%);
   background: #fff;
   color: #111;
@@ -240,6 +249,15 @@
   font-size: 20px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.2);
   z-index: 5;
+}
+
+.userProfileIcon{
+  background-color: #673AB7;
+  opacity: 0.5;
+  position: absolute;
+  bottom: 2%;
+  padding: 10px;
+  border-radius: 50%;
 }
 
 /* ================== RESPONSIVE ================== */
