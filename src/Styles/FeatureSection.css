@@ -16,7 +16,9 @@
 
 .features-subtitle {
   color: #6c47ff;
-  font-weight: 600;
+  font-weight: 549;
+  height: 28px;
+  font-weight: bold;
   letter-spacing: 1px;
   margin-bottom: 12px;
   font-size: 14px;
@@ -127,7 +129,7 @@
   }
 
   .feature-right img {
-    max-width: 100%;
+    max-width: 100px;
     height: auto;
     border-radius: 20px; /* ✅ softer rectangle, not circular */
   }
@@ -170,7 +172,7 @@
     margin: 0 0 20px 0;          /* spacing below */
   }
   .feature-right img {
-    width: 350px;
+    width: 10px;
     height: auto;
     border-radius: 0px;
   }
@@ -182,7 +184,7 @@
 }
 
 
-/* ✅ Small Mobile (≤480px) */
+
 /* ✅ Mobile (≤768px) */
 @media (max-width: 768px) {
   .feature-section {
@@ -221,7 +223,7 @@
   }
 
   .feature-right img {
-    width: 350px;
+    width: 300px;
     height: auto;
     border-radius: 0px;
   }

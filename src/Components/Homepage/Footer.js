@@ -3,7 +3,10 @@ import React, { useState } from "react";
 import Image from "next/image";  
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 import "../../Styles/Footer.css";
-import logo from "../../assets/Images/logo.png";
+
+// Decorative images
+import leftImg from "../../assets/Images/back1.png";  
+import rightImg from "../../assets/Images/back2.png";  
 
 const socialLinks = [
   { icon: <FaFacebookF />, href: "#" },
@@ -38,11 +41,17 @@ const Footer = () => {
 
   return (
     <footer className="footer">
+      {/* Left decorative image */}
+      <div className="footer-img-left">
+        <Image src={leftImg} alt="Left Decoration" />
+      </div>
+
       <div className="footer-container">
         {/* Left Section */}
         <div className="footer-left">
+          {/* ✅ Replaced Logo with Text */}
           <div className="logo-area">
-            <Image src={logo} alt="Logo" className="footer-logo" priority />
+            <h2 className="footer-brand">Madesha Tour & Travels</h2>
           </div>
           <p className="footer-text">
             From breathtaking destinations to unforgettable experiences, we’re
@@ -100,6 +109,11 @@ const Footer = () => {
             <p key={index}>{info}</p>
           ))}
         </div>
+      </div>
+
+      {/* Right decorative image */}
+      <div className="footer-img-right">
+        <Image src={rightImg} alt="Right Decoration" />
       </div>
     </footer>
   );
