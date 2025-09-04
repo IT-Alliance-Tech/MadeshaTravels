@@ -30,36 +30,35 @@
 /* Flex row → image + FAQ list side by side */
 .faqContainer {
   display: flex;
-  gap: 50px;
+  gap: 40px;
   align-items: flex-start;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
-/* Image */
+/* Image takes 50% */
 .faqImage {
-  flex: 1;
-  min-width: 320px;
+  flex: 0 0 50%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .imageBox {
   border-radius: 20px;
   width: 100%;
-  max-width: 450px;
-  height: 100%;
-  max-height: 350px;
+  height: auto;
   object-fit: cover;
+  max-height: 420px;
 }
 
-/* FAQ List */
+/* FAQ List takes 50% */
 .faqList {
-  flex: 1;
-  min-width: 320px;
+  flex: 0 0 50%;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 20px;
+
+  /* ✅ shift down a little */
+  margin-top: 40px;
 }
 
 .faqItem {
@@ -86,10 +85,10 @@
 }
 
 .faqQuestion::after {
-  content: "⌄"; /* Chevron symbol */
-  font-size: 18px; /* Bigger for visibility */
+  content: "⌄";
+  font-size: 18px;
   position: absolute;
-  right: 20px; /* Increased spacing from edge */
+  right: 20px;
   top: 50%;
   transform: translateY(-50%);
   transition: transform 0.3s;
@@ -116,7 +115,7 @@
   background: transparent;
   transition: all 0.3s ease;
   color: #333;
-  border-top: 1px solid rgba(255, 255, 255, 0.6); /* Lighter divider line */
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .active .faqAnswer {
@@ -127,20 +126,25 @@
 @media (max-width: 992px) {
   .faqContainer {
     flex-direction: column;
+    gap: 25px;
+  }
+
+  .faqImage,
+  .faqList {
+    flex: 1 1 100%;
   }
 
   .faqImage {
-    order: 2;
     justify-content: center;
-  }
-
-  .faqList {
-    order: 3;
-    margin-top: 15px;
   }
 
   .faqHeading {
     font-size: 24px;
+  }
+
+  /* reset extra margin on smaller screens */
+  .faqList {
+    margin-top: 15px;
   }
 }
 
@@ -170,7 +174,7 @@
     width: 100%;
     max-width: 100%;
     height: auto;
-    max-height: 100vh; /* ✅ image adapts without shrinking */
+    max-height: 100vh;
     object-fit: cover;
     border-radius: 20px;
   }

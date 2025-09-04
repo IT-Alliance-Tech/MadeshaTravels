@@ -45,8 +45,7 @@ export default function BlogSection() {
 
       <div className={styles.cardsWrapper}>
         {blogs.map((blog, i) => (
-          <Link
-            href={`/blogDetails/${blog?.id}`}
+          <div
             key={blog.id}
             className={styles.blogCard}
           >
@@ -57,11 +56,12 @@ export default function BlogSection() {
             />
             <div className={styles.blogContent}>
               <p className={styles.blogTitle}>{blog.title}</p>
-              <a href={blog.link} className={styles.knowMore}>
+              <Link
+            href={`/blogDetails/${blog?.id}`} className={styles.knowMore}>
                 Know more
-              </a>
+              </Link>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
 
