@@ -3,20 +3,22 @@
   align-items: center;
   justify-content: center;
   padding: 40px;
-  gap: 40px;
+  gap: 32px;
   font-family: Arial, sans-serif;
+  width: 100%;
 }
 
 .imageWrapper {
-  flex: 1;
+  flex-shrink: 0;
   border-radius: 16px;
   overflow: hidden;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .image {
-  width: 550px;   /* Desktop size */
+  width: 550px;
   height: 500px;
   object-fit: cover;
   border-radius: 16px;
@@ -24,96 +26,161 @@
 
 .content {
   flex: 1;
-  max-width: 500px;
+  max-width: 550px;
+
+  /* ✅ move content slightly down to align with image */
+  margin-top: 20px;
 }
 
 .blogTag {
-  color: #a855f7; /* Purple */
+  color: #a855f7;
   font-weight: bold;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: clamp(12px, 1.5vw, 14px);
   margin-bottom: 10px;
+
+  margin-left: 20px; /* shift right */
 }
 
 .heading {
-  font-size: 28px;
+  font-size: clamp(20px, 3vw, 28px);
   font-weight: bold;
   line-height: 1.3;
   margin-bottom: 20px;
+
+  margin-left: 20px; /* shift right */
 }
 
 .description {
-  font-size: 15px;
+  font-size: clamp(13px, 2vw, 15px);
   color: #444;
   margin-bottom: 15px;
+
+  margin-left: 20px; /* align with heading */
 }
 
 .list {
   list-style: none;
-  padding: 0;
+  padding-left: 40px;
   margin: 0 0 20px 0;
 }
 
 .list li {
-  font-size: 15px;
-  margin-bottom: 10px;
+  font-size: clamp(13px, 2vw, 15px);
+  margin-bottom: 14px;
   color: #333;
+  text-align: left;
+  line-height: 1.6;
+
+  text-indent: -15px;
+  padding-left: 15px;
 }
 
+/* ✅ Buttons */
 .buttons {
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
+  margin-top: 15px;
+
+  margin-left: 20px; /* shift buttons right */
 }
 
 .getStarted {
-  background-color: #7e22ce;
+  background-color: #6738b7;
   color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
+  width: 146px;
+  height: 49px;
+  border-radius: 100px;
   border: none;
   font-weight: bold;
   cursor: pointer;
-  flex: 1;
+  transition: all 0.3s ease;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.getStarted:hover,
+.getStarted:focus {
+  background-color: #542d92;
 }
 
 .register {
   background-color: white;
+  color: #333;
+  width: 157px;
+  height: 49px;
+  border-radius: 100px;
   border: 1px solid #ccc;
-  padding: 10px 20px;
-  border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
-  flex: 1;
+  transition: all 0.3s ease;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.register:hover,
+.register:focus {
+  border-color: #6738b7;
+  color: #6738b7;
+}
+
+/* ✅ Navigation Arrows */
+.navigation {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.navWhite,
+.navBlue {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.navWhite {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: #333;
+}
+
+.navBlue {
+  background-color: #6738b7;
+  color: #fff;
 }
 
 /* ------------------- */
 /* Responsive Styling  */
 /* ------------------- */
 
-/* Tablets */
 @media (max-width: 1024px) {
   .container {
     padding: 20px;
     gap: 20px;
   }
 
-  .heading {
-    font-size: 24px;
-  }
-
-  .description,
-  .list li {
-    font-size: 14px;
-  }
-
   .image {
     width: 450px;
     height: 400px;
   }
+
+  .content {
+    max-width: 100%;
+    margin-top: 15px; /* adjust smaller screens */
+  }
 }
 
-/* ✅ Mobile View (your screenshot style) */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -130,46 +197,48 @@
     width: 100%;
     max-width: 100%;
     height: auto;
-    border-radius: 16px;
   }
 
   .content {
     max-width: 100%;
-  }
-
-  .heading {
-    font-size: 22px;
-    margin-bottom: 15px;
+    margin-top: 10px; /* adjust for mobile */
   }
 
   .description,
   .list li {
-    font-size: 14px;
     text-align: left;
   }
 
   .buttons {
-    flex-direction: column;  /* stack vertically */
+    flex-direction: column;
     gap: 12px;
+    margin-left: 0; /* reset shift on mobile */
   }
 
   .getStarted,
   .register {
     width: 100%;
-    padding: 12px;
     font-size: 15px;
+  }
+
+  .navigation {
+    justify-content: center;
+  }
+
+  .blogTag,
+  .heading,
+  .description {
+    margin-left: 0; /* reset shift on mobile */
   }
 }
 
-/* Small Mobile */
 @media (max-width: 480px) {
-  .heading {
-    font-size: 20px;
+  .container {
+    padding: 12px;
   }
 
-  .description,
-  .list li {
-    font-size: 13px;
+  .heading {
+    margin-bottom: 15px;
   }
 
   .getStarted,

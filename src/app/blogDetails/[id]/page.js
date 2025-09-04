@@ -3,6 +3,49 @@ import styles from "../../../styles/aboutus/BlogDetails.module.css";
 import travellersImg from "../../../assets/image/car1.png";
 
 export default function BlogDetails() {
+  const features = [
+    {
+      key: "a",
+      text: (
+        <>
+          Spacious Seating: Comfort for groups without feeling cramped.
+        </>
+      ),
+    },
+    {
+      key: "b",
+      text: (
+        <>
+          Cost-Effective: Share the cost, save more <br /> compared to multiple cars.
+        </>
+      ),
+    },
+    {
+      key: "c",
+      text: (
+        <>
+          Professional Drivers: Ensuring safe and stress <br /> free journeys.
+        </>
+      ),
+    },
+    {
+      key: "d",
+      text: (
+        <>
+          Convenience: Everyone travels together—no <br /> splitting up.
+        </>
+      ),
+    },
+    {
+      key: "e",
+      text: (
+        <>
+          Perfect for Events: Weddings, tours, picnics, and <br /> office outings.
+        </>
+      ),
+    },
+  ];
+
   return (
     <div className={styles.container}>
       {/* Left Image */}
@@ -26,28 +69,25 @@ export default function BlogDetails() {
           Madosha Tours & Travels, our Tempo Travellers offer:
         </p>
 
+        {/* ✅ Features list with a–e */}
         <ul className={styles.list}>
-          <li>
-            <b>Spacious Seating:</b> Comfort for groups without feeling cramped.
-          </li>
-          <li>
-            <b>Cost-Effective:</b> Share the cost, save more compared to multiple cars.
-          </li>
-          <li>
-            <b>Professional Drivers:</b> Ensuring safe and stress-free journeys.
-          </li>
-          <li>
-            <b>Convenience:</b> Everyone travels together—no splitting up.
-          </li>
-          <li>
-            <b>Perfect for Events:</b> Weddings, tours, picnics, and office outings.
-          </li>
+          {features.map((item) => (
+            <li key={item.key}>
+              <b>{item.key}) </b> {item.text}
+            </li>
+          ))}
         </ul>
 
-        {/* Buttons */}
+        {/* ✅ Buttons after list */}
         <div className={styles.buttons}>
           <button className={styles.getStarted}>Get Started</button>
           <button className={styles.register}>Register Now</button>
+        </div>
+
+        {/* ✅ Navigation Arrows */}
+        <div className={styles.navigation}>
+          <button className={styles.navWhite}>←</button>
+          <button className={styles.navBlue}>→</button>
         </div>
       </div>
     </div>

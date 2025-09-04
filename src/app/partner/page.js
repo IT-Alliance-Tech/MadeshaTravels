@@ -1,79 +1,71 @@
-"use client";
 import Image from "next/image";
-import { Plane } from "lucide-react"; // ✅ airplane icon
 import styles from "../../styles/aboutus/PartnerSection.module.css";
 
-// Import images
-import img1 from "../../assets/image/partner1.png"; 
-import img2 from "../../assets/image/partner3.png";
-import img3 from "../../assets/image/partner2.png";
-import worldmap from "../../assets/images/map2.png"; // ✅ world map import
+// Images
+import hillImg from "../../assets/image/partner1.png";
+import gatewayImg from "../../assets/image/partner3.png";
+import tajmahalImg from "../../assets/image/partner2.png";
 
 export default function PartnerSection() {
-  const services = [
-    {
-      title: "Corporate Transfers:",
-      desc: "Office trips, employee transport, and business travel.",
-    },
-    {
-      title: "Event Travel:",
-      desc: "Weddings, functions, and group gatherings with hassle-free transport.",
-    },
-    {
-      title: "School & College Trips:",
-      desc: "Safe and reliable buses & tempo travellers for educational tours.",
-    },
-    {
-      title: "Tour Operators:",
-      desc: "Partner with us for group tours and package inclusions.",
-    },
-  ];
-
   return (
-    <section className={styles.partnerSection}>
-      {/* Left Content */}
-      <div className={styles.textContent}>
-        <p className={styles.smallHeading}>PARTNER WITH US</p>
-        <h2 className={styles.mainHeading}>
-          Grow Together with <br /> Madesha Tours & Travels
-        </h2>
-        <p className={styles.description}>
-          Looking for a dependable transport partner? We provide Car, Bus, and Tempo Traveller services for:
+    <section className={styles.hero}>
+      {/* Left Side */}
+      <div className={styles.left}>
+        <p className={styles.subHeading}>Partner With Us</p>
+        <h1>Grow Together with Madesha Tours & Travels</h1>
+        <p>
+          Looking for a dependable transport partner? We provide Car, Bus, and
+          Tempo Traveller services for:
         </p>
 
-        <ul className={styles.list}>
-          {services.map((service, index) => (
-            <li key={index}>
-              <strong>{service.title}</strong> {service.desc}
-            </li>
-          ))}
+        <ul>
+          <li>
+            Corporate Transfers: Office trips, employee transport, and business
+            travel.
+          </li>
+          <li>
+            Event Travel: Weddings, functions, and group gatherings with
+            hassle-free transport.
+          </li>
+          <li>
+            School & College Trips: Safe and reliable buses & tempo travellers
+            for educational tours.
+          </li>
+          <li>
+            Tour Operators: Partner with us for group tours and package
+            inclusions.
+          </li>
         </ul>
 
         <div className={styles.buttons}>
-          <button className={styles.primaryBtn}>Get Started</button>
-          <button className={styles.secondaryBtn}>Register Now</button>
+          <button className={styles.getStarted}>Get Started</button>
+          <button className={styles.register}>Register Now</button>
         </div>
       </div>
 
-      {/* Right Images */}
-      <div className={styles.imageGrid}>
-        {/* World Map */}
-        <Image src={worldmap} alt="World Map" className={styles.worldMap} />
+      {/* Right Side */}
+      <div className={styles.right}>
+        <div className={styles.imageLayout}>
+          {/* Left column */}
+          <div className={styles.leftCol}>
+            <div className={styles.imgCard}>
+              <Image src={hillImg} alt="Hill Station" placeholder="blur" />
+            </div>
+            <div className={styles.imgCard}>
+              <Image src={tajmahalImg} alt="Taj Mahal" placeholder="blur" />
+            </div>
+          </div>
 
-        {/* Airplane Icons */}
-        <Plane className={`${styles.airplane} ${styles.airplane1}`} />
-        <Plane className={`${styles.airplane} ${styles.airplane2}`} />
-        <Plane className={`${styles.airplane} ${styles.airplane3}`} />
-
-        {/* Partner Images */}
-        <div className={styles.imageWrapper}>
-          <Image src={img1} alt="Partner Image 1" className={styles.partnerImage} />
-        </div>
-        <div className={`${styles.imageWrapper} ${styles.middleImage}`}>
-          <Image src={img2} alt="Partner Image 2" className={styles.partnerImage} />
-        </div>
-        <div className={styles.imageWrapper}>
-          <Image src={img3} alt="Partner Image 3" className={styles.partnerImage} />
+          {/* Right column */}
+          <div className={styles.rightCol}>
+            <div className={styles.imgCardTall}>
+              <Image
+                src={gatewayImg}
+                alt="Gateway of India"
+                placeholder="blur"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
