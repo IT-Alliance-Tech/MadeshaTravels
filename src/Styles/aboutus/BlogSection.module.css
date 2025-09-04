@@ -7,7 +7,7 @@
   margin: 0 auto;
 }
 
-/* Small heading (BLOGS) */
+/* Small heading */
 .smallHeading {
   font-size: 14px;
   font-weight: 700;
@@ -15,7 +15,7 @@
   text-transform: uppercase;
   margin-bottom: 8px;
   letter-spacing: 1px;
-  padding-left: 8%;
+  padding-left: 3%;
 }
 
 /* Main heading */
@@ -24,63 +24,64 @@
   font-weight: 700;
   margin-bottom: 30px;
   color: #000;
-  padding-left: 8%;
+  padding-left: 3%;
 }
 
 /* Cards wrapper */
 .cardsWrapper {
   display: flex;
   gap: 20px;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  padding-left: 8%;
-  padding-right: 8%;
-  transition: transform 0.4s ease-in-out;
+  overflow-x: auto;
+  overflow-y: hidden;
   scroll-behavior: smooth;
+  padding-left: 3%;
+  padding-right: 6%;
+  scrollbar-width: none;
+}
+.cardsWrapper::-webkit-scrollbar {
+  display: none;
 }
 
 /* Blog Card */
 .blogCard {
-  flex: 0 0 320px;
+  flex: 0 0 calc((100% - 40px) / 3); /* 3 cards desktop */
   background: #fff;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0px 4px 14px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  border: 1px solid rgba(0,0,0,0.06);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-  height: auto;
 }
 
 .blogCard:hover {
   transform: translateY(-6px);
-  box-shadow: 0px 6px 18px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
 
 /* Blog Image */
 .blogImage {
-  width: 100%;
-  height: 260px;
+  width: 373.33px;  /* fixed width */
+  height: 320px;    /* ✅ reduced height */
   object-fit: cover;
   display: block;
+  border-radius: 0;
 }
 
 /* Blog Content */
 .blogContent {
-  padding: 18px;
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
-  background: linear-gradient(
-    to top,
-    rgba(240, 245, 255, 0.5),
-    rgba(255, 255, 255, 1)
-  );
 }
 
 .blogTitle {
   font-size: 16px;
   font-weight: 600;
-  margin-bottom: 10px;
   color: #000;
+  margin: 0 0 6px 0;
 }
 
 .knowMore {
@@ -88,8 +89,8 @@
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
+  margin-top: 10px;
 }
-
 .knowMore:hover {
   text-decoration: underline;
 }
@@ -98,60 +99,59 @@
 .navButtons {
   position: absolute;
   top: 30px;
-  right: 8%;
+  right: 6%;
   display: flex;
   gap: 12px;
 }
-
 .navBtn {
   width: 44px;
   height: 44px;
   border-radius: 50%;
   border: none;
   background: #fff;
-  box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   font-size: 20px;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .navBtn.activeBtn {
   background: #673AB7;
   color: #fff;
 }
-
 .navBtn:hover {
   transform: scale(1.05);
 }
 
-/* ---------------- MOBILE ---------------- */
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1024px) {
+  .blogCard {
+    flex: 0 0 calc((100% - 20px) / 2); /* 2 cards tablet */
+  }
+  .blogImage {
+    width: 100%;
+    height: 320px;  /* ✅ reduced for tablet */
+  }
+}
+
 @media (max-width: 768px) {
   .mainHeading {
     font-size: 22px;
     padding-left: 6%;
   }
-
   .cardsWrapper {
-    flex-wrap: nowrap;   /* ✅ no wrapping, acts like a slider */
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
     gap: 16px;
     padding-left: 6%;
     padding-right: 6%;
   }
-
   .blogCard {
-    flex: 0 0 80%;  /* ✅ each card takes most of screen */
-    scroll-snap-align: center;
+    flex: 0 0 100%; /* 1 card mobile */
   }
-
   .blogImage {
-    height: 200px;
+    width: 100%;
+    height: 320px;  /* ✅ reduced for mobile */
   }
-
   .navButtons {
     top: auto;
     bottom: -20px;
