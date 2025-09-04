@@ -1,12 +1,12 @@
 "use client";
 import React, { useState } from "react";
-import Image from "next/image";  
+import Image from "next/image";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 import "../../Styles/Footer.css";
 
 // Decorative images
-import leftImg from "../../assets/Images/back1.png";  
-import rightImg from "../../assets/Images/back2.png";  
+import leftImg from "../../assets/Images/back1.png";
+import rightImg from "../../assets/Images/back2.png";
 
 const socialLinks = [
   { icon: <FaFacebookF />, href: "#" },
@@ -17,11 +17,21 @@ const socialLinks = [
 const footerLinks = [
   {
     title: "Company",
-    links: ["Services", "Discover", "Gallery", "Testimonials"],
+    links: [
+      { name: "Services", path: "/" },
+      { name: "Discover", path: "/" },
+      { name: "Gallery", path: "/" },
+      { name: "Testimonials", path: "/" },
+    ],
   },
   {
     title: "Contact",
-    links: ["Why Travlog?", "Partner with us", "FAQ’s", "Blog"],
+    links: [
+      { name: "Why Us?", path: "/whyUs" },
+      { name: "Partner with us", path: "/partner" },
+      { name: "FAQ’s", path: "/faq" },
+      { name: "Blog", path: "/blog" },
+    ],
   },
 ];
 
@@ -76,7 +86,7 @@ const Footer = () => {
           <ul>
             {footerLinks[0].links.map((link, i) => (
               <li key={i}>
-                <a href="#">{link}</a>
+                <a href="#">{link?.name}</a>
               </li>
             ))}
           </ul>
@@ -92,7 +102,7 @@ const Footer = () => {
           <ul>
             {footerLinks[1].links.map((link, i) => (
               <li key={i}>
-                <a href="#">{link}</a>
+                <a href={link.path}>{link.name}</a>
               </li>
             ))}
           </ul>
@@ -100,9 +110,7 @@ const Footer = () => {
 
         {/* Meet Us */}
         <div
-          className={`footer-contact ${
-            openSection === "meet" ? "active" : ""
-          }`}
+          className={`footer-contact ${openSection === "meet" ? "active" : ""}`}
         >
           <h4 onClick={() => toggleSection("meet")}>Meet Us</h4>
           {contactInfo.map((info, index) => (
