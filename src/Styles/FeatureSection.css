@@ -1,9 +1,9 @@
 .feature-section {
   display: grid;
-  grid-template-columns: 1fr 693px; /* left flexible, right fixed width */
+  grid-template-columns: 1fr 693px; /* desktop: left flexible, right fixed */
   align-items: center;
   gap: 50px;
-  padding: 60px 0; /* remove horizontal padding so image can reach edge */
+  padding: 60px 0;
   font-family: Arial, sans-serif;
   background-color: #fff;
 }
@@ -11,14 +11,13 @@
 /* LEFT SIDE */
 .feature-left {
   max-width: 600px;
-  padding-left: 80px; /* keep spacing on the left side */
+  padding-left: 80px;
 }
 
 .features-subtitle {
   color: #6c47ff;
-  font-weight: 549;
-  height: 28px;
   font-weight: bold;
+  height: 28px;
   letter-spacing: 1px;
   margin-bottom: 12px;
   font-size: 14px;
@@ -42,17 +41,16 @@
 
 .feature-card {
   display: flex;
-  align-items: center; /* center icon vertically */
+  align-items: center;
   gap: 15px;
   margin-bottom: 20px;
   padding: 18px;
   border-radius: 14px;
-  /* background: #fff; */
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   transition: transform 0.2s ease;
-  max-width: 450px;   /* reduce card width */
+  max-width: 450px;
   width: 100%;
-  background: #fff; /* keep card visible */
+  background: #fff;
   cursor: pointer;
 }
 
@@ -94,7 +92,7 @@
 /* RIGHT SIDE (IMAGE) */
 .feature-right {
   display: flex;
-  justify-content: flex-end; /* push image to right edge */
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -109,50 +107,25 @@
 }
 
 /* ------------------- RESPONSIVE ------------------- */
-/* ------------------- RESPONSIVE ------------------- */
 
-/* ✅ Tablet & small laptops */
-@media (max-width: 1024px) and (min-width: 769px) {
-  .feature-section {
-    grid-template-columns: 1fr 1fr; /* keep two equal columns */
-    padding: 40px 30px;
-    gap: 30px;
-  }
-
-  .feature-left {
-    padding-left: 0;
-    max-width: 100%;
-  }
-
-  .feature-card {
-    margin-bottom: 20px;
-  }
-
-  .feature-right img {
-    max-width: 100px;
-    height: auto;
-    border-radius: 20px; /* ✅ softer rectangle, not circular */
-  }
-}
-
-/* ✅ Mobile (≤768px) */
-@media (max-width: 768px) {
+/* ✅ Tablet & Mobile (≤1024px) → same as mobile design */
+@media (max-width: 1024px) {
   .feature-section {
     display: flex;
-    flex-direction: column; /* stack vertically */
+    flex-direction: column; 
     padding: 30px 15px;
     gap: 30px;
     text-align: center;
   }
 
   .feature-left {
-    order: 2; /* move text/cards below */
+    order: 2; 
     padding-left: 0;
     max-width: 100%;
   }
 
   .feature-right {
-    order: 1; /* move image above */
+    order: 1; 
     justify-content: center;
   }
 
@@ -165,80 +138,28 @@
   }
 
   .feature-card {
-    flex-direction: column;        /* ✅ keep icon + text in a row */
-    align-items: flex-start;     /* ✅ align from top */
-    text-align: left;            /* ✅ text starts from left */
-    max-width: 100%;             /* take full width */
-    margin: 0 0 20px 0;          /* spacing below */
-  }
-  .feature-right img {
-    width: 10px;
-    height: auto;
-    border-radius: 0px;
-  }
-
-  .feature-card h4,
-  .feature-card p {
-    text-align: left;            /* ✅ ensure text aligns left */
-  }
-}
-
-
-
-/* ✅ Mobile (≤768px) */
-@media (max-width: 768px) {
-  .feature-section {
-    display: flex;
-    flex-direction: column; /* stack vertically */
-    padding: 30px 15px;
-    gap: 30px;
-    text-align: center;
-  }
-
-  .feature-left {
-    order: 2; /* move text/cards below */
-    padding-left: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
     max-width: 100%;
-  }
-
-  .feature-right {
-    order: 1; /* move image above */
-    justify-content: center;
-  }
-
-  .features-title {
-    font-size: 28px;
-  }
-
-  .features-desc {
-    font-size: 15px;
-  }
-
-  .feature-card {
-    flex-direction: column;        
-    align-items: flex-start;     
-    text-align: left;            
-    max-width: 100%;             
-    margin: 0 0 20px 0;          
+    margin: 0 0 20px 0;
   }
 
   .feature-right img {
-    width: 300px;
+    width: 100%;
+    max-width: 350px;  /* works for small phones & tablets */
     height: auto;
     border-radius: 0px;
   }
 
   .feature-card h4,
   .feature-card p {
-    text-align: left;            
+    text-align: left;
   }
 
-  /* ✅ Mobile "tap" effect (same as desktop hover) */
   .feature-card:active,
   .feature-card:focus {
     transform: translateY(-3px);
     background: #f3eaff;
   }
 }
-
-
