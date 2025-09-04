@@ -1,3 +1,4 @@
+/* ================ FAQ SECTION ================ */
 .faqSection {
   padding: 60px 8%;
   font-family: "Arial", sans-serif;
@@ -30,7 +31,7 @@
 .faqContainer {
   display: flex;
   gap: 50px;
-  align-items: flex-start; /* ✅ image stays aligned to top */
+  align-items: flex-start;
   flex-wrap: wrap;
 }
 
@@ -45,9 +46,10 @@
 .imageBox {
   border-radius: 20px;
   width: 100%;
-  max-width: 450px;  /* ✅ wider */
+  max-width: 450px;
   height: 100%;
-  max-height: 350px; /* ✅ shorter */
+  max-height: 350px;
+  object-fit: cover;
 }
 
 /* FAQ List */
@@ -57,7 +59,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 20px; /* ⬅️ FAQ list starts lower than the image */
+  margin-top: 20px;
 }
 
 .faqItem {
@@ -68,7 +70,7 @@
   transition: all 0.3s ease;
 }
 
-/* FAQ Question with dropdown arrow */
+/* FAQ Question */
 .faqQuestion {
   width: 100%;
   padding: 15px;
@@ -84,23 +86,23 @@
 }
 
 .faqQuestion::after {
-  content: "▼"; /* dropdown arrow */
-  font-size: 12px;
+  content: "⌄"; /* Chevron symbol */
+  font-size: 18px; /* Bigger for visibility */
   position: absolute;
-  right: 15px;
+  right: 20px; /* Increased spacing from edge */
   top: 50%;
   transform: translateY(-50%);
   transition: transform 0.3s;
 }
 
 .active .faqQuestion::after {
-  transform: translateY(-50%) rotate(180deg); /* arrow rotates */
+  transform: translateY(-50%) rotate(180deg);
 }
 
 .active {
-  background: #673AB7; /* ⬅️ updated darker purple */
+  background: #673AB7;
   color: #fff;
-  border-color: #673AB7; /* ⬅️ updated border */
+  border-color: #673AB7;
 }
 
 .active .faqQuestion {
@@ -114,13 +116,14 @@
   background: transparent;
   transition: all 0.3s ease;
   color: #333;
+  border-top: 1px solid rgba(255, 255, 255, 0.6); /* Lighter divider line */
 }
 
 .active .faqAnswer {
   color: #fff;
 }
 
-/* Responsive */
+/* Tablet */
 @media (max-width: 992px) {
   .faqContainer {
     flex-direction: column;
@@ -133,7 +136,7 @@
 
   .faqList {
     order: 3;
-    margin-top: 15px; /* smaller gap for tablets/mobiles */
+    margin-top: 15px;
   }
 
   .faqHeading {
@@ -141,10 +144,11 @@
   }
 }
 
+/* Mobile */
 @media (max-width: 600px) {
   .faqSection {
     padding: 40px 5%;
-    text-align: center; /* Center align headings on mobile */
+    text-align: center;
   }
 
   .faqHeading {
@@ -153,27 +157,31 @@
 
   .faqContainer {
     flex-direction: column;
-    gap: 20px; /* reduce gap for mobile */
+    gap: 20px;
   }
 
   .faqImage {
-    order: 1; /* image first */
+    order: 1;
     justify-content: center;
+    width: 100%;
+  }
+
+  .imageBox {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 100vh; /* ✅ image adapts without shrinking */
+    object-fit: cover;
+    border-radius: 20px;
   }
 
   .faqHeader {
-    order: 2; /* heading comes after image */
+    order: 2;
     text-align: center;
   }
 
   .faqList {
-    order: 3; /* FAQ list comes last */
-    margin-top: 12px; /* small spacing below heading */
-  }
-
-  .imageBox {
-    max-width: 100%;
-    max-height: 280px;
-    object-fit: contain;
+    order: 3;
+    margin-top: 12px;
   }
 }

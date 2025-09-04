@@ -23,12 +23,14 @@ export default function DestinationSection() {
 
       {/* Cards */}
       <div className={styles.cardsWrapper}>
-        {/* Card 1 */}
+        {/* Card 1 - Munnar */}
         <div className={styles.card}>
           <Image src={munnarImg} alt="Munnar" className={styles.cardImg} />
           <div className={styles.cardContent}>
             <div className={styles.cardHeader}>
-              <h3>Munnar Trip (3 Days, 2 Nights)</h3>
+              <h3>
+                Munnar Trip (3<br />Days, 2 Nights)
+              </h3>
               <span className={styles.price}>₹15,500</span>
             </div>
             <p className={styles.location}>Cochin (Kochi), ~130 km away</p>
@@ -36,12 +38,14 @@ export default function DestinationSection() {
           </div>
         </div>
 
-        {/* Card 2 */}
+        {/* Card 2 - Kedarnath */}
         <div className={styles.card}>
           <Image src={kedarnathImg} alt="Kedarnath" className={styles.cardImg} />
           <div className={styles.cardContent}>
             <div className={styles.cardHeader}>
-              <h3>Kedarnath Trip (3–4 Days)</h3>
+              <h3>
+                Kedarnath Trip (3<br />–4 Days)
+              </h3>
               <span className={styles.price}>₹18,500</span>
             </div>
             <p className={styles.location}>Garhwal Himalayas (North India)</p>
@@ -49,12 +53,14 @@ export default function DestinationSection() {
           </div>
         </div>
 
-        {/* Card 3 */}
+        {/* Card 3 - Kerala */}
         <div className={styles.card}>
           <Image src={keralaImg} alt="Kerala" className={styles.cardImg} />
           <div className={styles.cardContent}>
             <div className={styles.cardHeader}>
-              <h3>7-Day Kerala Itinerary</h3>
+              <h3>
+                7-Day Kerala<br />Itinerary
+              </h3>
               <span className={styles.price}>₹60,000</span>
             </div>
             <p className={styles.location}>Kerala, India</p>

@@ -59,7 +59,7 @@
   box-shadow: 0 6px 18px rgba(179, 157, 219, 0.35);
   padding: 28px 20px;
   width: 300px;                    
-  min-height: 340px;               
+  min-height: 320px;   /* ✅ keep card height same */
   flex: 0 0 auto;
   text-align: center;
   scroll-snap-align: center;       
@@ -67,7 +67,7 @@
   transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between; /* ✅ distribute content, reduce bottom gap */
   align-items: center;
 }
 .card:hover {
@@ -86,7 +86,7 @@
   font-size: 19px;
   font-weight: 600;
   color: #222;
-  margin-bottom: 12px;
+  margin-bottom: 6px; /* ✅ reduced gap between heading and text */
 }
 
 .card p {
@@ -95,6 +95,7 @@
   color: #666;
   line-height: 1.6;
   max-width: 260px;
+  margin-bottom: 0; /* ✅ remove extra bottom spacing */
 }
 
 /* ================== RESPONSIVE ================== */
@@ -146,8 +147,9 @@
     max-width: 400px;
     margin: 0 auto;
     padding: 24px 18px;
-    min-height: auto;
+    min-height: auto;              /* ✅ allow auto height on mobile */
     scroll-snap-align: unset;
+    justify-content: flex-start;   /* ✅ normal flow for mobile */
   }
 
   .cardImg {
@@ -157,6 +159,7 @@
 
   .card h3 {
     font-size: 17px;
+    margin-bottom: 6px; /* ✅ keep reduced spacing on mobile too */
   }
 
   .card p {

@@ -13,7 +13,7 @@ export default function EnquiryForm() {
           <input type="text" placeholder="Phone" className={styles.input} />
           <input type="email" placeholder="Email" className={styles.input} />
           <textarea
-            placeholder="Hello, I am interested in booking a hotel...."
+            placeholder={`Hello, I am interested in booking a\nhotel....`}
             className={styles.textarea}
           ></textarea>
           <p className={styles.terms}>
@@ -25,10 +25,15 @@ export default function EnquiryForm() {
         </form>
       </div>
 
+      {/* ✅ Removed background/box — now only text + smoky effect from CSS */}
       <div className={styles.textContent}>
-        <h5 className={styles.smallHeading}>ENQUIRE NOW</h5>
-        <h2 className={styles.mainHeading}>
-          Register now to get <br /> started with ease.
+        <h5 className={styles.smallHeading} style={{ textAlign: "right" }}>
+          ENQUIRE NOW
+        </h5>
+        <h2 className={styles.mainHeading} style={{ textAlign: "right" }}>
+          <span>Register now to get</span>
+          <br />
+          <span style={{ paddingLeft: "3.2ch" }}>started with ease.</span>
         </h2>
       </div>
     </section>

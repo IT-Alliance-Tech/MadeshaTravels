@@ -48,13 +48,11 @@ export default function FaqSection() {
 
       <div className={styles.faqContainer}>
         {/* Left: Image */}
-        
-          <Image
-            src={palaceImg}
-            alt="Travel Palace"
-            className={styles.imageBox}
-          />
-       
+        <Image
+          src={palaceImg}
+          alt="Travel Palace"
+          className={styles.imageBox}
+        />
 
         {/* Right: FAQ List */}
         <div className={styles.faqList}>
@@ -71,8 +69,12 @@ export default function FaqSection() {
               >
                 {faq.question}
               </button>
+
               {activeIndex === index && (
-                <p className={styles.faqAnswer}>{faq.answer}</p>
+                <div className={styles.answerWrapper}>
+                  <div className={styles.divider}></div>
+                  <p className={styles.faqAnswer}>{faq.answer}</p>
+                </div>
               )}
             </div>
           ))}

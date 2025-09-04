@@ -20,20 +20,21 @@ export default function PartnerSection() {
 
         <ul>
           <li>
-            Corporate Transfers: Office trips, employee transport, and business
-            travel.
+            Corporate Transfers: Office trips, employee<br />
+            transport, and business travel.
           </li>
           <li>
-            Event Travel: Weddings, functions, and group gatherings with
-            hassle-free transport.
+            Event Travel: Weddings, functions, and group<br />
+            gatherings with hassle-free transport.
           </li>
           <li>
-            School & College Trips: Safe and reliable buses & tempo travellers
-            for educational tours.
+            School & College Trips: Safe and reliable<br />
+            buses & tempo travellers for educational<br />
+            tours.
           </li>
           <li>
-            Tour Operators: Partner with us for group tours and package
-            inclusions.
+            Tour Operators: Partner with us for group<br />
+            tours and package inclusions.
           </li>
         </ul>
 

@@ -7,13 +7,9 @@
   align-items: center;
   padding: 80px 8%;
   flex-wrap: wrap;
-
-  /* fixed spacing between form and text */
-  gap: 278px;
-
-  /* ✅ Smokey background effect */
+  gap: 150px;
   position: relative;
-  font-family: 'Rubik', sans-serif; /* default font */
+  font-family: 'Rubik', sans-serif;
 }
 
 .enquirySection::before {
@@ -24,27 +20,24 @@
   transform: translate(-50%, -50%);
   width: 140%;
   height: 120%;
-  background: radial-gradient(circle at right, rgba(105, 58, 183, 0.25) 0%, transparent 70%);
+  background: radial-gradient(circle at right, rgba(179, 157, 221, 0.25) 0%, transparent 70%);
   filter: blur(120px);
-  z-index: -2; /* stays behind everything */
+  z-index: -2;
 }
 
 /* FORM CARD */
 .formCard {
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
   padding: 30px 25px;
   text-align: center;
-  border: 1px solid #e4d7f9;
-
-  /* ✅ Removed fixed height, keep width only */
+  border: 2px solid #673AB7;
   width: 371px;
   flex-shrink: 0;
   position: relative;
+  margin-right: 40px;
 }
 
-/* ✅ Smokey glow behind form */
 .formCard::before {
   content: "";
   position: absolute;
@@ -53,12 +46,12 @@
   transform: translate(-50%, -50%);
   width: 480px;
   height: 520px;
-  background: radial-gradient(circle, rgba(103, 58, 183, 0.35) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(179, 157, 221, 0.35) 0%, transparent 70%);
   z-index: -1;
   filter: blur(100px);
 }
 
-/* 🔽 ENQUIRY title at top-right corner */
+/* ENQUIRY title */
 .formTitle {
   font-size: 14px;
   font-weight: 700;
@@ -70,7 +63,6 @@
   margin: 0;
 }
 
-/* form layout */
 .form {
   display: flex;
   flex-direction: column;
@@ -79,7 +71,6 @@
   margin-top: 40px;
 }
 
-/* INPUT FIELDS (Name, Phone, Email) */
 .input {
   width: 311px;
   height: 35px;
@@ -91,13 +82,18 @@
   transition: border 0.3s ease;
   margin: 0 auto;
   font-family: 'Rubik', sans-serif;
+  color: #673AB7;
+}
+
+.input::placeholder {
+  color: #673AB7;
+  opacity: 0.8;
 }
 
 .input:focus {
-  border-color: #6a0dad;
+  border-color: #673AB7;
 }
 
-/* TEXTAREA */
 .textarea {
   width: 311px;
   height: 67px;
@@ -110,16 +106,35 @@
   margin: 0 auto;
   resize: none;
   font-family: 'Rubik', sans-serif;
+  color: #673AB7;
+  position: relative;
+}
+
+.textarea::placeholder {
+  color: #673AB7;
+  opacity: 0.8;
 }
 
 .textarea:focus {
-  border-color: #6a0dad;
+  border-color: #673AB7;
 }
 
-/* TERMS */
+/* Smoky glow below textarea */
+.textarea::after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  height: 60px;
+  background: radial-gradient(circle, rgba(179, 157, 221, 0.4) 0%, transparent 70%);
+  filter: blur(60px);
+  z-index: -1;
+}
+
 .terms {
   width: 292px;
-  height: 23px;
   font-size: 11px;
   color: #666;
   margin: 0 auto;
@@ -133,20 +148,17 @@
   font-weight: 500;
 }
 
-/* SUBMIT BUTTON */
 .submitBtn {
   width: 153px;
   height: 35px;
-  margin: 10px auto 0; /* ✅ Removed extra bottom margin */
-  background: #b39ddd; /* ash color */
+  margin: 10px auto 0;
+  background: #b39ddd;
   color: #fff;
   border: 1px solid #333;
   border-radius: 10px;
   font-size: 14px;
   cursor: pointer;
   transition: background 0.3s ease;
-
-  /* ✅ Only Poppins font */
   font-family: 'Poppins', sans-serif;
 }
 
@@ -154,11 +166,32 @@
   background: #9a84c2;
 }
 
-/* TEXT CONTENT */
+/* TEXT CONTENT (NO BOX, ONLY SMOKEY GLOW BEHIND) */
 .textContent {
   max-width: 400px;
-  position: relative;
   font-family: 'Rubik', sans-serif;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  background: none;      /* ⛔ removed box */
+  box-shadow: none;      /* ⛔ removed shadow */
+  padding: 0;            /* ⛔ removed padding */
+  border-radius: 0;      /* ⛔ removed border radius */
+}
+
+.textContent::before {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 380px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(179, 157, 221, 0.35) 0%, transparent 70%);
+  z-index: -1;
+  filter: blur(100px);
 }
 
 .smallHeading {
@@ -167,65 +200,49 @@
   color: #6a0dad;
   letter-spacing: 1px;
   margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
 .mainHeading {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 700;
   color: #222;
   line-height: 1.4;
-  position: relative;
+  text-align: right;
 }
 
-/* ✅ Smokey glow under "Register now..." */
-.mainHeading::after {
-  content: "";
-  position: absolute;
-  bottom: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 320px;
-  height: 120px;
-  background: radial-gradient(circle, rgba(103, 58, 183, 0.35) 0%, transparent 70%);
-  z-index: -1;
-  filter: blur(90px);
-}
-
-/* ================== RESPONSIVE ================== */
-
-/* Tablet */
+/* Responsive */
 @media (max-width: 992px) {
   .enquirySection {
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
     text-align: center;
   }
 
   .formCard {
     width: 100%;
     max-width: 400px;
-    height: auto; /* ✅ Let it adjust naturally */
+    height: auto;
+    margin-right: 0;
   }
 
   .textContent {
-    display: none;
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
   }
 
   .formTitle {
-    display: block !important;
     font-size: 18px;
-    text-align: right;
     right: 15px;
   }
 }
 
-/* Mobile */
 @media (max-width: 576px) {
   .enquirySection {
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 0;
+    gap: 20px;
     padding: 40px 20px;
   }
 
@@ -233,7 +250,6 @@
     width: 100%;
     max-width: 360px;
     padding: 25px 20px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   }
 
   .formTitle {
@@ -254,6 +270,6 @@
   }
 
   .textContent {
-    display: none !important;
+    text-align: center;
   }
 }

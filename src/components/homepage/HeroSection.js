@@ -5,18 +5,24 @@ import styles from "../../styles/homepage/HeroSection.module.css";
 import hillImg from "../../assets/image/image3.png";
 import gatewayImg from "../../assets/image/image2.png";
 import tajmahalImg from "../../assets/image/image1.png";
-import worldMap from "../../assets/image/map.jpg";
+
+// ✅ Background / Icons
+import suitcaseIcon from "../../assets/icons/icon.png";
+import arrowIcon from "../../assets/icons/object.png";
+import userIcon from "../../assets/icons/add-user 1.png";
 
 // Icons
-import { FaPaperPlane, FaUserAlt } from "react-icons/fa";
-import userIcon from "../../assets/icons/add-user 1.png";
+import { FaPaperPlane } from "react-icons/fa";
 
 export default function HeroSection() {
   return (
     <section className={styles.hero}>
       {/* Left Side */}
       <div className={styles.left}>
-        <button className={styles.exploreBtn}>Explore Ultimate India!</button>
+        <button className={styles.exploreBtn}>
+          Explore Ultimate India!
+          <Image src={suitcaseIcon} alt="Suitcase" width={24} height={24} />
+        </button>
         <h1 className={styles.heading}>
           <span className={styles.travel}>Travel</span>{" "}
           <span className={styles.top}>top</span>{" "}
@@ -35,8 +41,6 @@ export default function HeroSection() {
 
       {/* Right Side */}
       <div className={styles.right}>
-        {/* World Map */}
-
         {/* Image Layout */}
         <div className={styles.imageLayout}>
           {/* Left column (Hill + Taj) */}
@@ -60,7 +64,6 @@ export default function HeroSection() {
                 alt="Gateway of India"
                 placeholder="blur"
               />
-
               <span className={styles.badge}>Top Places</span>
             </div>
             <Image
@@ -74,12 +77,9 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Bottom-left triangles */}{/* Remove this part and add new background image */}
+      {/* ✅ Decorative arrows (hidden only in mobile via CSS) */}
       <div className={styles.decorArrows}>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+        <Image src={arrowIcon} alt="Arrow Icon" width={20} height={20} />
       </div>
     </section>
   );
