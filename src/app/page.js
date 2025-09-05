@@ -16,7 +16,7 @@ export default function Home() {
         background:"#fff"
       }
     }>
-      <Header />
+      {/* <Header /> */}
       <HeroSection />
       <EnquiryForm />
       <ServicesSection />
@@ -27,7 +27,7 @@ export default function Home() {
       <FeatureSection />
       <GallerySection />
       <Testimonials />
-      <Footer />
+      {/* <Footer /> */}
     </main>
   );
 }
