@@ -4,7 +4,6 @@
   font-family: "Arial", sans-serif;
 }
 
-/* Heading is above everything */
 .faqHeader {
   margin-bottom: 25px;
   text-align: left;
@@ -27,38 +26,27 @@
   color: #1a1a1a;
 }
 
-/* Flex row → image + FAQ list side by side */
 .faqContainer {
   display: flex;
   gap: 40px;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: nowrap;
-}
-
-/* Image takes 50% */
-.faqImage {
-  flex: 0 0 50%;
-  display: flex;
-  justify-content: center;
 }
 
 .imageBox {
   border-radius: 20px;
   width: 100%;
-  height: auto;
-  object-fit: cover;
-  max-height: 420px;
+  height: 100%;
+  max-width: 580px;
+  max-height: 550px;
 }
 
-/* FAQ List takes 50% */
 .faqList {
-  flex: 0 0 50%;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-
-  /* ✅ shift down a little */
-  margin-top: 40px;
+  gap: 30px;
+  width: 100%;
+  max-width: 580px;
 }
 
 .faqItem {
@@ -69,7 +57,6 @@
   transition: all 0.3s ease;
 }
 
-/* FAQ Question */
 .faqQuestion {
   width: 100%;
   padding: 15px;
@@ -82,16 +69,9 @@
   color: #222;
   text-align: left;
   position: relative;
-}
-
-.faqQuestion::after {
-  content: "⌄";
-  font-size: 18px;
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: transform 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .active .faqQuestion::after {
@@ -99,9 +79,9 @@
 }
 
 .active {
-  background: #673AB7;
+  background: #673ab7;
   color: #fff;
-  border-color: #673AB7;
+  border-color: #673ab7;
 }
 
 .active .faqQuestion {
@@ -142,7 +122,6 @@
     font-size: 24px;
   }
 
-  /* reset extra margin on smaller screens */
   .faqList {
     margin-top: 15px;
   }
@@ -172,10 +151,9 @@
 
   .imageBox {
     width: 100%;
-    max-width: 100%;
-    height: auto;
-    max-height: 100vh;
-    object-fit: cover;
+    max-width: 450px;
+    height: 100%;
+    max-height: 380px;
     border-radius: 20px;
   }
 

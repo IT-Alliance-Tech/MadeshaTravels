@@ -3,6 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import styles from "../../styles/aboutus/FaqSection.module.css";
 import palaceImg from "../../assets/image/faq.png";
+import DownArrow from "@/assets/icons/downArrow";
 
 const faqs = [
   {
@@ -32,7 +33,7 @@ const faqs = [
 ];
 
 export default function FaqSection() {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -68,6 +69,9 @@ export default function FaqSection() {
                 onClick={() => toggleFAQ(index)}
               >
                 {faq.question}
+                <DownArrow
+                  color={activeIndex === index ? "#FFFFFF" : "#222222"}
+                />
               </button>
 
               {activeIndex === index && (
