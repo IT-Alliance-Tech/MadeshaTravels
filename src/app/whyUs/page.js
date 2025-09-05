@@ -1,39 +1,33 @@
 "use client";
 import Image from "next/image";
 import styles from "../../styles/aboutus/WhyUs.module.css";
-import hampiImg from "../../assets/image/hampi.png"; // ✅ import method
+import hampiImg from "../../assets/image/hampi.png";
 
 const whyUsPoints = [
   {
-    id: 1,
     title: "Trusted Experience",
-    desc: "Years of expertise in delivering safe and reliable travel solutions."
+    desc: "Years of expertise in delivering safe and reliable travel solutions.",
   },
   {
-    id: 2,
     title: "Comfort & Safety",
-    desc: "Well-maintained vehicles with professional drivers."
+    desc: "Well-maintained vehicles with professional drivers.",
   },
   {
-    id: 3,
     title: "24/7 Support",
-    desc: "Always available to assist with bookings, queries, and emergencies."
+    desc: "Always available to assist with bookings, queries, and emergencies.",
   },
   {
-    id: 4,
     title: "Custom Packages",
-    desc: "Flexible travel options tailored to your needs—corporate, family, or solo."
+    desc: "Flexible travel options tailored to your needs—corporate, family, or solo.",
   },
   {
-    id: 5,
     title: "Affordable Pricing",
-    desc: "Transparent rates with no hidden costs."
+    desc: "Transparent rates with no hidden costs.",
   },
   {
-    id: 6,
     title: "Pan-India Service",
-    desc: "Seamless travel experiences across major cities and destinations."
-  }
+    desc: "Seamless travel experiences across major cities and destinations.",
+  },
 ];
 
 export default function WhyUs() {
@@ -43,26 +37,23 @@ export default function WhyUs() {
       <div className={styles.imageContainer}>
         <Image src={hampiImg} alt="Hampi Chariot" className={styles.image} />
       </div>
-
       {/* Right Content */}
       <div className={styles.content}>
         <p className={styles.subtitle}>WHY US?</p>
-        {/* ✅ Force Commitment to next line */}
         <h2 className={styles.heading}>
           Your Journey, our <span className={styles.break}>Commitment</span>
         </h2>
 
-        <ul className={styles.list}>
-          {whyUsPoints.map((point) => (
-            <li key={point.id} className={styles.listItem}>
-              <span className={styles.number}>{point.id}.</span>
+        <ol className={styles.list}>
+          {whyUsPoints.map((point, index) => (
+            <li key={index} className={styles.listItem}>
               <div>
-                <strong>{point.title}: </strong>
-                {point.desc}
+                {point.title}:{" "}
+                <span className={styles.points}>{point.desc}</span>
               </div>
             </li>
           ))}
-        </ul>
+        </ol>
 
         <div className={styles.buttons}>
           <button className={styles.primaryBtn}>Get Started</button>

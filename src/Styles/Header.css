@@ -19,8 +19,8 @@
 }
 
 .logo img {
-  height: 30px; /* match Figma size */
-  width: 100px;
+  height: 200px; /* match Figma size */
+  width: 230px;
 }
 
 /* NAVIGATION */
@@ -84,7 +84,8 @@
   }
 
   .logo img {
-    height: 30px; /* scale down */
+    height: 110px;
+    width: 160px;
   }
 }
 

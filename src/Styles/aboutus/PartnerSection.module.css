@@ -1,18 +1,14 @@
 .hero {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 60px 8%;
   gap: 40px;
-  flex-wrap: wrap;
   position: relative;
 }
 
 .left {
-  flex: 1;
   width: 45%;
-  z-index: 2;
-  margin-top: -20px; /* ✅ moved slightly UP */
 }
 
 .subHeading {
@@ -36,8 +32,7 @@
 .left p {
   font-size: 15px;
   color: #666;
-  margin-bottom: 20px;
-  max-width: 480px;
+  margin-bottom: 40px;
 }
 
 .left ul {
@@ -91,7 +86,6 @@
 
 /* ========= Right Section ========= */
 .right {
-  flex: 1;
   display: flex;
   justify-content: center;
   position: relative;
@@ -161,7 +155,14 @@
   }
 
   .left {
-    margin-top: -10px; /* ✅ still up, but less for tablet */
+    width: 100%;
+    order: 2;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .left p {
+    max-width: 100%;
   }
 
   .left h1 {
@@ -176,6 +177,10 @@
     justify-content: center;
     gap: 15px;
   }
+  .right {
+    order: 1;
+    width: 100%;
+  }
 }
 
 /* ========= Mobile ========= */
@@ -186,18 +191,9 @@
   }
 
   .right {
-    order: 1;
-    width: 100%;
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
-  }
-
-  .left {
-    order: 2;
-    text-align: center;
-    width: 100%;
-    margin-top: 0; /* ✅ reset for mobile */
   }
 
   .left h1 {
@@ -227,10 +223,9 @@
   .imageLayout {
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     gap: 12px;
-    padding: 0;
-    background: none;
+    padding: 30px;
   }
 
   .leftCol {
@@ -246,6 +241,6 @@
 
   .rightCol .imgCardTall {
     width: 130px;
-    height: 272px;
+    height: 190px;
   }
 }
