@@ -54,13 +54,21 @@ export default function BlogSection() {
 
   const scrollLeft = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -330 * 3, behavior: "smooth" });
+      const card = scrollRef.current.querySelector(`.${styles.blogCard}`);
+      if (card) {
+        const cardWidth = card.offsetWidth + 20; // include gap
+        scrollRef.current.scrollBy({ left: -cardWidth, behavior: "smooth" });
+      }
     }
   };
 
   const scrollRight = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 330 * 3, behavior: "smooth" });
+      const card = scrollRef.current.querySelector(`.${styles.blogCard}`);
+      if (card) {
+        const cardWidth = card.offsetWidth + 20; // include gap
+        scrollRef.current.scrollBy({ left: cardWidth, behavior: "smooth" });
+      }
     }
   };
 
@@ -83,17 +91,21 @@ export default function BlogSection() {
           </button>
         </div>
       </div>
+
+      {/* Mobile Nav Buttons */}
       <div className={styles.mobNavButtons}>
-          <button className={styles.navBtn} onClick={scrollLeft}>
-            ←
-          </button>
-          <button
-            className={`${styles.navBtn} ${styles.activeBtn}`}
-            onClick={scrollRight}
-          >
-            →
-          </button>
-        </div>
+        <button className={styles.navBtn} onClick={scrollLeft}>
+          ←
+        </button>
+        <button
+          className={`${styles.navBtn} ${styles.activeBtn}`}
+          onClick={scrollRight}
+        >
+          →
+        </button>
+      </div>
+
+      {/* Blog Cards */}
       <div className={styles.cardsWrapper} ref={scrollRef}>
         {blogs.map((blog) => (
           <div key={blog.id} className={styles.blogCard}>

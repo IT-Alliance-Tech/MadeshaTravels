@@ -53,6 +53,7 @@
   transform: translateY(-6px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
+
 .blogImage {
   width: 373.33px;
   height: 280px;
@@ -104,6 +105,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: transform 0.2s ease;
 }
 .navBtn.activeBtn {
   background: #673ab7;
@@ -121,6 +123,7 @@
 .mobNavButtons {
   display: none;
 }
+
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 1024px) {
   .blogCard {
@@ -138,6 +141,7 @@
     justify-content: space-between;
     margin-bottom: 20px;
     padding-left: 20px;
+    padding-right: 20px;
   }
   .navButtons {
     display: none;
@@ -159,15 +163,10 @@
   }
   .blogCard {
     flex: 0 0 100%;
+    max-width: 100%;
   }
   .blogImage {
     width: 100%;
-    height: 320px;
-  }
-  .navButtons {
-    top: auto;
-    bottom: -20px;
-    right: 50%;
-    transform: translateX(50%);
+    height: 280px;
   }
 }

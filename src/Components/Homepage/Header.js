@@ -19,7 +19,16 @@ const Header = () => {
     <header className="header">
       {/* Logo Section */}
       <div className="logo">
-        <Image src={Logo} alt="Madesha Logo" width={140} height={40} priority />
+        <Link href="/">
+          <Image
+            src={Logo}
+            alt="Madesha Logo"
+            width={140}
+            height={40}
+            priority
+            className="cursor-pointer"
+          />
+        </Link>
         {/* <p className="logo-sub">TOURS AND TRAVELS</p> */}
       </div>
 
