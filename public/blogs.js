@@ -8,6 +8,7 @@ import img3 from "../src/assets/image/three.png";
     image: img1,
     title: "Why Tempo Travellers are the Best Choice for Group Travel",
     link: "#"
+    
   },
   {
     id: 2,

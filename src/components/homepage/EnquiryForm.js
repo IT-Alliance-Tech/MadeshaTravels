@@ -25,15 +25,14 @@ export default function EnquiryForm() {
         </form>
       </div>
 
-      {/* ✅ Removed background/box — now only text + smoky effect from CSS */}
       <div className={styles.textContent}>
         <h5 className={styles.smallHeading} style={{ textAlign: "right" }}>
           ENQUIRE NOW
         </h5>
         <h2 className={styles.mainHeading} style={{ textAlign: "right" }}>
-          <span>Register now to get</span>
+          Register now to get
           <br />
-          <span style={{ paddingLeft: "3.2ch" }}>started with ease.</span>
+          <span className={styles.indentedLine}>started with ease.</span>
         </h2>
       </div>
     </section>

@@ -2,13 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 80px;  /* smaller padding for correct height */
+  padding: 18px 80px;
   background-color: #fff;
-  /* box-shadow: 0px 2px 6px rgba(0,0,0,0.05); */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* subtle header shadow */
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 80px; /* fixed height like Figma */
+  height: 80px;
 }
 
 /* LOGO */
@@ -19,14 +19,18 @@
 }
 
 .logo img {
-  height: 200px; /* match Figma size */
-  width: 230px;
+  height: 300px;       /* Increased size for desktop */
+  width: auto;
+  object-fit: contain;
+  box-shadow: none !important;
+  background: #fff !important;
+  filter: none !important;
 }
 
 /* NAVIGATION */
 .nav ul {
   display: flex;
-  gap: 55px; /* adjust spacing like Figma */
+  gap: 55px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -44,7 +48,7 @@
 .nav ul li a:hover,
 .nav ul li a:focus,
 .nav ul li a.active {
-  color: #6a0dad; /* purple hover effect */
+  color: #6a0dad;
   font-weight: 600;
 }
 
@@ -55,7 +59,7 @@
 }
 
 .contact-btn {
-  background: #6a0dad;        /* purple like Figma */
+  background: #6a0dad;
   color: #fff;
   font-weight: 600;
   padding: 10px 22px;
@@ -67,9 +71,8 @@
 }
 
 .contact-btn:hover {
-  background: #520c9c;       /* darker purple hover */
+  background: #520c9c;
 }
-
 
 /* ---------------- RESPONSIVE ---------------- */
 
@@ -84,12 +87,15 @@
   }
 
   .logo img {
-    height: 110px;
-    width: 160px;
+    height: 150px;
+    width: auto;
+    object-fit: contain;
+    box-shadow: none !important;
+    background: #fff !important;
+    filter: none !important;
   }
 }
 
-/* Mobile (≤768px) */
 /* Mobile (≤768px) */
 @media (max-width: 768px) {
   .header {
@@ -98,7 +104,16 @@
   }
 
   .nav {
-    display: none; /* keep hidden for now */
+    display: none;
+  }
+
+  .logo img {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+    box-shadow: none !important;
+    background: #fff !important;
+    filter: none !important;
   }
 
   .contact-btn {
@@ -113,6 +128,15 @@
   .header {
     padding: 10px 15px;
     height: 70px;
+  }
+
+  .logo img {
+    height: 80px;
+    width: 100%;
+    object-fit: contain;
+    box-shadow: none !important;
+    background: #fff !important;
+    filter: none !important;
   }
 
   .contact-btn {

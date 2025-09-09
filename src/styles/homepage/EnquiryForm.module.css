@@ -5,9 +5,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 80px 8%;
+  padding: 20px 8%;
   flex-wrap: wrap;
-  gap: 150px;
+  gap: 20px;
   position: relative;
   font-family: 'Rubik', sans-serif;
 }
@@ -25,7 +25,6 @@
   z-index: -2;
 }
 
-/* FORM CARD */
 .formCard {
   background: #fff;
   border-radius: 12px;
@@ -35,7 +34,7 @@
   width: 371px;
   flex-shrink: 0;
   position: relative;
-  margin-right: 40px;
+  margin-right: 15px;
 }
 
 .formCard::before {
@@ -51,7 +50,6 @@
   filter: blur(100px);
 }
 
-/* ENQUIRY title (badge) */
 .formTitle {
   font-size: 14px;
   font-weight: 700;
@@ -68,7 +66,7 @@
   flex-direction: column;
   gap: 20px;
   position: relative;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .input {
@@ -119,7 +117,6 @@
   border-color: #673AB7;
 }
 
-/* Smoky glow below textarea */
 .textarea::after {
   content: "";
   position: absolute;
@@ -166,7 +163,6 @@
   background: #9a84c2;
 }
 
-/* TEXT CONTENT (NO BOX, ONLY SMOKEY GLOW BEHIND) */
 .textContent {
   max-width: 400px;
   font-family: 'Rubik', sans-serif;
@@ -208,15 +204,21 @@
   font-weight: 700;
   color: #222;
   line-height: 1.4;
-  text-align: center;  /* ✅ was right → fixed so both lines are centered */
+  text-align: center;
+}
+
+.indentedLine {
+  display: block;
+  margin-left: 0; /* Default: no indent */
 }
 
 /* Responsive */
 @media (max-width: 992px) {
   .enquirySection {
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
     text-align: center;
+    padding: 15px 5%;
   }
 
   .formCard {
@@ -242,8 +244,8 @@
   .enquirySection {
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    padding: 40px 20px;
+    gap: 10px;
+    padding: 15px 20px;
   }
 
   .formCard {
@@ -281,5 +283,10 @@
     margin-left: auto !important;
     margin-right: auto !important;
     display: block !important;
+  }
+
+  /* ✅ Apply indent ONLY in mobile view */
+  .indentedLine {
+    margin-left: 1.2em; /* Adjust this as needed for exact alignment under "R" */
   }
 }
