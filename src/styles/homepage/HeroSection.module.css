@@ -71,7 +71,7 @@
 .left p {
   font-size: 16px;
   color: #666;
-  margin-bottom: 25px;
+  margin-bottom: 15px;   /* ⬅️ reduced (was 25px) */
   max-width: 420px;
 }
 
@@ -167,11 +167,10 @@
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
-  /* position: relative; */
   z-index: 2;
   width: 100%;
-  gap: 40px;
-  padding: 60px;
+  gap: 30px;        /* ⬅️ reduced (was 40px) */
+  padding: 25px;    /* ⬅️ reduced (was 60px → 40px) */
 }
 
 .leftCol {
@@ -179,12 +178,10 @@
   flex-direction: column;
   gap: 20px;
   position: relative;
-  /* flex: 1; */
 }
 
 .rightCol {
   display: flex;
-  /* flex: 1; */
   align-items: center;
   justify-content: center;
   position: relative;
@@ -221,8 +218,6 @@
 }
 
 /* ========= Floating ICONS ========= */
-
-/* 📍 Paper plane icon positioned at LEFT corner between 2 stacked images */
 .iconOverlay {
   position: absolute;
   left: -15px;
@@ -258,7 +253,7 @@
 /* ✅ User Icon centered under tall image */
 .userIcon {
   position: absolute;
-  bottom: -55px;   /* ✅ adjusted for correct placement */
+  bottom: -20px;   /* ⬅️ reduced (was -55px → -35px) */
   left: 50%;
   transform: translateX(-50%);
   width: 55px;
@@ -273,7 +268,7 @@
   z-index: 5;
 }
 
-.userProfileIcon{
+.userProfileIcon {
   background-color: #673AB7;
   opacity: 0.5;
   position: absolute;
@@ -311,7 +306,8 @@
 
   .imageLayout {
     justify-content: center;
-    gap: 15px;
+    gap: 12px;      
+    padding: 20px;  /* ⬅️ reduced (was 30px) */
   }
 
   .badge {
@@ -352,7 +348,7 @@
 
   .left p {
     font-size: 13px;
-    margin: 0 auto 15px;
+    margin: 0 auto 10px;  /* ⬅️ reduced (was 15px) */
   }
 
   .buttons {
@@ -369,7 +365,8 @@
 
   .imageLayout {
     flex-direction: row;
-    gap: 12px;
+    gap: 8px;       
+    padding: 15px;  /* ⬅️ reduced (was 20px) */
   }
 
   .leftCol .imgCard:nth-of-type(1),
@@ -391,7 +388,7 @@
   }
 
   .userIcon {
-    bottom: -40px;   /* ✅ keep centered under image on mobile */
+    bottom: -15px;   /* ⬅️ reduced (was -40px → -25px) */
     width: 48px;
     height: 48px;
     font-size: 18px;
