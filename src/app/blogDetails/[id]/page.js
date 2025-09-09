@@ -1,8 +1,20 @@
+"use client";
 import Image from "next/image";
 import styles from "../../../styles/aboutus/BlogDetails.module.css";
 import travellersImg from "../../../assets/image/car1.png";
+import blogs from "../../../../public/blogs";
+import { useParams, useSearchParams } from "next/navigation";
 
 export default function BlogDetails() {
+
+  const searchParams = useSearchParams();
+  const params = useParams();
+
+  console.log(params?.id);
+  
+
+  console.log(blogs);
+  
   const features = [
     {
       key: "a",
@@ -48,6 +60,14 @@ export default function BlogDetails() {
 
   return (
     <div className={styles.container}>
+
+      {blogs?.map((item, index) => (
+        <></>
+      ))}
+
+
+
+
       {/* Left Image */}
       <div className={styles.imageWrapper}>
         <Image
