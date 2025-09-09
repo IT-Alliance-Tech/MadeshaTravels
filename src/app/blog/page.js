@@ -1,54 +1,11 @@
 "use client";
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "../../styles/aboutus/BlogSection.module.css";
 import Link from "next/link";
-import img1 from "../../assets/image/one.png";
-import img2 from "../../assets/image/two.png";
-import img3 from "../../assets/image/three.png";
-import img4 from "../../assets/image/one.png";
-import img5 from "../../assets/image/two.png";
-import img6 from "../../assets/image/three.png";
+import blogs from "../../../public/blogs";
 
 export default function BlogSection() {
-  const blogs = [
-    {
-      id: 1,
-      image: img1,
-      title: "Why Tempo Travellers are the Best Choice for Group Travel",
-      link: "#",
-    },
-    {
-      id: 2,
-      image: img2,
-      title: "Top Reasons to Choose a Bus for Your Next Event or Trip",
-      link: "#",
-    },
-    {
-      id: 3,
-      image: img3,
-      title: "Why Car Rentals Make Every Journey Easier and Hassle-Free",
-      link: "#",
-    },
-    {
-      id: 4,
-      image: img4,
-      title: "Discover Hidden Gems: Offbeat Travel Destinations in India",
-      link: "#",
-    },
-    {
-      id: 5,
-      image: img5,
-      title: "Essential Travel Hacks to Save Time and Money",
-      link: "#",
-    },
-    {
-      id: 6,
-      image: img6,
-      title: "Top Family-Friendly Destinations You Must Visit",
-      link: "#",
-    },
-  ];
 
   const scrollRef = useRef(null);
 
@@ -113,6 +70,8 @@ export default function BlogSection() {
               src={blog.image}
               alt={blog.title}
               className={styles.blogImage}
+              width={100}
+              height={100}
             />
             <div className={styles.blogContent}>
               <p className={styles.blogTitle}>{blog.title}</p>
