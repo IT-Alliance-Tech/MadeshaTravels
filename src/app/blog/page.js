@@ -7,7 +7,7 @@ import blogs from "../../../public/blogs";
 
 export default function BlogSection() {
 
-  const scrollRef = useRef(null);
+    const scrollRef = useRef(null);
 
   const scrollLeft = () => {
     if (scrollRef.current) {
