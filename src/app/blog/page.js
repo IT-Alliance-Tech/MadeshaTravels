@@ -9,7 +9,7 @@ export default function BlogSection() {
 
     const scrollRef = useRef(null);
 
-  const scrollLeft = () => {
+    const scrollLeft = () => {
     if (scrollRef.current) {
       const card = scrollRef.current.querySelector(`.${styles.blogCard}`);
       if (card) {
