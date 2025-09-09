@@ -51,7 +51,7 @@
   filter: blur(100px);
 }
 
-/* ENQUIRY title */
+/* ENQUIRY title (badge) */
 .formTitle {
   font-size: 14px;
   font-weight: 700;
@@ -175,10 +175,10 @@
   flex-direction: column;
   justify-content: center;
   position: relative;
-  background: none;      /* ⛔ removed box */
-  box-shadow: none;      /* ⛔ removed shadow */
-  padding: 0;            /* ⛔ removed padding */
-  border-radius: 0;      /* ⛔ removed border radius */
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  border-radius: 0;
 }
 
 .textContent::before {
@@ -208,7 +208,7 @@
   font-weight: 700;
   color: #222;
   line-height: 1.4;
-  text-align: right;
+  text-align: center;  /* ✅ was right → fixed so both lines are centered */
 }
 
 /* Responsive */
@@ -255,7 +255,9 @@
   .formTitle {
     font-size: 14px;
     top: 12px;
-    right: 15px;
+    right: auto !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
   }
 
   .input,
@@ -271,5 +273,13 @@
 
   .textContent {
     text-align: center;
+  }
+
+  .textContent .smallHeading,
+  .textContent .mainHeading {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
   }
 }
