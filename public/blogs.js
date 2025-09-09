@@ -2,7 +2,7 @@ import img1 from "../src/assets/image/one.png";
 import img2 from "../src/assets/image/two.png";
 import img3 from "../src/assets/image/three.png";
 
-const blogs = [
+  const blogs = [
   {
     id: 1,
     image: img1,
