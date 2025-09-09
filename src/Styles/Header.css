@@ -5,8 +5,10 @@
   padding: 18px 80px;
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* subtle header shadow */
-  position: sticky;
+  position: fixed; /* changed from sticky to fixed */
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
   height: 80px;
 }
@@ -22,8 +24,8 @@
   height: 300px;       /* Increased size for desktop */
   width: auto;
   object-fit: contain;
-  box-shadow: none !important;
-  background: #fff !important;
+  box-shadow: none !important; /* remove any shadow */
+  background: transparent !important; /* removed background */
   filter: none !important;
 }
 
@@ -36,18 +38,24 @@
   padding: 0;
 }
 
-.nav ul li a {
+.nav ul li a,
+.nav ul li .nav-btn {
   text-decoration: none;
   font-size: 16px;
   color: #19182580;
   transition: 0.3s ease;
   font-weight: 500;
-  width: 41px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
 }
 
 .nav ul li a:hover,
 .nav ul li a:focus,
-.nav ul li a.active {
+.nav ul li a.active,
+.nav ul li .nav-btn:hover,
+.nav ul li .nav-btn:focus {
   color: #6a0dad;
   font-weight: 600;
 }
@@ -91,7 +99,7 @@
     width: auto;
     object-fit: contain;
     box-shadow: none !important;
-    background: #fff !important;
+    background: transparent !important;
     filter: none !important;
   }
 }
@@ -104,7 +112,7 @@
   }
 
   .nav {
-    display: none;
+    display: none; /* if you want a hamburger menu later, can be added */
   }
 
   .logo img {
@@ -112,7 +120,7 @@
     width: auto;
     object-fit: contain;
     box-shadow: none !important;
-    background: #fff !important;
+    background: transparent !important;
     filter: none !important;
   }
 
@@ -135,7 +143,7 @@
     width: 100%;
     object-fit: contain;
     box-shadow: none !important;
-    background: #fff !important;
+    background: transparent !important;
     filter: none !important;
   }
 

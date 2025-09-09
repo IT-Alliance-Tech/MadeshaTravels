@@ -1,4 +1,4 @@
-"use client";  // required because we use useRef & event handlers
+"use client"; // required because we use useRef & event handlers
 
 import Image from "next/image";
 import { useRef } from "react";
@@ -25,7 +25,7 @@ export default function DestinationSection() {
   };
 
   return (
-    <section className={styles.destinationSection}>
+    <section id="discover" className={styles.destinationSection}>
       {/* Header */}
       <div className={styles.header}>
         <div>

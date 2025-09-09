@@ -100,15 +100,15 @@
   width: 650px;
   height: 550px;
   object-fit: cover;
-  border-top-left-radius: 346.5px;
+  border-radius: 50px; /* ⬅️ curved corners added */
+  border-top-left-radius: 346.5px; /* original curvature */
   border-bottom-left-radius: 346.5px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+  border-top-right-radius: 50px;   /* smaller curve */
+  border-bottom-right-radius: 50px;
 }
 
 /* ------------------- RESPONSIVE ------------------- */
 
-/* ✅ Tablet & Mobile (≤1024px) → same as mobile design */
 @media (max-width: 1024px) {
   .feature-section {
     display: flex;
@@ -149,7 +149,7 @@
     width: 100%;
     max-width: 350px;  /* works for small phones & tablets */
     height: auto;
-    border-radius: 0px;
+    border-radius: 50px; /* curved corners for mobile */
   }
 
   .feature-card h4,

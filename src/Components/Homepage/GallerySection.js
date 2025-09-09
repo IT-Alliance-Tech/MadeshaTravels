@@ -17,7 +17,7 @@ const galleryImages = [
 
 const GallerySection = () => {
   return (
-    <section className="gallery">
+    <section id="gallery" className="gallery">
       <div className="gallery-header">
         <p className="gallery-subtitle">OUR GALLERY</p>
         <h2 className="gallery-title">

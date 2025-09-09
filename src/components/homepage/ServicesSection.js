@@ -8,7 +8,7 @@ import styles from "../../styles/homepage/ServicesSection.module.css";
 
 export default function ServicesSection() {
   return (
-    <section className={styles.servicesSection}>
+    <section id="services" className={styles.servicesSection}>
       {/* Left Content */}
       <div className={styles.textContent}>
         <p className={styles.smallHeading}>SERVICES</p>
