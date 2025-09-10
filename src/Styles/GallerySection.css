@@ -1,73 +1,67 @@
 .gallery {
-  padding: 60px 80px;
+  padding: 40px 5%;
   text-align: center;
   font-family: Arial, sans-serif;
   background: #fff;
-  font-size: 20px;
 }
 
 .gallery-header {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .gallery-subtitle {
-  font-size: 24px;
-  font-weight: bold;
-  font-weight: 700px;
-  color: #6c2bd9; /* purple */
+  font-size: 18px;
+  font-weight: 700;
+  color: #6c2bd9;
   text-transform: uppercase;
   margin-bottom: 10px;
-  letter-spacing: 20%;
+  letter-spacing: 2px;
 }
 
 .gallery-title {
-  font-size: 32px;
+  font-size: clamp(22px, 4vw, 36px);
   font-weight: 700;
   color: #111;
   line-height: 1.3;
 }
 
-/* ===== Desktop (exact fixed grid) ===== */
 .gallery-grid {
   display: grid;
-  grid-template-columns: 400px 300px 300px;
+  grid-template-columns: 4fr 3fr 3fr;
   grid-template-rows: auto auto;
-  gap: 25px;
-  justify-content: center;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-/* Image positions */
 .img1 {
   grid-row: 1 / span 2;
   grid-column: 1 / 2;
-  width: 400px;
-  height: 600px;
+  aspect-ratio: 2 / 3;
 }
 
 .img2 {
   grid-row: 1 / 2;
   grid-column: 2 / 3;
-  width: 300px;
-  height: 300px;
+  aspect-ratio: 1 / 1;
 }
 
 .img3 {
   grid-row: 1 / 2;
   grid-column: 3 / 4;
-  width: 300px;
-  height: 300px;
+  aspect-ratio: 1 / 1;
 }
 
 .img4 {
   grid-row: 2 / 3;
   grid-column: 2 / span 2;
-  width: 636px;
-  height: 270px;
+  aspect-ratio: 16 / 7;
 }
 
 .gallery-item {
   overflow: hidden;
-  border-radius: 6px;
+  border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -82,43 +76,18 @@
   transform: scale(1.05);
 }
 
-/* ===== Responsive scaling (images shrink proportionally) ===== */
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
   .gallery-grid {
-    grid-template-columns: 2fr 1fr 1fr; 
-    gap: 8px;                           
-    justify-content: center;
+    grid-template-columns: 4fr 3fr 3fr;
+    gap: 12px;
+    max-width: 90%;
   }
+}
 
-  .img1 {
-    grid-row: 1 / span 2;
-    grid-column: 1 / 2;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 2/3; /* tall portrait */
-  }
-
-  .img2 {
-    grid-row: 1 / 2;
-    grid-column: 2 / 3;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1/1; /* square */
-  }
-
-  .img3 {
-    grid-row: 1 / 2;
-    grid-column: 3 / 4;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1/1; /* square */
-  }
-
-  .img4 {
-    grid-row: 2 / 3;
-    grid-column: 2 / span 2;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16/7; /* landscape */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 4fr 3fr 3fr;
+    gap: 8px;
+    max-width: 95%;
   }
 }

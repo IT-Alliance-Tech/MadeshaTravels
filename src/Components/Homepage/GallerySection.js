@@ -12,7 +12,7 @@ const galleryImages = [
   { id: 1, src: img1.src, alt: "First", className: "img1" },
   { id: 2, src: img2.src, alt: "Second", className: "img2" },
   { id: 3, src: img3.src, alt: "Third", className: "img3" },
-  { id: 4, src: img4.src, alt: "Fourth", className: "img4" }
+  { id: 4, src: img4.src, alt: "Fourth", className: "img4" },
 ];
 
 const GallerySection = () => {
