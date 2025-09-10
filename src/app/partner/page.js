@@ -31,11 +31,9 @@ export default function PartnerSection() {
             </li>
           ))}
         </ul>
-        <div className={styles.buttons}>
-          <button className={styles.getStarted}>Get Started</button>
-          <button className={styles.register}>Register Now</button>
-        </div>
+        {/* 🚀 Removed the buttons section */}
       </div>
+
       {/* Right Side */}
       <div className={styles.right}>
         <div className={styles.imageLayout}>

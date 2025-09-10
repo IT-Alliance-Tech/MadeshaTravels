@@ -33,17 +33,12 @@ export default function HeroSection() {
           We always make our customer happy by providing as many choices as
           possible
         </p>
-        <div className={styles.buttons}>
-          <button className={styles.getStarted}>Get Started</button>
-          <button className={styles.register}>Register Now</button>
-        </div>
+        {/* 🚀 Buttons removed */}
       </div>
 
       {/* Right Side */}
       <div className={styles.right}>
-        {/* Image Layout */}
         <div className={styles.imageLayout}>
-          {/* Left column (Hill + Taj) */}
           <div className={styles.leftCol}>
             <div className={styles.imgCard}>
               <Image src={hillImg} alt="Hill Station" placeholder="blur" />
@@ -56,7 +51,6 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right column (Gateway) */}
           <div className={styles.rightCol}>
             <div className={styles.imgCardTall}>
               <Image
@@ -77,7 +71,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* ✅ Decorative arrows (hidden only in mobile via CSS) */}
       <div className={styles.decorArrows}>
         <Image src={arrowIcon} alt="Arrow Icon" width={20} height={20} />
       </div>

@@ -37,6 +37,7 @@ export default function WhyUs() {
       <div className={styles.imageContainer}>
         <Image src={hampiImg} alt="Hampi Chariot" className={styles.image} />
       </div>
+
       {/* Right Content */}
       <div className={styles.content}>
         <p className={styles.subtitle}>WHY US?</p>
@@ -54,11 +55,6 @@ export default function WhyUs() {
             </li>
           ))}
         </ol>
-
-        <div className={styles.buttons}>
-          <button className={styles.primaryBtn}>Get Started</button>
-          <button className={styles.secondaryBtn}>Register Now</button>
-        </div>
       </div>
     </section>
   );

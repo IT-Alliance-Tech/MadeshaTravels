@@ -2,7 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Logo from "../../assets/Images/logo.png"; // adjust path
+import Logo from "../../assets/image/madeshalogo.png"; // adjust path
 import "../../Styles/Header.css";
 
 // 🔹 Navigation Links Data
