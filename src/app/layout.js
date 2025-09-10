@@ -35,6 +35,7 @@ export default function RootLayout({ children }) {
       >
         {/* ✅ Place header and footer inside the layout */}
         <Header />
+         <section style={{ marginTop: "80px" }}></section>
         {children}
         <Footer />
       </body>

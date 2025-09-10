@@ -7,7 +7,7 @@
   align-items: center;
   padding: 20px 8%;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 160px; /* ⬅️ Slightly more space for desktop */
   position: relative;
   font-family: 'Rubik', sans-serif;
 }
@@ -216,7 +216,7 @@
 @media (max-width: 992px) {
   .enquirySection {
     flex-direction: column;
-    gap: 20px;
+    gap: 60px; /* ⬅️ Controlled space for tablets */
     text-align: center;
     padding: 15px 5%;
   }
@@ -244,7 +244,7 @@
   .enquirySection {
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 40px; /* ⬅️ More space on mobile */
     padding: 15px 20px;
   }
 
@@ -287,6 +287,6 @@
 
   /* ✅ Apply indent ONLY in mobile view */
   .indentedLine {
-    margin-left: 1.2em; /* Adjust this as needed for exact alignment under "R" */
+    margin-left: 1.2em; /* Adjust as needed */
   }
 }
