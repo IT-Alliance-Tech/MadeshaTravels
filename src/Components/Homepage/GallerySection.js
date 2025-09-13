@@ -2,10 +2,10 @@
 import React from "react";
 import "../../Styles/GallerySection.css";
 
-import img1 from "../../assets/Images/gallery1.png";
-import img2 from "../../assets/Images/gallery2.png";
-import img3 from "../../assets/Images/gallery3.png";
-import img4 from "../../assets/Images/gallery4.png";
+import img1 from "../../assets/image/gallery1.png";
+import img2 from "../../assets/image/gallery2.png";
+import img3 from "../../assets/image/gallery3.png";
+import img4 from "../../assets/image/gallery4.png";
 
 // ✅ Gallery data array
 const galleryImages = [

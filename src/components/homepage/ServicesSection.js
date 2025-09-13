@@ -1,12 +1,45 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import busImg from "../../assets/image/bus.png";
 import carImg from "../../assets/image/car.png";
 import tempoImg from "../../assets/image/tempo.png";
 import styles from "../../styles/homepage/ServicesSection.module.css";
 
 export default function ServicesSection() {
+  const router = useRouter();
+
+  // Array of services
+  const services = [
+    {
+      id: 1,
+      title: "Bus Services",
+      description: "Budget-friendly connectivity with extensive networks reaching even remote towns.",
+      img: busImg,
+      link: "bus-service" // <-- link to your Bus Service page
+    },
+    {
+      id: 2,
+      title: "Car Services",
+      description: "Premium car rental services with professional drivers for business, travel, and personal needs.",
+      img: carImg,
+      link: "car-service" // <-- link to your Car Service page
+    },
+    {
+      id: 3,
+      title: "Tempo Traveller Services",
+      description: "Comfortable and reliable Tempo Traveller rentals for group trips, office outings, and family tours.",
+      img: tempoImg,
+      link: "tempo-service" // <-- link to your Tempo Service page
+    }
+  ];
+
+  // Handle card click
+  const handleClick = (link) => {
+    router.push(link); // Navigate to the page
+  };
+
   return (
     <section id="services" className={styles.servicesSection}>
       {/* Left Content */}
@@ -19,35 +52,18 @@ export default function ServicesSection() {
 
       {/* Cards Wrapper */}
       <div className={styles.cardsWrapper}>
-        {/* Card 1 */}
-        <div className={styles.card}>
-          <Image src={busImg} alt="Bus Services" className={styles.cardImg} />
-          <h3>Bus Services</h3>
-          <p>
-            Budget-friendly connectivity with extensive networks reaching even
-            remote towns.
-          </p>
-        </div>
-
-        {/* Card 2 */}
-        <div className={styles.card}>
-          <Image src={carImg} alt="Car Services" className={styles.cardImg} />
-          <h3>Car Services</h3>
-          <p>
-            Premium car rental services with professional drivers for business,
-            travel, and personal needs.
-          </p>
-        </div>
-
-        {/* Card 3 */}
-        <div className={styles.card}>
-          <Image src={tempoImg} alt="Tempo Traveller Services" className={styles.cardImg} />
-          <h3>Tempo Traveller Services</h3>
-          <p>
-            Comfortable and reliable Tempo Traveller rentals for group trips,
-            office outings, and family tours.
-          </p>
-        </div>
+        {services.map((service) => (
+          <div
+            key={service.id}
+            className={styles.card}
+            onClick={() => handleClick(service.link)}
+            style={{ cursor: "pointer" }} // Show pointer on hover
+          >
+            <Image src={service.img} alt={service.title} className={styles.cardImg} />
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
+          </div>
+        ))}
       </div>
     </section>
   );

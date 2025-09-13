@@ -1,0 +1,130 @@
+/* ==============================
+   Tempo Traveller Section Styles
+   ============================== */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 60px 8%;
+  margin-top: 64px; /* spacing from header */
+}
+
+.imageWrapper {
+  width: 100%;
+  max-width: 550px;
+  height: 100%;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  border-radius: 45px; /* same as whyUsSection */
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+}
+
+.content {
+  flex: 1;
+  max-width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.subheading {
+  font-size: 14px;
+  font-weight: 600;
+  color: #7c3aed; /* purple */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.heading {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.list {
+  list-style: decimal;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.list li {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 16px;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+/* ==============================
+   Responsive Styles
+   ============================== */
+
+@media (max-width: 1024px) {
+  .container {
+    gap: 30px;
+    padding: 50px 6%;
+  }
+
+  .heading {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 5%;
+  }
+
+  .imageWrapper {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .image {
+    margin: 0 auto 20px;
+    width: 100%;
+    height: auto;
+    border-radius: 20px; /* smaller radius on mobile */
+  }
+
+  .content {
+    max-width: 100%;
+    margin-top: 0;
+    padding: 15px;
+  }
+
+  .subheading {
+    margin-bottom: 8px;
+  }
+
+  .heading {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .list li {
+    font-size: 14px;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 20px;
+  }
+
+  .list li {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,222 @@
+/* ================== Contact Section ================== */
+.contactSection {
+  position: relative;
+  padding: 60px 8%;
+  background-color: #f9f9f9;
+  overflow: hidden;
+}
+
+/* Background map */
+.bgWrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.08;
+}
+
+.bgImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.left {
+  flex: 1;
+  min-width: 320px;
+  padding-left: 20px;
+}
+
+.right {
+  flex: 1;
+  min-width: 320px;
+}
+
+.subTitle {
+  font-size: 14px;
+  color: #673ab7;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: 3px;
+}
+
+.title {
+  font-size: 22px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  font-weight: 700;
+  color: #222;
+}
+
+.infoBox {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.iconWrapper {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.infoItem p {
+  margin: 0;
+  line-height: 1.6;
+  color: #333;
+  font-size: 15px;
+}
+
+/* ================== Form ================== */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* 🔹 Reduced label height */
+.form label {
+  font-weight: 500;
+  font-size: 14px;
+  color: #673ab7;
+  line-height: 1.2;   /* smaller label height */
+  margin-bottom: 4px; /* less spacing below label */
+}
+
+.form input,
+.form textarea {
+  width: 528px;
+  height: 55px;         /* ⬅️ reduced height */
+  padding: 10px 14px;
+  border: 1px solid #9f9f9f;
+  border-radius: 10px;
+  font-size: 14px;
+  background: #fff;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.form textarea {
+  min-height: 100px;    /* ⬅️ keep message box bigger */
+  resize: vertical;
+}
+
+.submitBtn {
+  width: 159px;
+  height: 49px;
+  background-color: #673ab7;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: "Rubik", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.submitBtn:hover {
+  background-color: #5146d9;
+}
+
+/* ================== Responsive ================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .container {
+    gap: 30px;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .form input,
+  .form textarea {
+    width: 100%;
+    height: 50px;  /* ⬅️ smaller on tablet */
+  }
+  .form textarea {
+    min-height: 90px;
+  }
+  .submitBtn {
+    width: 150px;
+    height: 45px;
+  }
+}
+
+/* Mobile (large phones) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .left {
+    padding-left: 10px;
+  }
+  .title {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  .form input,
+  .form textarea {
+    width: 100%;
+    height: 48px;   /* ⬅️ tighter on mobile */
+  }
+  .form textarea {
+    min-height: 80px;
+  }
+  .submitBtn {
+    width: 140px;
+    height: 44px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .contactSection {
+    padding: 40px 5%;
+  }
+  .subTitle {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+  .title {
+    font-size: 16px;
+  }
+  .infoItem p {
+    font-size: 14px;
+  }
+  .form input,
+  .form textarea {
+    font-size: 13px;
+    width: 100%;
+    height: 45px;   /* ⬅️ smallest height */
+  }
+  .form textarea {
+    min-height: 70px;
+  }
+  .submitBtn {
+    width: 130px;
+    height: 42px;
+    font-size: 14px;
+  }
+}

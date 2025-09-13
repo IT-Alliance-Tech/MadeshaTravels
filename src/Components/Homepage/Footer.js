@@ -30,7 +30,7 @@ const footerLinks = [
       { name: "Why Us?", path: "/whyUs" },
       { name: "Partner with us", path: "/partner" },
       { name: "FAQ’s", path: "/faq" },
-      { name: "Blog", path: "/blog" },
+      // { name: "Blog", path: "/blog" },
     ],
   },
 ];
