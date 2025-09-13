@@ -1,8 +1,10 @@
 /* ================= Container wrapper ================= */
 .container {
   max-width: 1200px;
-  margin: 30px auto;
-  padding: 0 20px;
+  /* margin: 30px auto; */
+  margin-top: 120px;
+  padding-left: 60px;
+  padding-right: 60px;
 }
 
 /* ================= Service Buttons ================= */

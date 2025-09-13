@@ -15,29 +15,33 @@ export default function ServicesSection() {
     {
       id: 1,
       title: "Bus Services",
-      description: "Budget-friendly connectivity with extensive networks reaching even remote towns.",
+      description:
+        "Budget-friendly connectivity with extensive networks reaching even remote towns.",
       img: busImg,
-      link: "bus-service" // <-- link to your Bus Service page
+      link: "bus", // <-- link to your Bus Service page
     },
     {
       id: 2,
       title: "Car Services",
-      description: "Premium car rental services with professional drivers for business, travel, and personal needs.",
+      description:
+        "Premium car rental services with professional drivers for business, travel, and personal needs.",
       img: carImg,
-      link: "car-service" // <-- link to your Car Service page
+      link: "car-service", // <-- link to your Car Service page
     },
     {
       id: 3,
       title: "Tempo Traveller Services",
-      description: "Comfortable and reliable Tempo Traveller rentals for group trips, office outings, and family tours.",
+      description:
+        "Comfortable and reliable Tempo Traveller rentals for group trips, office outings, and family tours.",
       img: tempoImg,
-      link: "tempo-service" // <-- link to your Tempo Service page
-    }
+      link: "tempo", // <-- link to your Tempo Service page
+    },
   ];
 
   // Handle card click
   const handleClick = (link) => {
-    router.push(link); // Navigate to the page
+    if (link === "car-service") router.push("/");
+    else router.push(`/servicedetails?service=${link}`);
   };
 
   return (
@@ -59,7 +63,11 @@ export default function ServicesSection() {
             onClick={() => handleClick(service.link)}
             style={{ cursor: "pointer" }} // Show pointer on hover
           >
-            <Image src={service.img} alt={service.title} className={styles.cardImg} />
+            <Image
+              src={service.img}
+              alt={service.title}
+              className={styles.cardImg}
+            />
             <h3>{service.title}</h3>
             <p>{service.description}</p>
           </div>

@@ -24,8 +24,8 @@ const serviceData = {
       "A minimum of 300 km per day is required.",
       "Driver Bata is ₹500/day (from 6:00 AM to 10:00 PM).",
       "If travel extends before 6:00 AM or after 10:00 PM, an extra driver bata of ₹700 will be applicable.",
-      "Road toll and parking charges are additional."
-    ]
+      "Road toll and parking charges are additional.",
+    ],
   },
   bus21_25: {
     title: "Bus Service",
@@ -36,14 +36,14 @@ const serviceData = {
       {
         name: "21 Seater",
         desc: "A great option for smaller groups, the 21-Seater Bus offers comfort and affordability.",
-        points: ["Non-AC and AC.", "Driver Bata: ₹700/day."]
+        points: ["Non-AC and AC.", "Driver Bata: ₹700/day."],
       },
       {
         name: "25 Seater",
         desc: "Perfect for school trips or small functions, the 25-Seater Bus ensures a smooth ride.",
-        points: ["Non-AC and AC.", "Driver Bata: ₹700/day."]
-      }
-    ]
+        points: ["Non-AC and AC.", "Driver Bata: ₹700/day."],
+      },
+    ],
   },
   bus30_35: {
     title: "Bus Service",
@@ -52,63 +52,33 @@ const serviceData = {
     image: busImg,
     buses: [
       {
-        name: "Mini Bus – 30 Seater",
+        name: "Mini Bus - 30 Seater",
         desc: "Our 30-Seater Mini Bus is ideal for medium-sized groups and corporate outings.",
-        points: ["Non-AC and AC.", "Driver Bata: ₹700/day."]
+        points: ["Non-AC and AC.", "Driver Bata: ₹700/day."],
       },
       {
         name: "33 Seater",
         desc: "Spacious and reliable, the 33-Seater Bus is suitable for weddings, tours, and events.",
-        points: ["Non-AC and AC.", "Driver Bata: ₹700/day."]
+        points: ["Non-AC and AC.", "Driver Bata: ₹700/day."],
       },
       {
         name: "50 Seater",
         desc: "For large gatherings and group travel, our 50-Seater Bus is the best choice.",
-        points: ["Non-AC and AC.", "Driver Bata: ₹1000/day."]
-      }
-    ]
-  }
+        points: ["Non-AC and AC.", "Driver Bata: ₹1000/day."],
+      },
+    ],
+  },
 };
 
 const Page = () => {
   const searchParams = useSearchParams();
-  const serviceParam = searchParams.get("service") || "tempo";
-
-  const [current, setCurrent] = useState(
-    serviceParam.startsWith("bus") ? "bus" : serviceParam
-  );
-  const [busCurrent, setBusCurrent] = useState(
-    serviceParam.startsWith("bus") ? serviceParam : "bus21_25" // default 21–25
-  );
-
-  useEffect(() => {
-    if (serviceParam.startsWith("bus")) {
-      setCurrent("bus");
-      setBusCurrent(serviceParam);
-    } else {
-      setCurrent(serviceParam);
-    }
-  }, [serviceParam]);
-
+  const serviceParam = searchParams.get("service");
+  const [busCurrent, setBusCurrent] = useState("bus21_25");
   const content =
-    current === "bus" ? serviceData[busCurrent] : serviceData[current];
+    serviceParam === "bus" ? serviceData[busCurrent] : serviceData["tempo"];
 
   return (
     <div className={styles.container}>
-      {/* Service Buttons */}
-      <div className={styles.buttons}>
-        {["tempo", "bus"].map((key) => (
-          <button
-            key={key}
-            type="button"
-            onClick={() => setCurrent(key)}
-            className={current === key ? styles.activeBtn : ""}
-          >
-            {key === "tempo" ? "TEMPO TRAVELLERS" : "BUS SERVICES"}
-          </button>
-        ))}
-      </div>
-
       {/* Service Details */}
       <div className={styles.serviceDetails}>
         <div className={styles.imageSection}>
@@ -146,16 +116,20 @@ const Page = () => {
           )}
 
           {/* Fixed Color Buttons */}
-          {current === "bus" && (
+          {serviceParam === "bus" && (
             <div className={styles.busButtons}>
               <button
-                className={`${styles.busBtn} ${styles.purpleBtn}`}
+                className={`${styles.busBtn} ${
+                  busCurrent === "bus21_25" ? styles.purpleBtn : styles.whiteBtn
+                }`}
                 onClick={() => setBusCurrent("bus21_25")}
               >
                 21 to 25 Seater
               </button>
               <button
-                className={`${styles.busBtn} ${styles.whiteBtn}`}
+                className={`${styles.busBtn} ${
+                  busCurrent === "bus30_35" ? styles.purpleBtn : styles.whiteBtn
+                }`}
                 onClick={() => setBusCurrent("bus30_35")}
               >
                 30 to 35 Seater
