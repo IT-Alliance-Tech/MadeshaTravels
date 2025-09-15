@@ -17,50 +17,38 @@ export default function ContactPage() {
   });
 
   const [loading, setLoading] = useState(false);
-
-  // ✅ Replace with your real Google Sheet URL
-  const GOOGLE_SHEET_URL =
-    "https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/edit";
-
-  // ✅ Replace with your Google Apps Script Web App URL
-  const SCRIPT_URL =
-    "https://script.google.com/macros/s/XXXXX/exec";
+    const [status, setStatus] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+  e.preventDefault();
+  setStatus("Submitting...");
 
-    try {
-      const params = new URLSearchParams();
-      params.append("name", formData.name);
-      params.append("email", formData.email);
-      params.append("phone", formData.phone);
-      params.append("message", formData.message);
+  try {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
-      const res = await fetch(SCRIPT_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: params.toString(),
-      });
+    const result = await response.json();
 
-      if (!res.ok) throw new Error("Failed to submit");
-
-      window.open(GOOGLE_SHEET_URL, "_blank");
-
+    if (result.status === "success") {
+      setStatus("Message sent successfully!");
       setFormData({ name: "", email: "", phone: "", message: "" });
-
-      alert("Data submitted successfully!");
-    } catch (err) {
-      console.error("Error submitting data:", err);
-      alert("Failed to submit data. Please try again.");
-    } finally {
-      setLoading(false);
+    } else {
+      setStatus("Something went wrong.");
     }
-  };
+  } catch (error) {
+    console.error(error);
+    setStatus("Error submitting form.");
+  }
+};
 
   return (
     <section className={styles.contactSection}>
@@ -168,6 +156,7 @@ export default function ContactPage() {
             >
               {loading ? "Submitting..." : "Submit"}
             </button>
+            {status && <p className="mt-4">{status}</p>}
           </form>
         </div>
       </div>
