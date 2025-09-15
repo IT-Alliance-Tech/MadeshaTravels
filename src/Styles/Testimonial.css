@@ -2,19 +2,17 @@
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  padding: 80px 20px;
+  padding: 80px 20px 40px 20px; /* ✅ reduced bottom padding */
   font-family: Arial, sans-serif;
   background-color: #fff;
-   position: relative;
-    overflow: hidden;
-    
+  position: relative;
+  overflow: hidden;
 
-    background-image: url("../assets/Images/Layer_1.png"); /* 👈 replace with your image */
+  background-image: url("../assets/Images/Layer_1.png"); /* 👈 replace with your image */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  
   min-height: 650px;  /* adjust this value as per your design */
   display: flex;
   flex-direction: column;
@@ -124,9 +122,8 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   transition: all 0.3s ease;
-transform: translateY(0);      /* remove vertical centering */
-bottom: 200px;
-
+  transform: translateY(0);      /* remove vertical centering */
+  bottom: 200px;
 }
 
 .arrow:hover {
@@ -136,18 +133,18 @@ bottom: 200px;
 
 .arrow.left {
   left: -150px;
-   font-size: 1rem;  
+  font-size: 1rem;  
 }
 
 .arrow.right {
   right: -150px;
-   font-size: 1rem;  
+  font-size: 1rem;  
 }
 
 
 /* Dots */
 .dots {
- position: absolute;
+  position: absolute;
   bottom: 0px;         /* fixed distance from bottom */
   left: 50%;
   transform: translateX(-50%);
@@ -210,14 +207,13 @@ bottom: 200px;
 /* Mobile */
 @media (max-width: 600px) {
   .testimonials {
-    padding: 50px 15px;
-    /* position: relative; ensure arrows are positioned relative to this */
+    padding: 50px 15px 30px 15px; /* ✅ reduced bottom padding for mobile too */
   }
+
   .testimonial-content {
     min-height: 320px;      /* shrink block height */
     padding-bottom: 50px;   /* leave just enough space for dots */
   }
-
 
   .testimonial-img {
     width: 90px;
@@ -250,7 +246,7 @@ bottom: 200px;
   .arrow.left {
     left: 20px;           /* keep gap from edge */
   }
- .arrow.right {
+  .arrow.right {
     right: 20px;
   }
 }

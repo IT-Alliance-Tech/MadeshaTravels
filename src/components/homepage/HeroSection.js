@@ -2,9 +2,9 @@ import Image from "next/image";
 import styles from "../../styles/homepage/HeroSection.module.css";
 
 // Images
-import hillImg from "../../assets/image/image3.png";
-import gatewayImg from "../../assets/image/image2.png";
-import tajmahalImg from "../../assets/image/image1.png";
+import hillImg from "../../assets/image/hero1.png";
+import gatewayImg from "../../assets/image/hero2.png";
+import tajmahalImg from "../../assets/image/hero3.png";
 
 // ✅ Background / Icons
 import suitcaseIcon from "../../assets/icons/icon.png";

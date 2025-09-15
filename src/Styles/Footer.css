@@ -1,10 +1,11 @@
 .footer {
   position: relative;
   background: #fff;
-  padding: 80px 80px 60px; /* 🔥 increased top padding so content is pushed down */
+  padding: 80px 80px 60px;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* 🔥 align top, not center, so it's not floating weird */
+  align-items: flex-start;
+  margin-top: 60px; /* ✅ Added margin at top to prevent merging with above section */
 }
 
 .footer-brand {
@@ -30,13 +31,13 @@
 
 .footer-container {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1.2fr 1fr 1fr 1.2fr; /* ✅ balanced spacing */
+  gap: 50px; /* ✅ extra space between columns */
   font-size: 16px;
   align-items: start;
-  padding-top: 40px; /* 🔥 added padding to push content down more */
+  padding-top: 40px;
   position: relative;
-  z-index: 1; /* ensure content is above decorative images */
+  z-index: 1;
 }
 
 /* LOGO + LEFT SECTION */
@@ -134,6 +135,10 @@
   color: #6c3bce;
 }
 
+.footer-contact {
+  padding-left: 25px; /* ✅ adds breathing room on the right column */
+}
+
 .footer-contact p {
   margin: 6px 0;
   line-height: 1.7;
@@ -144,8 +149,9 @@
 /* ---------------- RESPONSIVE ---------------- */
 @media (max-width: 600px) {
   .footer {
-    padding: 60px 20px 40px; /* 🔥 Adjusted padding for mobile */
+    padding: 60px 20px 40px;
     align-items: flex-start;
+    margin-top: 40px; /* ✅ keep smaller margin on mobile */
   }
 
   /* Hide decorative images on mobile */

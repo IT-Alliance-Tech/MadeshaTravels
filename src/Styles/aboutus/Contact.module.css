@@ -2,22 +2,13 @@
 .contactSection {
   position: relative;
   padding: 60px 8%;
-  background-color: #f9f9f9;
+  background-color: #fff;   /* White background */
   overflow: hidden;
 }
 
-/* Background map */
+/* Remove background map */
 .bgWrapper {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  opacity: 0.08;
-}
-
-.bgImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  display: none;   /* Hide bluish background */
 }
 
 .container {
@@ -63,6 +54,7 @@
   flex-direction: column;
   gap: 25px;
   margin-top: 20px;
+  margin-left: 30px;  /* ✅ Moves only address/phone/email block towards form */
 }
 
 .infoItem {
@@ -79,6 +71,13 @@
   justify-content: center;
 }
 
+.infoHeading {
+  font-size: 16px;
+  font-weight: 600;
+  color: #673ab7;   /* Same as icon color */
+  margin-bottom: 5px;
+}
+
 .infoItem p {
   margin: 0;
   line-height: 1.6;
@@ -93,19 +92,18 @@
   gap: 15px;
 }
 
-/* 🔹 Reduced label height */
 .form label {
   font-weight: 500;
   font-size: 14px;
   color: #673ab7;
-  line-height: 1.2;   /* smaller label height */
-  margin-bottom: 4px; /* less spacing below label */
+  line-height: 1.2;
+  margin-bottom: 4px;
 }
 
 .form input,
 .form textarea {
   width: 528px;
-  height: 55px;         /* ⬅️ reduced height */
+  height: 55px;
   padding: 10px 14px;
   border: 1px solid #9f9f9f;
   border-radius: 10px;
@@ -116,7 +114,7 @@
 }
 
 .form textarea {
-  min-height: 100px;    /* ⬅️ keep message box bigger */
+  min-height: 100px;
   resize: vertical;
 }
 
@@ -152,7 +150,7 @@
   .form input,
   .form textarea {
     width: 100%;
-    height: 50px;  /* ⬅️ smaller on tablet */
+    height: 50px;
   }
   .form textarea {
     min-height: 90px;
@@ -163,7 +161,7 @@
   }
 }
 
-/* Mobile (large phones) */
+/* Mobile */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -179,7 +177,7 @@
   .form input,
   .form textarea {
     width: 100%;
-    height: 48px;   /* ⬅️ tighter on mobile */
+    height: 48px;
   }
   .form textarea {
     min-height: 80px;
@@ -209,7 +207,7 @@
   .form textarea {
     font-size: 13px;
     width: 100%;
-    height: 45px;   /* ⬅️ smallest height */
+    height: 45px;
   }
   .form textarea {
     min-height: 70px;

@@ -7,10 +7,8 @@ import styles from "../../styles/aboutus/Contact.module.css";
 import AddressIcon from "../../assets/icons/location.png";
 import PhoneIcon from "../../assets/icons/call.png";
 import EmailIcon from "../../assets/icons/Mail.png";
-// Background map
-import BgMap from "../../assets/icons/map.png";
 
-export default function Contact() {
+export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -20,11 +18,13 @@ export default function Contact() {
 
   const [loading, setLoading] = useState(false);
 
-  // Replace with your Google Apps Script Web App URL
-  const SHEET_MACRO_URL = "https://script.google.com/macros/s/XXXXX/exec";
+  // ✅ Replace with your real Google Sheet URL
+  const GOOGLE_SHEET_URL =
+    "https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/edit";
 
-  // Replace with your Google Sheet URL
-  const GOOGLE_SHEET_URL = "https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/edit";
+  // ✅ Replace with your Google Apps Script Web App URL
+  const SCRIPT_URL =
+    "https://script.google.com/macros/s/XXXXX/exec";
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -35,23 +35,23 @@ export default function Contact() {
     setLoading(true);
 
     try {
-      // Send data to Google Apps Script
-      await fetch(SHEET_MACRO_URL, {
+      const params = new URLSearchParams();
+      params.append("name", formData.name);
+      params.append("email", formData.email);
+      params.append("phone", formData.phone);
+      params.append("message", formData.message);
+
+      const res = await fetch(SCRIPT_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: params.toString(),
       });
 
-      // Open Google Sheet in a new tab
+      if (!res.ok) throw new Error("Failed to submit");
+
       window.open(GOOGLE_SHEET_URL, "_blank");
 
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
-      });
+      setFormData({ name: "", email: "", phone: "", message: "" });
 
       alert("Data submitted successfully!");
     } catch (err) {
@@ -64,13 +64,8 @@ export default function Contact() {
 
   return (
     <section className={styles.contactSection}>
-      {/* Background Map */}
-      <div className={styles.bgWrapper}>
-        <Image src={BgMap} alt="Background map" className={styles.bgImage} />
-      </div>
-
       <div className={styles.container}>
-        {/* Left Section */}
+        {/* Left */}
         <div className={styles.left}>
           <h5 className={styles.subTitle}>GET IN TOUCH WITH US</h5>
           <h2 className={styles.title}>
@@ -80,41 +75,47 @@ export default function Contact() {
           </h2>
 
           <div className={styles.infoBox}>
-            {/* Address */}
             <div className={styles.infoItem}>
               <div className={styles.iconWrapper}>
                 <Image src={AddressIcon} alt="Address" width={22} height={28} />
               </div>
-              <p>
-                #711, Muneswhara Prasanna, <br />
-                Opposite to AD Classic Apartment, <br />
-                AECS Layout A-Block, <br />
-                Singasandra, Bangalore, 560068
-              </p>
+              <div>
+                <h4 className={styles.infoHeading}>Address</h4>
+                <p>
+                  #711, Muneswhara Prasanna, <br />
+                  Opposite to AD Classic Apartment, <br />
+                  AECS Layout A-Block, <br />
+                  Singasandra, Bangalore, 560068
+                </p>
+              </div>
             </div>
 
-            {/* Phone */}
             <div className={styles.infoItem}>
               <div className={styles.iconWrapper}>
                 <Image src={PhoneIcon} alt="Phone" width={22} height={22} />
               </div>
-              <p>
-                Mobile 1: (+91) 99809 42628 <br />
-                Mobile 2: (+91) 96328 39345
-              </p>
+              <div>
+                <h4 className={styles.infoHeading}>Phone</h4>
+                <p>
+                  Mobile 1: (+91) 99809 42628 <br />
+                  Mobile 2: (+91) 96328 39345
+                </p>
+              </div>
             </div>
 
-            {/* Email */}
             <div className={styles.infoItem}>
               <div className={styles.iconWrapper}>
                 <Image src={EmailIcon} alt="Email" width={23} height={23} />
               </div>
-              <p>modetraboutourstravels@gmail.com</p>
+              <div>
+                <h4 className={styles.infoHeading}>Email</h4>
+                <p>modetraboutourstravels@gmail.com</p>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Right Section (Form) */}
+        {/* Right (Form) */}
         <div className={styles.right}>
           <form className={styles.form} onSubmit={handleSubmit}>
             <label>Your name</label>
@@ -160,7 +161,11 @@ export default function Contact() {
               disabled={loading}
             ></textarea>
 
-            <button type="submit" className={styles.submitBtn} disabled={loading}>
+            <button
+              type="submit"
+              className={styles.submitBtn}
+              disabled={loading}
+            >
               {loading ? "Submitting..." : "Submit"}
             </button>
           </form>

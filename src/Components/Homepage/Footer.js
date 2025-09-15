@@ -30,16 +30,15 @@ const footerLinks = [
       { name: "Why Us?", path: "/whyUs" },
       { name: "Partner with us", path: "/partner" },
       { name: "FAQ’s", path: "/faq" },
-      // { name: "Blog", path: "/blog" },
     ],
   },
 ];
 
+// ✅ Updated contact info from your screenshot
 const contactInfo = [
-  "+00 92 1234 56789",
-  "info@travlog.com",
-  "205. R Street, New York",
-  "BD23200",
+  "(+91) 9980942628",
+  "madeshatourstravels@gmail.com",
+  "#1713, Muneshwara Prasanna, Opposite to AD Clasia Apartment, AECS LAYOUT, A BLOCK, Singasandra, Bangalore, 560068",
 ];
 
 const Footer = () => {
@@ -59,7 +58,6 @@ const Footer = () => {
       <div className="footer-container">
         {/* Left Section */}
         <div className="footer-left">
-          {/* ✅ Replaced Logo with Text */}
           <div className="logo-area">
             <h2 className="footer-brand">Madesha Tour & Travels</h2>
           </div>

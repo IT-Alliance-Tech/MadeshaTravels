@@ -3,9 +3,9 @@ import React from "react";
 import "../../Styles/GallerySection.css";
 
 import img1 from "../../assets/image/gallery1.png";
-import img2 from "../../assets/image/gallery2.png";
+import img2 from "../../assets/image/g1.png";
 import img3 from "../../assets/image/gallery3.png";
-import img4 from "../../assets/image/gallery4.png";
+import img4 from "../../assets/image/bus2.png";
 
 // ✅ Gallery data array
 const galleryImages = [

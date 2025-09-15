@@ -3,8 +3,8 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
-import tempoImg from "../../assets/image/tempo1.png";
-import busImg from "../../assets/image/bus1.png";
+import tempoImg from "../../assets/image/tempo2.png";
+import busImg from "../../assets/image/buss.png";
 import styles from "../../styles/aboutus/service-details.module.css";
 
 const serviceData = {

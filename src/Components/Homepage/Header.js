@@ -22,7 +22,8 @@ const Header = () => {
     if (section) {
       const headerOffset = 80; // adjust according to your header height
       const elementPosition = section.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerOffset;
 
       window.scrollTo({
         top: offsetPosition,
@@ -69,8 +70,8 @@ const Header = () => {
 
       {/* Contact Us Button */}
       <div className="contact-button">
-        <Link href="/contact">
-          <button className="contact-btn">Contact Us</button>
+        <Link href="/contact" className="contact-btn">
+          Contact Us
         </Link>
       </div>
     </header>

@@ -1,7 +1,6 @@
 /* ================= Container wrapper ================= */
 .container {
   max-width: 1200px;
-  /* margin: 30px auto; */
   margin-top: 120px;
   padding-left: 60px;
   padding-right: 60px;
@@ -32,22 +31,24 @@
 /* ================= Main Service Layout ================= */
 .serviceDetails {
   display: flex;
-  align-items: flex-start;
+  align-items: flex-start;         /* 🔥 keeps content aligned at top */
   justify-content: space-between;
-  gap: 60px;
+  gap: 40px;                       /* 🔥 reduced gap for better balance */
   flex-wrap: nowrap;
 }
 
 .imageSection,
 .contentSection {
-  flex: 0 0 50%;
+  flex: 0 0 50%;                   /* 🔥 strict 50% each */
   max-width: 50%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ================= Image ================= */
 .imageSection img {
-  width: 550px;
-  height: 550px;
+  width: 100%;
+  height: auto;                    /* 🔥 prevent stretching */
   border-radius: 40px;
   object-fit: cover;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -55,9 +56,9 @@
 
 /* ================= Content ================= */
 .contentSection {
-  display: flex;
-  flex-direction: column;
   justify-content: flex-start;
+  padding: 0 20px;                 /* 🔥 reduced top padding */
+  margin-top: -10px;               /* 🔥 nudges content upward */
 }
 
 .subheading {
@@ -94,21 +95,22 @@
 .busBlock {
   background: none;
   padding: 0;
-  margin-bottom: 0;
+  margin-bottom: 15px;             /* 🔥 adds spacing between blocks */
   box-shadow: none;
 }
 
 .busBlock h3 {
   font-size: 20px;
   font-weight: 600;
-  margin-bottom: 5px;
+  margin-bottom: 8px;              /* 🔥 slightly more space under heading */
   color: #673AB7;
 }
 
 .busBlock p {
   font-size: 15px;
   color: #444;
-  margin-bottom: 10px;
+  margin-bottom: 14px;             /* 🔥 more breathing room between paragraphs */
+  line-height: 1.6;                /* 🔥 better readability */
 }
 
 /* ================= Bus Buttons ================= */
@@ -116,7 +118,7 @@
   display: flex;
   gap: 12px;
   margin-top: 20px;
-  flex-wrap: nowrap; /* keep in one line */
+  flex-wrap: nowrap;
 }
 
 .busBtn {
@@ -148,14 +150,14 @@
 /* ================= Responsive ================= */
 @media (max-width: 768px) {
   .serviceDetails {
-    flex-direction: row;
+    flex-direction: column;         /* 🔥 stack on small screens */
     gap: 20px;
   }
 
   .imageSection,
   .contentSection {
-    flex: 1 1 50%;
-    max-width: 50%;
+    flex: 1 1 100%;
+    max-width: 100%;
     width: auto;
     height: auto;
   }
