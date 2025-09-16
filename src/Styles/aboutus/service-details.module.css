@@ -31,15 +31,15 @@
 /* ================= Main Service Layout ================= */
 .serviceDetails {
   display: flex;
-  align-items: flex-start;         /* keeps content aligned at top */
+  align-items: flex-start;
   justify-content: space-between;
-  gap: 40px;                       
+  gap: 40px;
   flex-wrap: nowrap;
 }
 
 .imageSection,
 .contentSection {
-  flex: 0 0 50%;                   
+  flex: 0 0 50%;
   max-width: 50%;
   display: flex;
   flex-direction: column;
@@ -48,7 +48,8 @@
 /* ================= Image ================= */
 .imageSection img {
   width: 100%;
-  height: auto;                    
+  height: auto;
+  max-height: 450px;
   border-radius: 40px;
   object-fit: cover;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -56,17 +57,22 @@
 
 /* ================= Car Service (special case) ================= */
 .carService .imageSection img {
-  object-fit: contain;            
-  border-radius: 20px;   /* ✅ Rounded corners for car service */
-  box-shadow: none;                
-  background: none;                
+  border-radius: 25px;   /* ✅ Rounded corners only for car image */
+  object-fit: cover;     /* Keep the image proportionate */
+  box-shadow: none;      
+  background: none;
+}
+
+/* Shift only the car content down */
+.carService .contentSection {
+  margin-top: 40px;
 }
 
 /* ================= Content ================= */
 .contentSection {
   justify-content: flex-start;
-  padding: 0 20px;                 
-  margin-top: -10px;               
+  padding: 0 20px;
+  margin-top: -10px;
 }
 
 .subheading {
@@ -103,22 +109,22 @@
 .busBlock {
   background: none;
   padding: 0;
-  margin-bottom: 15px;             
+  margin-bottom: 15px;
   box-shadow: none;
 }
 
 .busBlock h3 {
   font-size: 20px;
   font-weight: 600;
-  margin-bottom: 8px;              
+  margin-bottom: 8px;
   color: #673AB7;
 }
 
 .busBlock p {
   font-size: 15px;
   color: #444;
-  margin-bottom: 14px;             
-  line-height: 1.6;                
+  margin-bottom: 14px;
+  line-height: 1.6;
 }
 
 /* ================= Bus Buttons ================= */
@@ -162,7 +168,7 @@
     gap: 30px;
     align-items: center;
     text-align: center;
-    margin-bottom: 15px;  /* reduced space before footer */
+    margin-bottom: 15px;
   }
 
   .imageSection,
@@ -190,15 +196,14 @@
     line-height: 1.4;
   }
 
-  /* ===== Tempo & Car (use same Figma style) ===== */
   .tempoService .contentSection,
   .carService .contentSection {
     text-align: center;
+    margin-top: 15px;
   }
 
-  /* ===== Bus Services in Mobile ===== */
   .busService .contentSection {
-    text-align: left;  
+    text-align: left;
     padding: 0 15px;
   }
 
@@ -212,7 +217,7 @@
     text-align: left;
     margin: 0 0 20px 0;
     padding-bottom: 15px;
-    border-bottom: 1px solid #eee; 
+    border-bottom: 1px solid #eee;
   }
 
   .busButtons {
