@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import "../../Styles/Footer.css";
 
 // Decorative images
@@ -10,9 +10,14 @@ import rightImg from "../../assets/Images/back2.png";
 import Link from "next/link";
 
 const socialLinks = [
-  { icon: <FaFacebookF />, href: "#" },
-  { icon: <FaTwitter />, href: "#" },
-  { icon: <FaInstagram />, href: "#" },
+  { 
+    icon: <FaFacebookF />, 
+    href: "https://www.facebook.com/profile.php?id=61579286710827&sk=about" 
+  },
+  { 
+    icon: <FaInstagram />, 
+    href: "https://www.instagram.com/madesha_tours_travels/" 
+  },
 ];
 
 const footerLinks = [
@@ -54,7 +59,8 @@ const Footer = () => {
     if (section) {
       const headerOffset = 80; // adjust according to your header height
       const elementPosition = section.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerOffset;
 
       window.scrollTo({
         top: offsetPosition,
@@ -82,7 +88,7 @@ const Footer = () => {
           </p>
           <div className="social-icons">
             {socialLinks.map((item, index) => (
-              <a key={index} href={item.href}>
+              <a key={index} href={item.href} target="_blank" rel="noopener noreferrer">
                 {item.icon}
               </a>
             ))}
@@ -99,9 +105,7 @@ const Footer = () => {
           <ul>
             {footerLinks[0].links.map((link, i) => (
               <li key={i}>
-                <a onClick={() => handleScroll(link.id)}>
-                  {link.name}
-                </a>
+                <a onClick={() => handleScroll(link.id)}>{link.name}</a>
               </li>
             ))}
           </ul>

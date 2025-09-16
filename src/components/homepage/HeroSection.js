@@ -4,7 +4,7 @@ import styles from "../../styles/homepage/HeroSection.module.css";
 // Images
 import hillImg from "../../assets/image/hero1.png";
 import gatewayImg from "../../assets/image/hero2.png";
-import tajmahalImg from "../../assets/image/hero3.png";
+import tajmahalImg from "../../assets/images/nature1.png";
 
 // Icons
 import suitcaseIcon from "../../assets/icons/icon.png";
