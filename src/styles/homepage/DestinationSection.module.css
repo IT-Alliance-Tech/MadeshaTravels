@@ -94,8 +94,9 @@
 /* ================= CARD CONTENT ================= */
 
 .cardContent {
-  padding: 12px 16px; /* reduced padding */
+  padding: 20px 16px; /* reduced padding */
   display: flex;
+  text-align: center;
   flex-direction: column;
   gap: 4px; /* tighter spacing */
 }

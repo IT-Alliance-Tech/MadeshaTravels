@@ -1,10 +1,7 @@
-"use client"; // required because we use useRef & event handlers
-
+"use client";
 import Image from "next/image";
 import { useRef } from "react";
 import styles from "../../styles/homepage/DestinationSection.module.css";
-
-// ✅ Import images
 import munnarImg from "../../assets/image/hero1.png";
 import kedarnathImg from "../../assets/image/hero2.png";
 import keralaImg from "../../assets/image/des5.png";
@@ -32,75 +29,55 @@ export default function DestinationSection() {
           <h2 className={styles.mainHeading}>Explore top destination</h2>
         </div>
         <div className={styles.arrows}>
-          <button onClick={scrollLeft} className={styles.arrowBtn}>←</button>
-          <button onClick={scrollRight} className={styles.arrowBtnActive}>→</button>
+          <button onClick={scrollLeft} className={styles.arrowBtn}>
+            ←
+          </button>
+          <button onClick={scrollRight} className={styles.arrowBtnActive}>
+            →
+          </button>
         </div>
       </div>
-
-      {/* Cards Wrapper */}
       <div className={styles.cardsWrapper} ref={scrollRef}>
-        {/* Card 1 */}
-        <div className={styles.card}>
-          <Image src={munnarImg} alt="Munnar" className={styles.cardImg} />
-          <div className={styles.cardContent}>
-            <h3>
-              Murudeshwara<br />
-            
-            </h3>
+        {destinationCards?.map((item, index) => (
+          <div key={index} className={styles.card}>
+            <Image
+              src={item?.img}
+              alt={`${item?.name}`}
+              className={styles.cardImg}
+            />
+            <div className={styles.cardContent}>
+              <h3>{item?.name}</h3>
+            </div>
           </div>
-        </div>
-
-        {/* Card 2 */}
-        <div className={styles.card}>
-          <Image src={kedarnathImg} alt="Kedarnath" className={styles.cardImg} />
-          <div className={styles.cardContent}>
-            <h3>
-             Dharmasthala <br />
-              
-            </h3>
-          </div>
-        </div>
-
-        {/* Card 3 */}
-        <div className={styles.card}>
-          <Image src={keralaImg} alt="Kerala" className={styles.cardImg} />
-          <div className={styles.cardContent}>
-            <h3>
-             Mysore
-            </h3>
-          </div>
-        </div>
-
-        {/* Card 4 */}
-        <div className={styles.card}>
-          <Image src={goaImg} alt="Goa" className={styles.cardImg} />
-          <div className={styles.cardContent}>
-            <h3>
-              Gokarna
-            </h3>
-          </div>
-        </div>
-
-        {/* Card 5 */}
-        <div className={styles.card}>
-          <Image src={ladakhImg} alt="Ladakh" className={styles.cardImg} />
-          <div className={styles.cardContent}>
-            <h3>
-              Udupi
-            </h3>
-          </div>
-        </div>
-
-        {/* Card 6 */}
-        <div className={styles.card}>
-          <Image src={rajasthanImg} alt="Rajasthan" className={styles.cardImg} />
-          <div className={styles.cardContent}>
-            <h3>
-              Chikmagalur
-            </h3>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );
 }
+
+const destinationCards = [
+  {
+    img: munnarImg,
+    name: "Murudeshwara",
+  },
+  {
+    img: kedarnathImg,
+    name: "Dharmasthala",
+  },
+  {
+    img: keralaImg,
+    name: "Mysore",
+  },
+  {
+    img: goaImg,
+    name: "Gokarna",
+  },
+  {
+    img: ladakhImg,
+    name: "Udupi",
+  },
+  {
+    img: rajasthanImg,
+    name: "Chikmagalur",
+  },
+];
