@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import tempoImg from "../../assets/image/tempo2.png";
 import busImg from "../../assets/image/buss.png";
+import carImg from "../../assets/image/car2.png"; // ✅ Car image
 import styles from "../../styles/aboutus/service-details.module.css";
 
 const serviceData = {
@@ -25,6 +26,24 @@ const serviceData = {
       "Driver Bata is ₹500/day (from 6:00 AM to 10:00 PM).",
       "If travel extends before 6:00 AM or after 10:00 PM, an extra driver bata of ₹700 will be applicable.",
       "Road toll and parking charges are additional.",
+    ],
+  },
+  "car-service": {
+    title: "Car Service",
+    heading: (
+      <>
+        Our 6+1 and 4+1 Seater cars <br />
+        are perfect for small groups, <br />
+        couples, or family trips.
+      </>
+    ),
+    image: carImg,
+    points: [
+      "AC and Non-AC rides available.",
+      "Minimum distance: 300 km per day.",
+      "Driver Bata: ₹500/day (from 6:00 AM to 10:00 PM).",
+      "Extended hours: If travel extends before 6:00 AM or after 10:00 PM, an extra driver bata of ₹700 applies.",
+      "Additional charges: Road toll and parking charges extra.",
     ],
   },
   bus21_25: {
@@ -74,13 +93,24 @@ const Page = () => {
   const searchParams = useSearchParams();
   const serviceParam = searchParams.get("service");
   const [busCurrent, setBusCurrent] = useState("bus21_25");
-  const content =
-    serviceParam === "bus" ? serviceData[busCurrent] : serviceData["tempo"];
+
+  let content;
+  if (serviceParam === "bus") {
+    content = serviceData[busCurrent];
+  } else if (serviceParam === "car-service") {
+    content = serviceData["car-service"];
+  } else {
+    content = serviceData["tempo"];
+  }
 
   return (
     <div className={styles.container}>
       {/* Service Details */}
-      <div className={styles.serviceDetails}>
+      <div
+        className={`${styles.serviceDetails} ${
+          serviceParam === "car-service" ? styles.carService : ""
+        }`}
+      >
         <div className={styles.imageSection}>
           <Image
             src={content.image}
@@ -115,7 +145,7 @@ const Page = () => {
             </ol>
           )}
 
-          {/* Fixed Color Buttons */}
+          {/* Bus buttons */}
           {serviceParam === "bus" && (
             <div className={styles.busButtons}>
               <button

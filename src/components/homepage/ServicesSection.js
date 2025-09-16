@@ -40,8 +40,7 @@ export default function ServicesSection() {
 
   // Handle card click
   const handleClick = (link) => {
-    if (link === "car-service") router.push("/");
-    else router.push(`/servicedetails?service=${link}`);
+    router.push(`/servicedetails?service=${link}`);
   };
 
   return (

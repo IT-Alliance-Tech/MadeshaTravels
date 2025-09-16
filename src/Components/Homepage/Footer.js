@@ -7,6 +7,7 @@ import "../../Styles/Footer.css";
 // Decorative images
 import leftImg from "../../assets/Images/back1.png";
 import rightImg from "../../assets/Images/back2.png";
+import Link from "next/link";
 
 const socialLinks = [
   { icon: <FaFacebookF />, href: "#" },
@@ -18,10 +19,10 @@ const footerLinks = [
   {
     title: "Company",
     links: [
-      { name: "Services", path: "/" },
-      { name: "Discover", path: "/" },
-      { name: "Gallery", path: "/" },
-      { name: "Testimonials", path: "/" },
+      { name: "Services", id: "services" },
+      { name: "Discover", id: "discover" },
+      { name: "Gallery", id: "gallery" },
+      { name: "Testimonials", id: "testimonials" },
     ],
   },
   {
@@ -34,7 +35,6 @@ const footerLinks = [
   },
 ];
 
-// ✅ Updated contact info from your screenshot
 const contactInfo = [
   "(+91) 9980942628",
   "madeshatourstravels@gmail.com",
@@ -46,6 +46,21 @@ const Footer = () => {
 
   const toggleSection = (name) => {
     setOpenSection(openSection === name ? null : name);
+  };
+
+  const handleScroll = (id) => {
+    if (!id) return;
+    const section = document.getElementById(id);
+    if (section) {
+      const headerOffset = 80; // adjust according to your header height
+      const elementPosition = section.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
   };
 
   return (
@@ -76,7 +91,7 @@ const Footer = () => {
 
         {/* Company */}
         <div
-          className={`footer-links ${
+          className={`footer-links company-links ${
             openSection === "company" ? "active" : ""
           }`}
         >
@@ -84,7 +99,9 @@ const Footer = () => {
           <ul>
             {footerLinks[0].links.map((link, i) => (
               <li key={i}>
-                <a href="#">{link?.name}</a>
+                <a onClick={() => handleScroll(link.id)}>
+                  {link.name}
+                </a>
               </li>
             ))}
           </ul>

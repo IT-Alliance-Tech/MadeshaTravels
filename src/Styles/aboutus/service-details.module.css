@@ -31,15 +31,15 @@
 /* ================= Main Service Layout ================= */
 .serviceDetails {
   display: flex;
-  align-items: flex-start;         /* 🔥 keeps content aligned at top */
+  align-items: flex-start;         /* keeps content aligned at top */
   justify-content: space-between;
-  gap: 40px;                       /* 🔥 reduced gap for better balance */
+  gap: 40px;                       
   flex-wrap: nowrap;
 }
 
 .imageSection,
 .contentSection {
-  flex: 0 0 50%;                   /* 🔥 strict 50% each */
+  flex: 0 0 50%;                   
   max-width: 50%;
   display: flex;
   flex-direction: column;
@@ -48,17 +48,25 @@
 /* ================= Image ================= */
 .imageSection img {
   width: 100%;
-  height: auto;                    /* 🔥 prevent stretching */
+  height: auto;                    
   border-radius: 40px;
   object-fit: cover;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* ================= Car Service (special case) ================= */
+.carService .imageSection img {
+  object-fit: contain;            
+  border-radius: 20px;   /* ✅ Rounded corners for car service */
+  box-shadow: none;                
+  background: none;                
+}
+
 /* ================= Content ================= */
 .contentSection {
   justify-content: flex-start;
-  padding: 0 20px;                 /* 🔥 reduced top padding */
-  margin-top: -10px;               /* 🔥 nudges content upward */
+  padding: 0 20px;                 
+  margin-top: -10px;               
 }
 
 .subheading {
@@ -95,22 +103,22 @@
 .busBlock {
   background: none;
   padding: 0;
-  margin-bottom: 15px;             /* 🔥 adds spacing between blocks */
+  margin-bottom: 15px;             
   box-shadow: none;
 }
 
 .busBlock h3 {
   font-size: 20px;
   font-weight: 600;
-  margin-bottom: 8px;              /* 🔥 slightly more space under heading */
+  margin-bottom: 8px;              
   color: #673AB7;
 }
 
 .busBlock p {
   font-size: 15px;
   color: #444;
-  margin-bottom: 14px;             /* 🔥 more breathing room between paragraphs */
-  line-height: 1.6;                /* 🔥 better readability */
+  margin-bottom: 14px;             
+  line-height: 1.6;                
 }
 
 /* ================= Bus Buttons ================= */
@@ -150,24 +158,73 @@
 /* ================= Responsive ================= */
 @media (max-width: 768px) {
   .serviceDetails {
-    flex-direction: column;         /* 🔥 stack on small screens */
-    gap: 20px;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 15px;  /* reduced space before footer */
   }
 
   .imageSection,
   .contentSection {
     flex: 1 1 100%;
     max-width: 100%;
-    width: auto;
+    width: 100%;
+  }
+
+  .imageSection img {
+    max-width: 90%;
+    margin: 0 auto;
     height: auto;
+    border-radius: 20px; /* smaller radius for mobile */
+  }
+
+  .contentSection {
+    padding: 0 15px;
+    margin-top: 0;
+    text-align: center;
   }
 
   .heading {
-    font-size: 24px;
+    font-size: 22px;
+    line-height: 1.4;
+  }
+
+  /* ===== Tempo & Car (use same Figma style) ===== */
+  .tempoService .contentSection,
+  .carService .contentSection {
+    text-align: center;
+  }
+
+  /* ===== Bus Services in Mobile ===== */
+  .busService .contentSection {
+    text-align: left;  
+    padding: 0 15px;
+  }
+
+  .busService .list {
+    padding-left: 0;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .busService .busBlock {
+    text-align: left;
+    margin: 0 0 20px 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee; 
+  }
+
+  .busButtons {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
   }
 
   .busBtn {
-    width: 100%;
-    max-width: 155px;
+    width: auto;
+    min-width: 140px;
+    max-width: 100%;
   }
 }

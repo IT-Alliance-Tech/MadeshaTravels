@@ -1,11 +1,12 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
-import Logo from "../../assets/image/madeshalogo.svg"; // adjust path
+import Logo from "../../assets/image/madeshalogo.svg"; 
 import "../../Styles/Header.css";
 
-// 🔹 Navigation Links Data
+
 const navLinks = [
   { name: "Home", path: "/" },           // Home navigates to home page
   { name: "Services", id: "services" },  // Scrolls to section with id="services"
@@ -15,9 +16,10 @@ const navLinks = [
 ];
 
 const Header = () => {
-  // Scroll handler for sections
   const handleScroll = (id) => {
+    console.log(id)
     if (!id) return;
+
     const section = document.getElementById(id);
     if (section) {
       const headerOffset = 80; // adjust according to your header height
@@ -32,9 +34,11 @@ const Header = () => {
     }
   };
 
+  
+
   return (
     <header className="header">
-      {/* Logo Section */}
+      {/* Logo */}
       <div className="logo">
         <Link href="/">
           <Image
@@ -55,6 +59,7 @@ const Header = () => {
             <li key={index}>
               {link.path ? (
                 <Link href={link.path}>{link.name}</Link>
+
               ) : (
                 <button
                   onClick={() => handleScroll(link.id)}
@@ -68,11 +73,9 @@ const Header = () => {
         </ul>
       </nav>
 
-      {/* Contact Us Button */}
+      {/* Contact Button */}
       <div className="contact-button">
-        <Link href="/contact" className="contact-btn">
-          Contact Us
-        </Link>
+        <Link href="/contact" className="contact-btn">Contact Us</Link>
       </div>
     </header>
   );

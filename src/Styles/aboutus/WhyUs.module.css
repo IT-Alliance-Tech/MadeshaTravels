@@ -91,7 +91,8 @@
   .whyUsSection {
     flex-direction: column;
     text-align: center;
-    padding: 40px 5%;
+    padding: 20px 5%; /* ⬅️ reduced from 40px to 20px */
+    margin-bottom: 0; /* ⬅️ added to remove extra space before footer */
   }
 
   .imageContainer {
@@ -100,7 +101,7 @@
   }
 
   .image {
-    margin: 0 auto 20px; /* ⬅️ reduced (was 25px) */
+    margin: 0 auto 15px; /* ⬅️ reduced from 20px to 15px */
     width: 100%;
     height: auto;
     border-radius: 20px;
@@ -109,7 +110,7 @@
   .content {
     max-width: 100%;
     margin-top: 0;
-    padding: 15px; /* ⬅️ reduced (was 20px) */
+    padding: 10px; /* ⬅️ reduced from 15px to 10px */
   }
 
   .subtitle {
@@ -118,7 +119,7 @@
 
   .heading {
     font-size: 22px;
-    margin-bottom: 15px; /* ⬅️ reduced */
+    margin-bottom: 12px; /* ⬅️ reduced */
   }
 
   .listItem {

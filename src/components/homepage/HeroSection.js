@@ -6,17 +6,16 @@ import hillImg from "../../assets/image/hero1.png";
 import gatewayImg from "../../assets/image/hero2.png";
 import tajmahalImg from "../../assets/image/hero3.png";
 
-// ✅ Background / Icons
+// Icons
 import suitcaseIcon from "../../assets/icons/icon.png";
 import arrowIcon from "../../assets/icons/object.png";
 import userIcon from "../../assets/icons/add-user 1.png";
 
-// Icons
 import { FaPaperPlane } from "react-icons/fa";
 
 export default function HeroSection() {
   return (
-    <section className={styles.hero}>
+    <section id="top-destination" className={styles.hero}>
       {/* Left Side */}
       <div className={styles.left}>
         <button className={styles.exploreBtn}>
@@ -33,12 +32,12 @@ export default function HeroSection() {
           We always make our customer happy by providing as many choices as
           possible
         </p>
-        {/* 🚀 Buttons removed */}
       </div>
 
       {/* Right Side */}
       <div className={styles.right}>
         <div className={styles.imageLayout}>
+          {/* Left Column */}
           <div className={styles.leftCol}>
             <div className={styles.imgCard}>
               <Image src={hillImg} alt="Hill Station" placeholder="blur" />
@@ -51,6 +50,7 @@ export default function HeroSection() {
             </div>
           </div>
 
+          {/* Right Column */}
           <div className={styles.rightCol}>
             <div className={styles.imgCardTall}>
               <Image
@@ -63,7 +63,7 @@ export default function HeroSection() {
             <Image
               height={40}
               width={40}
-              className={`${styles.userProfileIcon}`}
+              className={styles.userProfileIcon}
               src={userIcon}
               alt="userIcon"
             />
@@ -71,6 +71,7 @@ export default function HeroSection() {
         </div>
       </div>
 
+      {/* Arrow Section */}
       <div className={styles.decorArrows}>
         <Image src={arrowIcon} alt="Arrow Icon" width={20} height={20} />
       </div>
