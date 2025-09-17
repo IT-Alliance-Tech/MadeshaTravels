@@ -1,0 +1,261 @@
+.testimonials {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 80px 20px 40px 20px; /* ✅ reduced bottom padding */
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+
+  background-image: url("../assets/Images/Layer_1.png"); /* 👈 replace with your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  min-height: 650px;  /* adjust this value as per your design */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.testimonials::before {
+  content: "";
+  position: absolute;
+  width: 2506.2px;
+  height: 958.64px;
+  top: 5738px;
+  left: -757.53px;
+  background-image: url("../assets/Images/Layer_1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  opacity: 0.1;
+  transform: rotate(9.37deg);
+  z-index: 0; /* stay behind content */
+}
+
+.subtitle {
+  text-transform: uppercase;
+  font-weight: 872px;
+  height: 28px;
+  color: #6c3bce;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  font-size: 23px;
+}
+
+.title {
+  font-size: 44px;
+  font-weight: 872px;
+  height: 73px;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.testimonial-content {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-bottom: 40px;   /* ✅ added as per request */
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  min-height: 450px;   /* make this tall enough for longest review */
+}
+
+.testimonial-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #B39DDB;
+}
+
+.role {
+  font-weight: normal;
+  font-size: 28px;
+  color: #191825BF;
+}
+
+.stars {
+  display: flex;         /* enable flex layout */
+  justify-content: center;
+  align-items: center;
+  gap: 12px;             /* controls spacing between stars */
+  margin: 10px 0 20px;
+}
+
+.review {
+  font-size: 1.1rem;
+  color:#191825BF;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+
+  min-height: 120px;   /* 👈 fixes jump (adjust to longest review) */
+  display: flex;
+  align-items: center; /* keeps review vertically centered */
+  text-align: center;
+}
+
+
+/* ✅ Arrows (always at bottom, pushed more down) */
+.arrow {
+  position: absolute;
+  bottom: 70px;          /* pushed more down */
+  background: #6c3bce;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: translateY(0);      /* remove vertical centering */
+  bottom: 200px;
+}
+
+.arrow:hover {
+  background: #6c3bce;
+  color: white;
+}
+
+.arrow.left {
+  left: -150px;
+  font-size: 1rem;  
+}
+
+.arrow.right {
+  right: -150px;
+  font-size: 1rem;  
+}
+
+
+/* Dots */
+.dots {
+  position: absolute;
+  bottom: 0px;         /* fixed distance from bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 6px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dot.active {
+  background-color: #6c3bce;
+}
+
+/* Fade animation */
+.fade {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------------------- */
+/* ✅ Responsive styles   */
+/* ---------------------- */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .review {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  .arrow.left {
+    left: 40px;
+    bottom: -60px;  /* pushed more down */
+  }
+
+  .arrow.right {
+    right: 40px;
+    bottom: -60px;  /* pushed more down */
+  }
+}
+
+/* Fix arrows merging with footer around 932px */
+@media (max-width: 992px) and (min-width: 901px) {
+  .arrow.left,
+  .arrow.right {
+    bottom: 40px;  /* move arrows slightly up from footer */
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .testimonials {
+    padding: 50px 15px 30px 15px; /* ✅ reduced bottom padding for mobile too */
+  }
+
+  .testimonial-content {
+    min-height: 320px;      /* shrink block height */
+    padding-bottom: 50px;   /* leave just enough space for dots */
+  }
+
+  .testimonial-img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .name {
+    font-size: 21px;
+    color: #673AB7;
+  }
+  
+  .role {
+    font-size: 21px;   /* bigger role */
+  }
+
+  .review {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+
+  /* ✅ Arrows adjusted for mobile */
+  .arrow {
+    top: auto;            /* disable vertical centering */
+    bottom: 100px;        /* fixed position above dots */
+    transform: none;
+    padding: 10px;        /* smaller size */
+  }
+
+  .arrow.left {
+    left: 20px;           /* keep gap from edge */
+  }
+  .arrow.right {
+    right: 20px;
+  }
+}

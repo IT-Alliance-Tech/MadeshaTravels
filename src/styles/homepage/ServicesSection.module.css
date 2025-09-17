@@ -1,15 +1,17 @@
 /* ================= SERVICES SECTION ================= */
 .servicesSection {
   display: flex;
-  gap: 28px;  /* reduced gap between text & cards */
-  padding: 80px 8% 80px 12%; /* ✅ shifted more right */
-  flex-wrap: nowrap; 
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
+  gap: 32px;                       
+  padding: 80px 6%;                
+  flex-wrap: nowrap;
+  overflow-x: auto;                
+  scroll-snap-type: x mandatory;   
+  scroll-padding: 0 20px;          
+  scroll-behavior: smooth;
   position: relative;
   font-family: "Rubik", sans-serif;
 
-  /* hide scrollbar but keep scroll working */
+  /* hide scrollbar but keep scroll */
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -17,13 +19,13 @@
   display: none;
 }
 
-/* Left text content */
+/* Heading block */
 .textContent {
-  flex: 0 0 auto;        
-  min-width: 260px;       /* ✅ wider for better look */
-  max-width: 380px;       
-  scroll-snap-align: start;
-  margin-left: 20px;      /* ✅ extra push from edge */
+  flex: 0 0 auto;
+  min-width: 260px;                
+  max-width: 360px;
+  scroll-snap-align: center;       
+  margin-left: 40px;               
 }
 
 .smallHeading {
@@ -40,87 +42,92 @@
   font-weight: 700;
   color: #222;
   line-height: 1.4;
+  margin-left: 0;
+  text-align: left;
 }
 
-/* Right side cards */
+/* Cards inline scroll */
 .cardsWrapper {
   display: flex;
-  gap: 20px;   /* ✅ reduced spacing between cards */
+  gap: 24px;                       
+  flex: 0 0 auto;
 }
 
 .card {
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(179, 157, 219, 0.35); 
-  padding: 22px 16px;
-  width: 330px;  /* ✅ slightly smaller for tighter layout */
-  height: 360px;
+  box-shadow: 0 6px 18px rgba(179, 157, 219, 0.35);
+  padding: 28px 20px;
+  width: 260px;   /* ⬅️ decreased width (was 300px) */
+  min-height: 320px;   
   flex: 0 0 auto;
   text-align: center;
-  scroll-snap-align: start;
+  scroll-snap-align: center;       
   border: 1px solid #e9e9e9;
   transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between; 
   align-items: center;
 }
-
 .card:hover {
   transform: translateY(-6px);
   box-shadow: 0 10px 28px rgba(179, 157, 219, 0.55);
 }
 
 .cardImg {
-  width: 90px;
-  height: 90px;
+  width: 85px;   /* ⬅️ slightly smaller to match reduced width */
+  height: 85px;
   object-fit: contain;
   margin-bottom: 18px;
 }
 
 .card h3 {
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 600;
   color: #222;
-  margin-bottom: 12px;
+  margin-bottom: 6px; 
 }
 
 .card p {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 400;
   color: #666;
   line-height: 1.6;
-  max-width: 260px;
+  max-width: 220px;  /* ⬅️ adjusted to avoid overflow */
+  margin-bottom: 0; 
 }
 
 /* ================== RESPONSIVE ================== */
 @media (max-width: 992px) {
   .servicesSection {
-    padding: 60px 6% 60px 10%;
-    gap: 24px;
+    padding: 60px 5%;
+    gap: 28px;
   }
-
+  .textContent {
+    margin-left: 20px;             
+  }
   .mainHeading {
     font-size: 28px;
   }
-
-  .textContent {
-    max-width: 320px;
-    margin-left: 10px;
-  }
-
-  .card {
-    width: 300px;
-    height: auto;
-  }
 }
 
+/* ✅ Mobile stacked layout */
 @media (max-width: 600px) {
   .servicesSection {
-    flex-direction: column;
-    padding: 40px 5%;
-    gap: 20px;
-    align-items: center;  /* ✅ centers everything in column */
+    flex-direction: column;         
+    align-items: center;
+    overflow: visible;              
+    gap: 30px;
+    padding: 40px 20px;
+  }
+
+  .textContent {
+    margin: 0 auto;
+    text-align: center;
+    min-width: unset;
+    max-width: 100%;
+    scroll-snap-align: unset;
   }
 
   .mainHeading {
@@ -128,39 +135,36 @@
     text-align: center;
   }
 
-  .textContent {
-    min-width: 100%;
-    max-width: 100%;
-    margin-left: 0;
-    text-align: center;
-  }
-
   .cardsWrapper {
-    flex-direction: column;   /* ✅ stack cards vertically */
-    align-items: center;      /* ✅ center them horizontally */
-    justify-content: center;
-    gap: 16px;
+    display: flex;
+    flex-direction: column;         
+    gap: 20px;
     width: 100%;
   }
 
   .card {
-    width: 90%;
-    max-width: 280px;
-    height: auto;
-    padding: 20px 15px;
+    width: 100%;                   
+    max-width: 360px; /* ⬅️ narrower but keeps good look */
+    margin: 0 auto;
+    padding: 24px 18px;
+    min-height: auto;              
+    scroll-snap-align: unset;
+    justify-content: flex-start;   
   }
 
   .cardImg {
-    width: 70px;
+    width: 70px;                   
     height: 70px;
   }
 
   .card h3 {
     font-size: 17px;
+    margin-bottom: 6px; 
   }
 
   .card p {
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.5;
+    max-width: 100%;
   }
 }

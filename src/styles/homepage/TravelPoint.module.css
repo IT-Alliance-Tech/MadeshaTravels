@@ -1,34 +1,43 @@
+/* ================ TRAVEL POINT SECTION ================ */
 .travelPointSection {
-  padding: 80px 8% 40px 8%; /* ✅ reduced bottom padding to avoid big gap */
+  padding: 80px 8% 40px 8%;
 }
 
 .container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 80px;
   flex-wrap: wrap;
 }
 
 .imageWrapper {
   flex: 1;
-  width: 550px;     /* fixed width */
-  height: 550px;    /* fixed height */
+  max-width: 1000px;  
+  max-height: 600px;  
+  width: 100%;
+  height: auto;
   position: relative;
   overflow: hidden;
+  margin: 0 auto;       /* ✅ centered */
+  left: 0 !important;   /* ✅ remove offset */
+  right: 0;
 }
 
-/* ✅ Fixed 550x550 with rounded top-right + bottom-left corners */
 .travelImage {
+  display: block;
+  margin: 0 auto;       /* ✅ centered */
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 0 100px 0 100px; /* TL | TR | BR | BL */
+  height: auto;
+  max-width: 500px; /* ✅ fixed max width */
+  border-radius: 0 20% 0 20%;
 }
 
 .content {
   flex: 1;
   max-width: 500px;
+  text-align: center;   /* ✅ center align main content */
+  margin: 0 auto;       /* ✅ keep it centered */
 }
 
 .smallHeading {
@@ -38,6 +47,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 12px;
+  text-align: center;   /* ✅ center heading */
 }
 
 .mainHeading {
@@ -45,6 +55,7 @@
   font-weight: 700;
   color: #222;
   margin-bottom: 16px;
+  text-align: center;   /* ✅ center heading */
 }
 
 .description {
@@ -52,20 +63,38 @@
   line-height: 1.6;
   color: #555;
   margin-bottom: 32px;
+  text-align: center;   /* ✅ center text */
 }
 
+/* ✅ Feature cards also center aligned */
+.smart-destination,
+.schedule-trip,
+.easy-planner {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Keep stat cards centered */
 .statsGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  justify-content: center; /* ✅ center grid */
 }
 
+/* Stat card styles */
 .statCard {
+  width: 204px;
+  height: 151px;
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   padding: 24px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
 }
 
 .statCard h3 {
@@ -80,45 +109,154 @@
   color: #666;
 }
 
+/* Remove yellow icon completely */
+.yellowCircle {
+  display: none !important;
+}
+
+/* ================ RESPONSIVE ================= */
+
+/* ✅ Fix for large screens (prevent image cut) */
+@media (min-width: 1600px) {
+  .imageWrapper {
+    max-height: none;
+  }
+  .travelImage {
+    height: auto;
+    max-width: 500px;
+  }
+}
+
 /* Tablet */
 @media (max-width: 992px) {
   .container {
     flex-direction: column;
-    text-align: center;
+    gap: 40px;
+    align-items: center;
   }
 
   .mainHeading {
     font-size: 26px;
   }
+
+  .imageWrapper {
+    max-width: 800px;
+    max-height: 500px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;  /* ✅ stays centered */
+  }
+
+  .travelImage {
+    border-radius: 0 18% 0 18%;
+    max-width: 500px; /* ✅ keep fixed */
+  }
 }
 
-/* ✅ Mobile Updated */
+/* ✅ FIX: Center everything below 977px */
+@media (max-width: 977px) {
+  /* container centering */
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    text-align: center;
+  }
+
+  /* image wrapper */
+  .imageWrapper {
+    position: relative;
+    margin: 0 auto !important;
+    width: 100%;
+    max-width: 520px;
+    max-height: none;
+    overflow: hidden;
+  }
+
+  .travelImage {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+  }
+
+  /* content centered */
+  .content {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 720px;
+    width: 100%;
+  }
+
+  .smallHeading,
+  .mainHeading,
+  .description {
+    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Stats / feature grid now SINGLE column */
+  .statsGrid {
+    display: grid;
+    grid-template-columns: 1fr; /* ✅ stack vertically */
+    gap: 20px;
+    justify-content: center;
+    justify-items: center;
+    width: 100%;
+  }
+
+  .statCard {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  /* Feature blocks */
+  .smart-destination,
+  .schedule-trip,
+  .easy-planner,
+  .members-backups {
+    display: block;
+    width: 100%;
+    max-width: 520px;
+    margin: 12px auto;
+    text-align: center;
+  }
+}
+
+/* Mobile */
 @media (max-width: 600px) {
   .container {
     flex-direction: column;
     gap: 24px;
     text-align: center;
   }
-  .travelPointSection {
-  padding: 0px; /* ✅ reduced bottom padding to avoid big gap */
-}
 
-  /* Image on top */
+  .travelPointSection {
+    padding: 20px;
+  }
+
   .imageWrapper {
     width: 100%;
     height: auto;
     max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
   }
 
   .travelImage {
     width: 100%;
-    height: auto;
-    border-radius: 0 60px 0 60px; /* softer corners for mobile */
+    max-width: 500px;
+    border-radius: 0 15% 0 15%;
+    margin: 0 auto;
   }
 
-  /* Text below image */
   .content {
     max-width: 100%;
+    text-align: center; /* ✅ keep centered */
   }
 
   .smallHeading {
@@ -138,13 +276,15 @@
     margin-bottom: 20px;
   }
 
-  /* Cards stacked full width */
   .statsGrid {
     grid-template-columns: 1fr;
     gap: 16px;
+    justify-content: center; /* ✅ center grid */
   }
 
   .statCard {
+    width: 100%;
+    height: auto;
     padding: 18px;
     border-radius: 12px;
   }

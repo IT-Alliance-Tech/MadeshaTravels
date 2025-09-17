@@ -1,16 +1,51 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import busImg from "../../assets/image/bus.png";
-import flightImg from "../../assets/image/flight.png";
-import trainImg from "../../assets/image/train.png";
-import hotelImg from "../../assets/image/hotel.png";
+import carImg from "../../assets/image/car.png";
+import tempoImg from "../../assets/image/tempo.png";
 import styles from "../../styles/homepage/ServicesSection.module.css";
 
 export default function ServicesSection() {
+  const router = useRouter();
+
+  // Array of services
+  const services = [
+    {
+      id: 1,
+      title: "Bus Services",
+      description:
+        "Budget-friendly connectivity with extensive networks reaching even remote towns.",
+      img: busImg,
+      link: "bus", // <-- link to your Bus Service page
+    },
+    {
+      id: 2,
+      title: "Car Services",
+      description:
+        "Premium car rental services with professional drivers for business, travel, and personal needs.",
+      img: carImg,
+      link: "car-service", // <-- link to your Car Service page
+    },
+    {
+      id: 3,
+      title: "Tempo Traveller Services",
+      description:
+        "Comfortable and reliable Tempo Traveller rentals for group trips, office outings, and family tours.",
+      img: tempoImg,
+      link: "tempo", // <-- link to your Tempo Service page
+    },
+  ];
+
+  // Handle card click
+  const handleClick = (link) => {
+    router.push(`/servicedetails?service=${link}`);
+  };
+
   return (
-    <section className={styles.servicesSection}>
-      {/* Left Content (now scrolls too) */}
+    <section id="services" className={styles.servicesSection}>
+      {/* Left Content */}
       <div className={styles.textContent}>
         <p className={styles.smallHeading}>SERVICES</p>
         <h2 className={styles.mainHeading}>
@@ -18,39 +53,24 @@ export default function ServicesSection() {
         </h2>
       </div>
 
-      {/* Cards (part of same scroll) */}
-      <div className={styles.card}>
-        <Image src={busImg} alt="Bus Services" className={styles.cardImg} />
-        <h3>Bus Services</h3>
-        <p>
-          Budget-friendly connectivity with extensive networks reaching even
-          remote towns.
-        </p>
-      </div>
-
-      <div className={styles.card}>
-        <Image src={flightImg} alt="Flight Services" className={styles.cardImg} />
-        <h3>Flight Services</h3>
-        <p>
-          Fastest travel option connecting metros, tier-2 cities, and tourist
-          hubs nationwide.
-        </p>
-      </div>
-
-      <div className={styles.card}>
-        <Image src={trainImg} alt="Train Services" className={styles.cardImg} />
-        <h3>Train Services</h3>
-        <p>
-          Affordable and comfortable travel with India's vast railway network.
-        </p>
-      </div>
-
-      <div className={styles.card}>
-        <Image src={hotelImg} alt="Hotel Services" className={styles.cardImg} />
-        <h3>Hotel Services</h3>
-        <p>
-          Find the best deals on hotels with comfort and convenience guaranteed.
-        </p>
+      {/* Cards Wrapper */}
+      <div className={styles.cardsWrapper}>
+        {services.map((service) => (
+          <div
+            key={service.id}
+            className={styles.card}
+            onClick={() => handleClick(service.link)}
+            style={{ cursor: "pointer" }} // Show pointer on hover
+          >
+            <Image
+              src={service.img}
+              alt={service.title}
+              className={styles.cardImg}
+            />
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
