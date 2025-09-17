@@ -140,35 +140,33 @@
 }
 
 .footer-contact {
-  padding-left: 25px;
-}
-
-.footer-contact p {
-  margin: 6px 0;
-  line-height: 1.7;
-  color: #555;
-  font-size: 0.95rem;
+  /* ✅ removed padding-left */
 }
 
 /* ---------------- RESPONSIVE ---------------- */
 
-/* ✅ Fix around 957px: switch to 2 columns so Company & Contact stack neatly */
-@media (max-width: 960px) {
-  .footer-container {
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-  }
-}
-
-/* ✅ Extra separation around 722px so it doesn’t merge with testimonials */
+/* ✅ Extra separation around 740px so it doesn’t merge with testimonials */
 @media (max-width: 740px) {
   .footer {
     margin-top: 100px; /* adds safe spacing from testimonials */
   }
 }
 
-/* Mobile (≤600px) */
-@media (max-width: 600px) {
+/* ✅ Medium screens fix: 768px–1015px */
+@media (min-width: 768px) and (max-width: 1015px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr; /* two columns: Company + Contact */
+    gap: 30px;
+  }
+
+  /* Force Meet Us to drop below in full width */
+  .footer-container .footer-meetus {
+    grid-column: 1 / -1; /* span across both columns */
+  }
+}
+
+/* ✅ Mobile view now starts at 768px (accordion style) */
+@media (max-width: 768px) {
   .footer {
     padding: 25px 15px 20px;
     align-items: flex-start;

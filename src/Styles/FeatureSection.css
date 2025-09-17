@@ -1,6 +1,6 @@
 .feature-section {
   display: grid;
-  grid-template-columns: 1fr 693px; /* desktop: left flexible, right fixed */
+  grid-template-columns: 1fr 600px; /* desktop: left flexible, right fixed */
   align-items: center;
   gap: 50px;
   padding: 60px 0;
@@ -37,6 +37,10 @@
   color: #555;
   line-height: 1.6;
   margin-bottom: 30px;
+  /* ✅ Limit width for "We offer best services" content */
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .feature-card {
@@ -99,7 +103,6 @@
 .feature-right img {
   width: 650px;
   height: 550px;
-  object-fit: cover;
   border-radius: 50px; /* ⬅️ curved corners added */
   border-top-left-radius: 346.5px; /* original curvature */
   border-bottom-left-radius: 346.5px;
@@ -164,12 +167,11 @@
   }
 }
 
-/* ✅ Fix at 960px–990px: center titles and right image */
-@media (min-width: 960px) and (max-width: 990px) {
+/* ✅ Fix: everything BELOW 1022px should be centered */
+@media (max-width: 1022px) {
   .feature-left {
     text-align: center;
     margin: 0 auto;
-    max-width: 100%;
   }
 
   .features-subtitle,
@@ -180,12 +182,15 @@
     margin-right: auto;
   }
 
-  .feature-right {
-    justify-content: center; /* center the image */
+  .feature-card {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    align-items: center; /* center icon + text */
   }
 
-  .feature-right img {
-    max-width: 550px; /* slightly smaller for balance */
-    height: auto;
+  .feature-card h4,
+  .feature-card p {
+    text-align: center;
   }
 }

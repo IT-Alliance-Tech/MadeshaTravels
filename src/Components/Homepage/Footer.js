@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa"; // ✅ Added WhatsApp
 import "../../Styles/Footer.css";
 
 // Decorative images
@@ -17,6 +17,10 @@ const socialLinks = [
   { 
     icon: <FaInstagram />, 
     href: "https://www.instagram.com/madesha_tours_travels/" 
+  },
+  { 
+    icon: <FaWhatsapp />, 
+    href: "https://wa.me/919980942628" // ✅ WhatsApp link
   },
 ];
 
@@ -88,7 +92,13 @@ const Footer = () => {
           </p>
           <div className="social-icons">
             {socialLinks.map((item, index) => (
-              <a key={index} href={item.href} target="_blank" rel="noopener noreferrer">
+              <a 
+                key={index} 
+                href={item.href} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label={item.icon.type.displayName || "social-link"} // ✅ accessibility
+              >
                 {item.icon}
               </a>
             ))}
