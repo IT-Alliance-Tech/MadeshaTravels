@@ -248,3 +248,37 @@
     max-width: 100%;
   }
 }
+
+/* ================= Tablet Fix for Tempo & Bus Services ================= */
+/* ✅ Covers 769px – 992px (including 812px, 837px, 877px, etc.) */
+@media (max-width: 992px) and (min-width: 769px) {
+  .tempoService .serviceDetails,
+  .busService .serviceDetails {
+    flex-direction: column;   /* stack vertically */
+    gap: 25px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .tempoService .imageSection,
+  .busService .imageSection,
+  .tempoService .contentSection,
+  .busService .contentSection {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .tempoService .imageSection img,
+  .busService .imageSection img {
+    max-width: 550px;
+    margin: 0 auto;
+    border-radius: 25px;
+  }
+
+  .tempoService .contentSection,
+  .busService .contentSection {
+    margin-top: 15px;
+    text-align: center;
+    padding: 0 20px;
+  }
+}

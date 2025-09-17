@@ -78,7 +78,6 @@
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease;
-  /* ⬇️ removed fixed min-height so cards shrink naturally */
 }
 
 .card:hover {
@@ -94,18 +93,18 @@
 /* ================= CARD CONTENT ================= */
 
 .cardContent {
-  padding: 20px 16px; /* reduced padding */
+  padding: 20px 16px;
   display: flex;
   text-align: center;
   flex-direction: column;
-  gap: 4px; /* tighter spacing */
+  gap: 4px;
 }
 
 .cardHeader {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 0; /* removed extra bottom margin */
+  margin-bottom: 0;
 }
 
 .cardHeader h3 {
@@ -149,11 +148,6 @@
   .destinationSection {
     padding: 40px 4%;
   }
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
   .mainHeading {
     font-size: 24px;
   }
@@ -165,6 +159,12 @@
   }
   .cardImg {
     height: 180px;
+  }
+  
+  /* ✅ Keep heading and arrows side by side */
+  .header {
+    flex-wrap: nowrap;
+    gap: 10px;
   }
 }
 

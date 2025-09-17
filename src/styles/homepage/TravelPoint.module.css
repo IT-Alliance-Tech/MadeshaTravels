@@ -100,11 +100,21 @@
 
 /* ================ RESPONSIVE ================= */
 
+/* ✅ Fix for large screens (prevent image cut) */
+@media (min-width: 1600px) {
+  .imageWrapper {
+    max-height: none;
+  }
+  .travelImage {
+    height: auto;
+    object-fit: contain;
+  }
+}
+
 /* Tablet */
 @media (max-width: 992px) {
   .container {
     flex-direction: column;
-    text-align: center;
     gap: 40px;
   }
 
@@ -125,6 +135,121 @@
   .travelImage {
     border-radius: 0 18% 0 18%;
     object-fit: cover;
+  }
+}
+
+/* ✅ Fix for screens 972px and below */
+@media (max-width: 972px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .content {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .imageWrapper {
+    max-width: 100%;
+    max-height: none;
+    width: 100%;
+    height: auto;
+    left: 0;
+    top: 0;
+    margin: 0 auto;
+    overflow: visible;
+  }
+
+  .travelImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0 18% 0 18%;
+  }
+}
+
+/* ✅ Fix for screens 922px and below */
+@media (max-width: 922px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .content {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .imageWrapper {
+    max-width: 100%;
+    max-height: none;
+    width: 100%;
+    height: auto;
+    left: 0;
+    top: 0;
+    margin: 0 auto;
+    overflow: visible;
+  }
+
+  .travelImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0 18% 0 18%;
+  }
+}
+
+/* ✅ Fix for screens 917px and below */
+@media (max-width: 917px) {
+  .content {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .imageWrapper {
+    max-width: 100%;
+    max-height: none;
+    width: 100%;
+    height: auto;
+    left: 0;
+    top: 0;
+    margin: 0 auto;
+    overflow: visible;
+  }
+
+  .travelImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0 18% 0 18%;
+  }
+}
+
+/* ✅ Special fix: Only content center-align at 872px */
+@media (max-width: 872px) {
+  .content {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .imageWrapper {
+    max-width: 100%;
+    max-height: none;
+    width: 100%;
+    height: auto;
+    left: 0;
+    top: 0;
+    margin: 0 auto;
+  }
+
+  .travelImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0 18% 0 18%;
   }
 }
 

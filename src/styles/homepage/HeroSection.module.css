@@ -57,9 +57,10 @@
   color: #000;
 }
 
+/* Updated color for Top Destination only */
 .left h1 .top,
 .left h1 .destination {
-  color: #4b56d2;
+  color: #673AB7; /* ✅ updated as requested */
 }
 
 .left h1 .india {

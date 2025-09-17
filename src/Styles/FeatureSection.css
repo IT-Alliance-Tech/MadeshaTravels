@@ -163,3 +163,29 @@
     background: #f3eaff;
   }
 }
+
+/* ✅ Fix at 960px–990px: center titles and right image */
+@media (min-width: 960px) and (max-width: 990px) {
+  .feature-left {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .features-subtitle,
+  .features-title,
+  .features-desc {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .feature-right {
+    justify-content: center; /* center the image */
+  }
+
+  .feature-right img {
+    max-width: 550px; /* slightly smaller for balance */
+    height: auto;
+  }
+}
