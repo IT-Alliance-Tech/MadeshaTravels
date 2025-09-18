@@ -12,55 +12,79 @@ export default function EnquiryForm() {
   });
 
   const [loading, setLoading] = useState(false); // Loading state
+  const [status, setStatus] = useState("");
 
   const handleSubmit = async (e) => {
+    // e.preventDefault();
+
+    // // Start loading
+    // setLoading(true);
+
+    // const formDataToSend = new FormData();
+    // formDataToSend.append("name", formData.name);
+    // formDataToSend.append("phone", formData.phone);
+    // formDataToSend.append("email", formData.email);
+    // formDataToSend.append("interested", formData.interested);
+
+    // try {
+    //   const response = await fetch(
+    //     "https://script.google.com/macros/s/AKfycbxJpcSgmsC3pfFKiMlGVSJR8XUCT9osXF7i98Q3Xn03nfUC9Yp2UjYABj7fmgsm6VA/exec",
+    //     {
+    //       method: "POST",
+    //       body: formDataToSend,
+    //     }
+    //   );
+
+    //   if (!response.ok) throw new Error("Network response was not ok");
+
+    //   // Wait for 3 seconds before clearing
+    //   setTimeout(() => {
+    //     alert("Enquiry submitted successfully!");
+    //     setFormData({
+    //       name: "",
+    //       interested: "",
+    //       email: "",
+    //       phone: "",
+    //     });
+    //     setLoading(false);
+    //   }, 3000);
+    // } catch (error) {
+    //   console.error("Fetch error:", error);
+    //   alert("Something went wrong!");
+    //   setLoading(false);
+    // }
+
     e.preventDefault();
-
-    // Start loading
-    setLoading(true);
-
-    const formDataToSend = new FormData();
-    formDataToSend.append("name", formData.name);
-    formDataToSend.append("phone", formData.phone);
-    formDataToSend.append("email", formData.email);
-    formDataToSend.append("interested", formData.interested);
+    setStatus("Submitting...");
 
     try {
-      const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbxJpcSgmsC3pfFKiMlGVSJR8XUCT9osXF7i98Q3Xn03nfUC9Yp2UjYABj7fmgsm6VA/exec",
-        {
-          method: "POST",
-          body: formDataToSend,
-        }
-      );
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
-      if (!response.ok) throw new Error("Network response was not ok");
+      const result = await response.json();
 
-      // Wait for 3 seconds before clearing
-      setTimeout(() => {
-        alert("Enquiry submitted successfully!");
-        setFormData({
-          name: "",
-          interested: "",
-          email: "",
-          phone: "",
-        });
-        setLoading(false);
-      }, 3000);
+      if (result.status === "success") {
+        setStatus("Message sent successfully!");
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        setStatus("Something went wrong.");
+      }
     } catch (error) {
-      console.error("Fetch error:", error);
-      alert("Something went wrong!");
-      setLoading(false);
+      console.error(error);
+      setStatus("Error submitting form.");
     }
   };
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  console.log(formData);
 
   return (
     <section className={styles.enquirySection}>
@@ -112,6 +136,7 @@ export default function EnquiryForm() {
           >
             {loading ? "Submitting..." : "Submit"}
           </button>
+          {status && <p className="mt-4">{status}</p>}
         </form>
       </div>
 
