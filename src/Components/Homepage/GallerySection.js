@@ -1,11 +1,12 @@
 "use client";
 import React from "react";
-import "../../Styles/GallerySection.css";
+import "../../styles/GallerySection.css";
 
 import img1 from "../../assets/image/gallery1.png";
 import img2 from "../../assets/image/g1.png";
 import img3 from "../../assets/image/gallery3.png";
 import img4 from "../../assets/image/bus2.png";
+import Image from "next/image";
 
 // ✅ Gallery data array
 const galleryImages = [
@@ -29,7 +30,7 @@ const GallerySection = () => {
         {/* ✅ Map through images */}
         {galleryImages.map((img) => (
           <div key={img.id} className={`gallery-item ${img.className}`}>
-            <img src={img.src} alt={img.alt} />
+            <Image src={img.src} alt={img.alt} width={100} height={100} />
           </div>
         ))}
       </div>

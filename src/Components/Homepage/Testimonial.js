@@ -9,7 +9,8 @@ import test2 from "../../assets/Images/test1.png";
 import test3 from "../../assets/Images/test.png";
 import test4 from "../../assets/Images/5.png";
 // ✅ Import CSS
-import "../../Styles/Testimonial.css";
+import "../../styles/Testimonial.css";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -67,10 +68,11 @@ export default function Testimonials() {
       <h2 className="title">Trust our clients</h2>
 
       <div className="testimonial-content fade">
-        <img
+        <Image
           src={testimonials[current].img.src}
           alt={testimonials[current].name}
           className="testimonial-img"
+           width={100} height={100}
         />
 
         <h3 className="name">

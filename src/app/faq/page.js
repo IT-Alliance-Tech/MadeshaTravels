@@ -43,8 +43,8 @@ export default function FaqSection() {
     <section className={styles.faqSection}>
       {/* Heading outside flex row */}
       <div className={styles.faqHeader}>
-        <p className={styles.faqSmallHeading}>FAQ'S</p>
-        <h2 className={styles.faqHeading}>Got Questions? We’ve Got Answers</h2>
+        <p className={styles.faqSmallHeading}>{"FAQ'S"}</p>
+        <h2 className={styles.faqHeading}>{"Got Questions? We’ve Got Answers"}</h2>
       </div>
 
       <div className={styles.faqContainer}>
