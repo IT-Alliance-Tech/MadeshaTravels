@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import styles from "../../styles/aboutus/Contact.module.css";
+import styles from "../../styles/aboutus/contact.module.css";
 
 // Icons
 import AddressIcon from "../../assets/icons/location.png";

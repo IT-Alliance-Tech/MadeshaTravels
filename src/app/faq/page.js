@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import styles from "../../styles/aboutus/FaqSection.module.css";
+import styles from "../../styles/aboutus/faqSection.module.css";
 import palaceImg from "../../assets/image/faq.png";
 import DownArrow from "@/assets/icons/downArrow";
 
