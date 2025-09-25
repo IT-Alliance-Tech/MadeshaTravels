@@ -5,8 +5,8 @@ import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import tempoImg from "../../assets/image/tempo2.png";
 import busImg from "../../assets/image/buss.png";
-import carImg from "../../assets/image/car11.png"; // ✅ Car image
-import styles from "../../styles/aboutus/service-details.module.css";
+import carImg from "../../assets/image/car11.png";
+import styles from "../../styles/aboutus/serviceDetails.module.css";
 
 const serviceData = {
   tempo: {
