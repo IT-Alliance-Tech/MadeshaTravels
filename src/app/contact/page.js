@@ -10,10 +10,10 @@ import EmailIcon from "../../assets/icons/Mail.png";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
+    name: null || "",
+    email: null || "",
+    phone: null || "",
+    message: null || "",
   });
 
   const [loading, setLoading] = useState(false);
