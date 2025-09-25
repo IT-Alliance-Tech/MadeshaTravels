@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import Logo from "../../assets/image/madeshalogo.svg"; 
-import "../../Styles/Header.css";
+import "../../styles/Header.css";
 
 
 const navLinks = [
