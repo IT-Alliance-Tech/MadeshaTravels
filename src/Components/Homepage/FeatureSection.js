@@ -6,6 +6,7 @@ import { MapPin, Calendar, CalendarCheck2 } from "lucide-react";
 import beachImg from "../../assets/Images/Background.jpg";
 
 import "../../Styles/FeatureSection.css";
+import Image from "next/image";
 
 const features = [
   {
@@ -60,7 +61,7 @@ const FeatureSection = () => {
 
       {/* Right Column */}
       <div className="feature-right">
-        <img src={beachImg.src} alt="Beach" />
+        <Image src={beachImg.src} alt="Beach" width={100} height={100} />
       </div>
     </section>
   );
