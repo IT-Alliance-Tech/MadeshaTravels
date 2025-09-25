@@ -3,8 +3,8 @@ import { Rubik } from "next/font/google";
 import "./globals.css";
 
 // Components
-import Header from "../components/homepage/Header";
-import Footer from "../components/homepage/Footer";
+import Header from "../components/homepage/navbar";
+import Footer from "../components/homepage/footerr";
 
 // Fonts
 const geistSans = Geist({
