@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import styles from "../../styles/aboutus/WhyUs.module.css";
+import styles from "../../styles/aboutus/whyUs.module.css";
 import hampiImg from "../../assets/image/hampi.png";
 
 const whyUsPoints = [
