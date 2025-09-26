@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa"; // ✅ Added WhatsApp
-import "../../styles/Footer.css";
+import "../../styles/footer.module.css";
 
 // Decorative images
 import leftImg from "../../assets/Images/back1.png";
