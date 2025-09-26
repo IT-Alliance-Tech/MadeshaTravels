@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import "../../styles/gallerySection.css";
+import "../../styles/gallerySection.module.css";
 
 import img1 from "../../assets/image/gallery1.png";
 import img2 from "../../assets/image/g1.png";

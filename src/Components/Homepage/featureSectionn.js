@@ -5,7 +5,7 @@ import { MapPin, Calendar, CalendarCheck2 } from "lucide-react";
 // ✅ Import image
 import beachImg from "../../assets/Images/Background.jpg";
 
-import "../../styles/featureSection.css";
+import "../../styles/featureSection.module.css";
 import Image from "next/image";
 
 const features = [
