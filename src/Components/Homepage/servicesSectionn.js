@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import busImg from "../../assets/image/bus.png";
 import carImg from "../../assets/image/car.png";
 import tempoImg from "../../assets/image/tempo.png";
-import styles from "../../styles/homepage/ServicesSection.module.css";
+import styles from "../../styles/homepage/servicesSection.module.css";
 
 export default function ServicesSection() {
   const router = useRouter();

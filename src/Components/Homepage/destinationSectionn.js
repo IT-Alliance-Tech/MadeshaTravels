@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useRef } from "react";
-import styles from "../../styles/homepage/DestinationSection.module.css";
+import styles from "../../styles/homepage/destinationSection.module.css";
 import munnarImg from "../../assets/image/hero1.png";
 import kedarnathImg from "../../assets/image/hero2.png";
 import keralaImg from "../../assets/image/des5.png";

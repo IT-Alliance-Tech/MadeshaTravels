@@ -1,13 +1,12 @@
-import HeroSection from "../components/homepage/HeroSection";
-import EnquiryForm from "../components/homepage/EnquiryForm";
-import ServicesSection from "../components/homepage/ServicesSection";
-import DestinationSection from "../components/homepage/DestinationSection";
-import TravelPoint from "../components/homepage/TravelPoint"; // ✅ import
-import Header from "@/components/homepage/navbar";
-import FeatureSection from "@/components/homepage/FeatureSection";
-import GallerySection from "@/components/homepage/GallerySection";
-import Testimonials from "@/components/homepage/Testimonial";
-import Footer from "@/components/homepage/footerr";
+import HeroSection from "../Components/Homepage/heroSectionn";
+import EnquiryForm from "../Components/Homepage/enquiryFormm";
+import ServicesSection from "../Components/Homepage/servicesSectionn";
+import DestinationSection from "../Components/Homepage/destinationSectionn";
+import TravelPoint from "../Components/Homepage/travelPointt"; // ✅ import
+import FeatureSection from "../Components/Homepage/featureSectionn";
+import GallerySection from "../Components/Homepage/gallerySectionn";
+import Testimonials from "../Components/Homepage/testimoniali";
+
 
 export default function Home() {
   return (
@@ -16,7 +15,6 @@ export default function Home() {
         background:"#fff"
       }
     }>
-      {/* <Header /> */}
       <HeroSection />
       <EnquiryForm />
       <ServicesSection />
@@ -27,7 +25,6 @@ export default function Home() {
       <FeatureSection />
       <GallerySection />
       <Testimonials />
-      {/* <Footer /> */}
     </main>
   );
 }

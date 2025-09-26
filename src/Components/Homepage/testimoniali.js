@@ -9,7 +9,7 @@ import test2 from "../../assets/Images/test1.png";
 import test3 from "../../assets/Images/test.png";
 import test4 from "../../assets/Images/5.png";
 // ✅ Import CSS
-import "../../styles/Testimonial.css";
+import "../../styles/testimonial.css";
 import Image from "next/image";
 
 const testimonials = [
