@@ -5,7 +5,7 @@ import { MapPin, Calendar, CalendarCheck2 } from "lucide-react";
 // ✅ Import image
 import beachImg from "../../assets/Images/Background.jpg";
 
-import "../../styles/featureSection.module.css";
+import styles from "../../styles/featureSection.module.css";
 import Image from "next/image";
 
 const features = [
@@ -34,14 +34,14 @@ const features = [
 
 const FeatureSection = () => {
   return (
-    <section className="feature-section">
+    <section className={`${styles.feature_section}`}>
       {/* Left Column */}
-      <div className="feature-left">
-        <p className="features-subtitle">KEY FEATURES</p>
-        <h2 className="features-title">
+      <div className={`${styles.feature_left}`}>
+        <p className={`${styles.features_subtitle}`}>KEY FEATURES</p>
+        <h2 className={`${styles.features_title}`}>
           We offer <span>best services</span>
         </h2>
-        <p className="features-desc">
+        <p className={`${styles.features_desc}`}>
           From seamless bookings and comfortable stays to safe travel and
           personalized guidance, we ensure every part of your journey is handled
           with care and excellence.
@@ -49,7 +49,7 @@ const FeatureSection = () => {
 
         {/* ✅ Mapping feature cards */}
         {features.map((item) => (
-          <div key={item.id} className="feature-card">
+          <div key={item.id} className={`${styles.feature_card}`}>
             <div className={`icon ${item.color}`}>{item.icon}</div>
             <div>
               <h4>{item.title}</h4>
@@ -60,7 +60,7 @@ const FeatureSection = () => {
       </div>
 
       {/* Right Column */}
-      <div className="feature-right">
+      <div className={`${styles.feature_right}`}>
         <Image src={beachImg.src} alt="Beach" width={100} height={100} />
       </div>
     </section>

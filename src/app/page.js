@@ -1,10 +1,10 @@
 import HeroSection from "../Components/Homepage/heroSectionn";
 import EnquiryForm from "../Components/Homepage/enquiryFormm";
 import ServicesSection from "../Components/Homepage/servicesSectionn";
-import DestinationSection from "../Components/Homepage/destinationSectionn";
+import DestinationSection from "../Components/Homepage/destinationSection";
 import TravelPoint from "../Components/Homepage/travelPointt"; // ✅ import
 import FeatureSection from "../Components/Homepage/featureSectionn";
-import GallerySection from "../Components/Homepage/gallerySectionn";
+import GallerySection from "../Components/Homepage/gallerySection";
 import Testimonials from "../Components/Homepage/testimoniali";
 
 

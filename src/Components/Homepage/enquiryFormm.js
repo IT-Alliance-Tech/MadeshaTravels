@@ -5,10 +5,10 @@ import styles from "../../styles/homepage/enquiryFormm.module.css";
 
 export default function EnquiryForm() {
   const [formData, setFormData] = useState({
-    name: null,
-    interested: null,
-    email: null,
-    phone: null,
+    name: "",
+    interested: "",
+    email: "",
+    phone: "",
   });
 
   const [loading, setLoading] = useState(false); // Loading state
