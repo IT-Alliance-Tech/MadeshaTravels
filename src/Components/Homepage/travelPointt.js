@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import styles from "../../styles/homepage/TravelPoint.module.css";
+import styles from "../../styles/homepage/travelPoint.module.css";
 import travelImg from "../../assets/image/travel.png";
 import { MdConfirmationNumber } from "react-icons/md"; // ✅ Ticket icon
 

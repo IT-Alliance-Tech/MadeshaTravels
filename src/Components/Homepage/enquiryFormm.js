@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import styles from "../../styles/homepage/EnquiryForm.module.css";
+import styles from "../../styles/homepage/enquiryForm.module.css";
 
 export default function EnquiryForm() {
   const [formData, setFormData] = useState({

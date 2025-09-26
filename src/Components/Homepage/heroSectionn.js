@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "../../styles/homepage/HeroSection.module.css";
+import styles from "../../styles/homepage/heroSection.module.css";
 
 // Images
 import hillImg from "../../assets/image/hero1.png";
