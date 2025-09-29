@@ -1,15 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import busImg from "../../assets/image/bus.png";
 import carImg from "../../assets/image/car.png";
 import tempoImg from "../../assets/image/tempo.png";
 import styles from "../../styles/homepage/servicesSection.module.css";
 
 export default function ServicesSection() {
-  const router = useRouter();
-
   // Array of services
   const services = [
     {
@@ -38,11 +36,6 @@ export default function ServicesSection() {
     },
   ];
 
-  // Handle card click
-  const handleClick = (link) => {
-    router.push(`/servicedetails?service=${link}`);
-  };
-
   return (
     <section id="services" className={styles.servicesSection}>
       {/* Left Content */}
@@ -56,20 +49,21 @@ export default function ServicesSection() {
       {/* Cards Wrapper */}
       <div className={styles.cardsWrapper}>
         {services.map((service) => (
-          <div
+          <Link
             key={service.id}
-            className={styles.card}
-            onClick={() => handleClick(service.link)}
-            style={{ cursor: "pointer" }} // Show pointer on hover
+            href={`/servicedetails?service=${service.link}`}
+            className={styles.cardLink}
           >
-            <Image
-              src={service.img}
-              alt={service.title}
-              className={styles.cardImg}
-            />
-            <h3>{service.title}</h3>
-            <p>{service.description}</p>
-          </div>
+            <div className={styles.card}>
+              <Image
+                src={service.img}
+                alt={service.title}
+                className={styles.cardImg}
+              />
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+            </div>
+          </Link>
         ))}
       </div>
     </section>

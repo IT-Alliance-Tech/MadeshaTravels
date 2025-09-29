@@ -1,5 +1,5 @@
 import React from "react";
-import ServiceDetailsClient from "@/components/services/serviceDetailsClient";
+import ServiceDetailsClient from "@/Components/services/serviceDetailsClient";
 
 export const dynamic = "force-dynamic";
 

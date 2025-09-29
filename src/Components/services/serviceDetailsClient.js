@@ -2,13 +2,12 @@
 
 import React, { useState } from "react";
 import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 import Image from "next/image";
 import tempoImg from "../../assets/image/tempo2.png";
 import busImg from "../../assets/image/buss.png";
 import carImg from "../../assets/image/car11.png";
 import styles from "../../styles/aboutus/serviceDetails.module.css";
-
-// put your full serviceData object here...
 
 export default function ServiceDetailsClient() {
   const searchParams = useSearchParams();
@@ -26,6 +25,13 @@ export default function ServiceDetailsClient() {
 
   return (
     <div className={styles.container}>
+      {/* Back to Home Button */}
+      <div className={styles.backButton}>
+        <Link href="/" className={styles.backLink}>
+          ← Back to Home
+        </Link>
+      </div>
+
       {/* Service Details */}
       <div
         className={`${styles.serviceDetails} ${
@@ -92,7 +98,6 @@ export default function ServiceDetailsClient() {
     </div>
   );
 }
-
 
 const serviceData = {
   tempo: {

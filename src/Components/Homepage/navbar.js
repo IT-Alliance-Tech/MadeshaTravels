@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Logo from "../../assets/image/madeshalogo.svg"; 
 import "../../styles/Header.css";
@@ -16,9 +16,16 @@ const navLinks = [
 ];
 
 const Header = () => {
+  const pathname = usePathname();
+
   const handleScroll = (id) => {
-    console.log(id)
     if (!id) return;
+
+    // If we're not on the home page, navigate to home first
+    if (pathname !== '/') {
+      window.location.href = `/#${id}`;
+      return;
+    }
 
     const section = document.getElementById(id);
     if (section) {
@@ -33,8 +40,6 @@ const Header = () => {
       });
     }
   };
-
-  
 
   return (
     <header className="header">
@@ -58,12 +63,16 @@ const Header = () => {
           {navLinks.map((link, index) => (
             <li key={index}>
               {link.path ? (
-                <Link href={link.path}>{link.name}</Link>
-
+                <Link 
+                  href={link.path}
+                  className={pathname === link.path ? 'active' : ''}
+                >
+                  {link.name}
+                </Link>
               ) : (
                 <button
                   onClick={() => handleScroll(link.id)}
-                  className="nav-btn"
+                  className={`nav-btn ${pathname === '/' ? '' : 'inactive'}`}
                 >
                   {link.name}
                 </button>
@@ -75,7 +84,12 @@ const Header = () => {
 
       {/* Contact Button */}
       <div className="contact-button">
-        <Link href="/contact" className="contact-btn">Contact Us</Link>
+        <Link 
+          href="/contact" 
+          className={`contact-btn ${pathname === '/contact' ? 'active' : ''}`}
+        >
+          Contact Us
+        </Link>
       </div>
     </header>
   );
